@@ -1,0 +1,3 @@
+- AWS shared responsibility model defines the security responsibilities of AWS and the customer:
+  - AWS is responsible for the security of the cloud, which includes the physical infrastructure, network, and virtualization layer (The parts of the stack that AWS manages).
+  - The customer is responsible for the security in the cloud, which includes the data, applications, and operating systems they run on AWS. (The parts of the stack that the customer manages).

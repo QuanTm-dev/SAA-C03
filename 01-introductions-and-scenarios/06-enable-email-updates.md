@@ -1,0 +1,2 @@
+- **Why**: Occasionally, we may get special offers or course updates on the platform.
+- **How**: Follow the steps on the [lesson](https://learn.cantrill.io/courses/1820301/lectures/44031509)

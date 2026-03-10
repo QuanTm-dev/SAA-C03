@@ -1,0 +1,1 @@
+- Lessons which are tagged in this way [SHAREDALL] [ASSOCIATESHARED] [SAAC03SHARED] are shared across multiple courses => We can skip these lessons when taking another course that includes them.
