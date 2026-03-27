@@ -6,7 +6,7 @@ argument-hint: "Provide the note path, for example: convert notes/javascript/clo
 
 # markdown-to-anki
 
-Convert a workspace markdown note into a tab-separated .text file ready to import into Anki. ## headings become card fronts; content below each heading becomes the card back.
+Convert a workspace markdown note into a tab-separated .txt file ready to import into Anki. ## headings become card fronts; content below each heading becomes the card back.
 
 ## When to Use This Skill
 
@@ -22,16 +22,16 @@ Use this skill when:
 - The note must use ## headings as card fronts with content below each heading.
 - Run from the repository root so deck names are derived correctly.
 - Requires Node.js to execute the conversion script.
-- See [references/note-format.md](../references/note-format.md) for full format rules, deck naming convention, and output file specification.
+- See [references/note-format.md](./references/note-format.md) for full format rules, deck naming convention, and output file specification.
 
 ## Workflow
 
 1. Identify the markdown note file path from the user's request.
 2. Confirm the file exists in the workspace.
 3. Determine the repository root (workspace root folder).
-4. Run [scripts/markdown-to-anki.js](../scripts/markdown-to-anki.js) with the note path and repo root:
+4. Run [scripts/markdown-to-anki.js](./scripts/markdown-to-anki.js) with the note path and repo root:
 
-node .github/skills/markdown-to-anki/scripts/markdown-to-anki.js <note.md> --repo-root . 5. Report the number of cards generated and the output .text file path. 6. If zero cards were generated, remind the user to use ## headings as card fronts with content below each heading.
+node .github/skills/markdown-to-anki/scripts/markdown-to-anki.js <note.md> --repo-root . 5. Report the number of cards generated and the output .txt file path. 6. If zero cards were generated, remind the user to use ## headings as card fronts with content below each heading.
 
 ## Troubleshooting
 
@@ -45,6 +45,6 @@ node .github/skills/markdown-to-anki/scripts/markdown-to-anki.js <note.md> --rep
 
 ## Completion Check
 
-- The .text file exists in .anki/ at the path matching the note's location.
+- The .txt file exists in .anki/ at the path matching the note's location.
 - The deck column uses :: notation matching the note's path.
 - At least one card was generated.

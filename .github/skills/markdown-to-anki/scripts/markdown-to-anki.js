@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Convert a markdown note to an Anki-importable tab-separated .text file.
+ * Convert a markdown note to an Anki-importable tab-separated .txt file.
  *
  * Usage:
  *   node markdown-to-anki.js <note.md> --repo-root <path>
@@ -10,7 +10,7 @@
  *   --repo-root    Path to the repository root (default: current directory).
  *
  * Output:
- *   Writes a tab-separated .text file to .anki/<note-relative-path>.text
+ *   Writes a tab-separated .txt file to .anki/<note-relative-path>.txt
  *   relative to the repo root.
  */
 
@@ -120,11 +120,11 @@ function main() {
     process.exit(1);
   }
 
-  // Build output path: .anki/<repo-relative-path-without-.md>.text
+  // Build output path: .anki/<repo-relative-path-without-.md>.txt
   const absNote = path.resolve(noteArg);
   const absRoot = path.resolve(repoRootArg);
   const rel = path.relative(absRoot, absNote);
-  const relWithNewExt = rel.replace(/\.md$/, ".text");
+  const relWithNewExt = rel.replace(/\.md$/, ".txt");
   const outPath = path.join(absRoot, ".anki", relWithNewExt);
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true });

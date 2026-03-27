@@ -44,16 +44,16 @@ Rules:
 
 ## Output File Location
 
-The output file mirrors the note path under the .anki/ folder at the repository root, with a .text extension:
+The output file mirrors the note path under the .anki/ folder at the repository root, with a .txt extension:
 
 | Note path                 | Output path                       |
 | ------------------------- | --------------------------------- |
-| javascript/closures.md    | .anki/javascript/closures.text    |
-| aws/compute/ec2.md        | .anki/aws/compute/ec2.text        |
+| javascript/closures.md    | .anki/javascript/closures.txt     |
+| aws/compute/ec2.md        | .anki/aws/compute/ec2.txt         |
 
 ## Output File Format
 
-The .text file uses tab-separated values with Anki import headers:
+The .txt file uses tab-separated values with Anki import headers:
 
 #separator:tab
 #html:true
@@ -69,6 +69,6 @@ Multi-line back content is converted to
 ## Importing into Anki
 
 1. Open Anki → File → Import.
-2. Select the .text file from the .anki/ folder.
+2. Select the .txt file from the .anki/ folder.
 3. Anki auto-detects the separator and column mapping from the file headers.
 4. Click Import. Cards are added to the deck derived from the file path.
