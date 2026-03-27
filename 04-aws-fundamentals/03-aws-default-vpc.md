@@ -1,18 +1,34 @@
-# VPC Basics
+# VPC: Virtual Private Cloud
 
-- A VPC (Virtual Private Cloud) is an isolated virtual network within an AWS region, operating across all availability zones.
-- VPCs are isolated by default—they cannot communicate with other VPCs or the internet unless you configure networking services (gateways, peering, etc.).
-- Every VPC has an IP address range called a CIDR block (e.g., 172.31.0.0/16). VPCs are divided into subnets, each in a single availability zone.
+> A VPC is an isolated virtual network within an AWS region. All resources in a VPC are isolated by default from the internet and other VPCs.
 
-# VPC Types
+## VPC Basics
 
-- **Default VPC**: Automatically created per region, pre-configured, and limited to 1 per region.
-- **Custom VPC**: User-created and fully customizable; you can have multiple per region.
+- Operates across all availability zones in a region.
+- Configured with an IP address range (CIDR block, e.g., 172.31.0.0/16).
+- Divided into subnets; each subnet is in a single AZ.
+- Isolated by default; requires explicit configuration (IGW, peering, NAT) to reach the internet or other VPCs.
 
-# Default VPC Configuration
+## VPC Types
 
-- Automatically created when you set up an AWS account; cannot be customized but can be deleted and recreated.
-- **CIDR block**: Always 172.31.0.0/16
-- **Subnets**: Each AZ receives a /20 subnet
-- **Networking**: Includes an internet gateway, security group, and NACL
-- **IP assignment**: Services deployed to default VPC receive public IPv4 addresses
+**Default VPC**
+
+- Automatically created per region.
+- Pre-configured and limited to 1 per region.
+- Can be deleted and recreated but not customized.
+
+**Custom VPC**
+
+- User-created and fully customizable.
+- Multiple per region allowed.
+
+## Default VPC Configuration
+
+| Attribute        | Value                        |
+| ---------------- | ---------------------------- |
+| CIDR Block       | 172.31.0.0/16                |
+| Subnets          | One /20 per AZ               |
+| Internet Gateway | Included                     |
+| Security Group   | Included                     |
+| NACL             | Included                     |
+| IP Assignment    | Public IPv4 to all resources |

@@ -1,27 +1,28 @@
-# CloudFormation Basics
+# CloudFormation (CFN)
 
-CloudFormation (CFN) is a service that lets you create, update, and delete AWS resources using templates. Templates can be written in JSON or YAML format.
+> Service for creating, updating, and deleting AWS resources using templates (JSON or YAML). Enables Infrastructure as Code (IaC).
 
-# CFN Template Sections
+## Template Sections
 
-CloudFormation templates have 8 main sections:
+| Section                      | Required | Purpose                                                                     |
+| ---------------------------- | -------- | --------------------------------------------------------------------------- |
+| **Resources**                | Yes      | AWS resources to create/update/delete                                       |
+| **Parameters**               | No       | Input variables with type and defaults                                      |
+| **Mappings**                 | No       | Fixed key-value lookup tables (e.g., region → AMI ID)                       |
+| **Conditions**               | No       | Logic to control resource creation                                          |
+| **Outputs**                  | No       | Values returned after stack deployment                                      |
+| **Metadata**                 | No       | Template metadata (e.g., UI hints)                                          |
+| **Description**              | No       | Template description (must follow AWSTemplateFormatVersion if both present) |
+| **AWSTemplateFormatVersion** | No       | Template version                                                            |
 
-- **Resources** (required): Defines the AWS resources to create, update, or delete.
-- **Description**: Describes the template. Must come immediately after `AWSTemplateFormatVersion` if both are present.
-- **AWSTemplateFormatVersion**: Specifies the template version
-- **Parameters**: Defines input parameters with type, default value, and allowed values.
-- **Mappings**: Defines fixed key-value pairs (e.g., region to AMI ID mappings) for lookup.
-- **Conditions**: Defines logic to control whether certain resources are created or properties are set.
-- **Metadata**: Stores arbitrary data about the template (e.g., UI presentation hints).
-- **Outputs**: Returns output values after the stack is created or updated.
+## How It Works
 
-# How CloudFormation Works
+- **Logical Resources**: Resources defined in the template.
+- **Physical Resources**: Actual AWS resources created by CloudFormation.
+- **Stack**: Collection of logical and physical resources.
+- **Change Detection**: CFN compares template against current stack; creates/updates/deletes resources as needed.
 
-- **Logical Resources**: Resources defined in the CFN template are called logical resources.
-- **Stack Creation**: When you deploy a template, CloudFormation creates a stack (a collection of AWS resources), from the stack physical resources (actual AWS instances) are created.
-- **Change Detection**: CloudFormation compares the template against the current stack and creates, updates, or deletes physical resources accordingly.
+## Benefits
 
-# Benefits of CloudFormation
-
-- Template can be reused to create multiple stacks with the same configuration.
+- Reuse templates to provision identical stacks.
 - Delete stacks to remove all associated resources in one action.

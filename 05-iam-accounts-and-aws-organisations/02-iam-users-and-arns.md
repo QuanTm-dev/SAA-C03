@@ -1,26 +1,32 @@
-## What is an IAM User?
+# IAM Users and ARNs
 
-- Please refer to [this lesson](../02-course-fundamentals-and-aws-accounts/04-identity-and-access-management-iam-basics.md#iam-objects)
+## IAM User Basics
 
-## How can an IAM User use AWS resources?
+- IAM User: An identity within an AWS account representing a person or application (see [IAM Objects](../02-course-fundamentals-and-aws-accounts/04-identity-and-access-management-iam-basics.md#iam-objects) for detailed concepts).
+- **Principal**: Any entity (user, role, service) requesting access to AWS resources.
 
-- Principal: An unidentified entity that want to access AWS resources.
+## Authentication and Authorization
 
-1. Principal needs to authenticate to IAM using credentials (password, access keys)
-2. AWS starts authorization process by evaluating all policies attached to the principal.
+1. Principal authenticates with credentials (password or access keys)
+2. AWS evaluates all policies attached to the principal
+3. Action allowed only if policies permit it
 
-## What is an ARN?
+## Amazon Resource Names (ARN)
 
 - Amazon Resource Name (ARN) is a unique identifier for AWS resources.
-- Format:
-  - `arn:partition:service:region:account-id:resource-type/resource-id`
-  - `arn:partition:service:region:account-id:resource-id`
-- Example:
-  - `arn:aws:s3:::catgif` => Refer to the bucket itself (You can perform actions on the bucket itself using this ARN, but not on the objects inside the bucket)
-  - `arn:aws:s3:::catgif/*` => Refer to all objects in the bucket (You can't perform actions on the bucket itself using this ARN, only on the objects inside the bucket)
 
-## Exam notes
+### Format
 
-- You cannot have more than 5000 IAM users in an AWS account.
-- IAM user can be a member of maximum of 10 groups.
-- Design impact: If your application needs to support more than 5000 users, you should consider using identity federation instead of creating IAM users.
+- `arn:partition:service:region:account-id:resource-type/resource-id`
+- `arn:partition:service:region:account-id:resource-id`
+
+### ARN Examples
+
+- `arn:aws:s3:::catgif` — Bucket itself (supports bucket-level actions)
+- `arn:aws:s3:::catgif/*` — All objects in bucket (supports object-level actions, not bucket actions)
+
+## Limits and Design Considerations
+
+- **IAM Users per Account**: Maximum 5000
+- **Groups per User**: Maximum 10 groups per user
+- **Scaling Beyond 5000**: Use identity federation (external identity providers) instead of creating individual IAM users

@@ -1,17 +1,32 @@
-## Overview
+# CloudWatch Logs
 
-- CloudWatch Logs is a public service for monitoring, storing, and accessing logging data from AWS services and external applications.
-- Logs are typically available within seconds, enabling near-real-time monitoring.
-- Logging sources: AWS services (EC2, Lambda, RDS, etc. via IAM roles) and external applications (via API or CloudWatch Agent).
+> Centralized logging service for monitoring, storing, and analyzing logs from AWS services and external applications.
 
 ## Key Concepts
 
-- **Log Event**: A single log entry containing message content and timestamp.
-- **Log Stream**: Ordered sequence of log events from a single source (e.g., one EC2 instance or Lambda function).
-- **Log Group**: Collection of log streams with shared retention, monitoring, permissions, and settings. **Regional resource** (associated with one AWS region).
+- **Log Event**: Single log entry (message + timestamp)
+- **Log Stream**: Time-ordered sequence of events from one source (e.g., one EC2 instance)
+- **Log Group**: Collection of streams with shared settings (retention, permissions, metric filters); regional resource
 
-## Log Group Configuration
+## Configuration
 
-- **Retention Settings**: Define how long logs are stored before automatic deletion (inherited by all streams in the group). Default is infinite.
-- **Permissions**: Access control applied at the log group level (affects all streams within the group).
-- **Metric Filters**: Extract metrics from log data by matching patterns; detected matches increment an associated CloudWatch metric, enabling alarms and automation.
+### Retention
+
+- Automatic deletion after specified period (default: infinite/never delete)
+- Inherited by all streams in the group
+
+### Access
+
+- Permissions applied at log group level; apply to all streams within
+
+### Monitoring
+
+- **Metric Filters**: Pattern matching extracts metrics from logs
+- Matched events increment associated CloudWatch metrics
+- Enables alarms and automation based on log content
+
+## Log Sources
+
+- AWS services: EC2, Lambda, RDS (via IAM roles)
+- External applications: API calls or CloudWatch Agent
+- Availability: Near real-time (typically seconds)

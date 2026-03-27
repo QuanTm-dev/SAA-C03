@@ -1,39 +1,31 @@
-## What is AWS Organizations?
+# AWS Organizations
 
-AWS Organizations is a service that lets you manage multiple AWS accounts in a centralized, cost-effective way.
+> Centralized service to govern multiple AWS accounts for compliance, cost control, and simplified management.
 
-## Problems Solved
+## Setup
 
-- **Multiple accounts fragmentation**: Without Organizations, each AWS account operates independently with separate billing, IAM users, and resources, making management difficult.
+1. Start with a standard AWS account and create an organization
+2. That account becomes the **management account** (full control)
+3. Add other accounts as **member accounts** (via invitation or creation)
 
-## How It Works
+## Account Types
 
-**Setup Process**
+- **Management Account**: Full control, centralized billing, manages all member accounts
+- **Member Accounts**: Separate billing consolidated into management account; governed by organization policies and SCPs
 
-- Take a standard AWS account and create an organization from it (the organization itself isn't "in" the account).
-- The initiating account becomes the **management account** (formerly "master account"), which has full control over the organization.
+## Organization Structure
 
-**Adding Accounts**
+- **Organizational Units (OUs)**: Hierarchical groupings of accounts (can nest)
+- **Organization Root**: Top-level container for all OUs and accounts
+- **Single point of control**: Policies applied at root cascade down to all OUs and accounts
 
-- Invite existing standard accounts to join; once they accept, they become **member accounts** (formerly "linked accounts").
-- Create new accounts directly from the management account, and they automatically become member accounts.
+## Consolidated Billing
 
-## Key Characteristics
+- Single invoice for all member accounts
+- Volume discounts applied across all accounts
+- Reserved Instances can be shared across accounts in organization
 
-**Structure**
+## Compliance and Governance
 
-- One management account per organization with multiple member accounts.
-- Accounts are grouped into **Organizational Units (OUs)**, which can be nested hierarchically, with the Organization root at the top.
-
-**Consolidated Billing**
-
-- Receive a single bill for all accounts in the organization, enabling volume discounts and reserved instance benefits.
-
-**Service Control Policies (SCPs)**
-
-- Set permission boundaries across member accounts to ensure compliance with security policies.
-- SCPs restrict IAM user and role permissions at the account level (not individual user level).
-
-**IAM Best Practice**
-
-- Centralize all identities in a single AWS account and use role switching to access other accounts, providing a single point of control for all identities and permissions.
+- **Service Control Policies (SCPs)**: Permission boundaries that restrict (not grant) actions at account level
+- **Best Practice**: Centralize all IAM users in one account; use role switching for cross-account access (maintains single identity source)

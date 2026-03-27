@@ -1,53 +1,71 @@
-# Route53 basics
+# Route 53
 
-- Route53 helps us:
-  - Register domain names
-  - Host Zone files
-- Route53 is a global service and globally resilient.
-- There are usually 4 name servers for each hosted zone, and they are distributed globally.
-- Hosted zones can be public or private:
-  - Public hosted zones are used to route traffic on the internet.
-  - Private hosted zones are used to route traffic within a VPC.
+> AWS DNS service for domain registration, DNS hosting, and traffic management. Globally resilient.
 
-# DNS record types
+## Capabilities
 
-## Name Server (NS) record
+- Register domain names.
+- Host DNS zones and manage DNS records.
+- Route traffic based on policies (weighted, latency-based, failover, geolocation).
 
-- NS records are used to delegate a domain to a set of name servers.
+## Resilience
 
-Example: example.com NS ns-123.awsdns-45.com
+- **Global Service**: Available everywhere globally.
+- **Globally Resilient**: Remains available even if all regions fail (zone data distributed across multiple AWS regions).
+- **Name Servers**: Typically 4 per hosted zone, distributed globally for redundancy.
 
-## A and AAAA records
+## Hosted Zones
 
-- A records map a domain name to an IPv4 address.
-- AAAA records map a domain name to an IPv6 address.
+**Public Hosted Zone**: Routes traffic on the internet for your domain.
 
-Example: www.example.com A 172.217.25.36, www.example.com AAAA 2607:f8b0:4005:805::2004
+**Private Hosted Zone**: Routes traffic within a VPC (internal DNS resolution).
 
-## CNAME record
+## DNS Record Types
 
-- CNAME records map a domain name to another domain name.
+### A Record
 
-Example: A server performs multiple tasks: fpt, mail, web services:
+Maps a domain name to an IPv4 address.
 
-- ftp.example.com CNAME server1.example.com
-- mail.example.com CNAME server1.example.com
-- www.example.com CNAME server1.example.com
+- Example: `www.example.com A 172.217.25.36`
 
-## MX record
+### AAAA Record
 
-- MX records specify the mail servers responsible for receiving email on behalf of a domain.
-- Lower priority values indicate higher priority mail servers.
-- A value can be a host or a fully qualified domain name (FQDN).
+Maps a domain name to an IPv6 address.
 
-Example: example.com MX 10 mail1.example.com, example.com MX 20 mail2.example.com
+- Example: `www.example.com AAAA 2607:f8b0:4005:805::2004`
 
-## TXT record
+### NS Record (Name Server)
 
-- TXT records are used to store text information for various purposes, such as domain ownership verification.
+Delegates a domain to a set of name servers.
 
-Example: An email service provider may require you to add a TXT record to verify domain ownership: example.com TXT "v=spf1 include:mailservice.com ~all". After adding this record, the email service provider can verify that you own the domain by querying the record.
+- Example: `example.com NS ns-123.awsdns-45.com`
+
+### CNAME Record (Canonical Name)
+
+Maps a domain name to another domain name (alias).
+
+- Example: Multiple subdomains pointing to one server:
+  - `ftp.example.com CNAME server1.example.com`
+  - `mail.example.com CNAME server1.example.com`
+  - `www.example.com CNAME server1.example.com`
+
+### MX Record (Mail Exchange)
+
+Specifies mail servers responsible for receiving email.
+
+- Lower priority number = higher priority.
+- Example: `example.com MX 10 mail1.example.com` (primary), `example.com MX 20 mail2.example.com` (secondary).
+
+### TXT Record
+
+Stores arbitrary text data; commonly used for domain verification and email authentication.
+
+- Example: SPF verification: `example.com TXT "v=spf1 include:mailservice.com ~all"`
 
 ## Time to Live (TTL)
 
-- TTL is the duration (in seconds) that a DNS record is cached by DNS resolvers.
+**Definition**: Duration (in seconds) that DNS resolvers cache a DNS record.
+
+**Impact**: Lower TTL = more frequent lookups (slower, more accurate); higher TTL = fewer lookups (faster, stale data possible).
+
+**Use case**: Lower TTL before migrations; normal (3600+) for stable records.

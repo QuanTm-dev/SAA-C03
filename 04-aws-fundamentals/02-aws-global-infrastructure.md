@@ -1,27 +1,33 @@
-AWS infrastructure is distributed globally across regions and edge locations. Each region is a completely independent deployment, and each edge location is smaller and used for content delivery.
+# AWS Global Infrastructure
 
-# Regions
+> AWS infrastructure spans globally across regions and edge locations, enabling high availability, disaster recovery, and low-latency access worldwide.
 
-A region is an isolated geographic area with complete AWS infrastructure (compute, storage, database, etc.). Data stays within the region you choose unless explicitly replicated elsewhere.
+## Regions
 
-**Benefits:**
+**Definition**: Isolated geographic areas, each with complete AWS infrastructure (compute, storage, database, etc.). Data stays within a region unless explicitly replicated.
 
-- **Fault Tolerance**: Region isolation means failures only affect that region.
-- **Compliance**: You follow only the laws of the country where the region is located.
-- **Performance**: Users experience lower latency when using the region nearest to them.
+**Key Benefits**:
 
-## Availability Zones
+- Fault isolation: Regional failures don't affect other regions.
+- Compliance: Resources stay within the country/laws of the chosen region.
+- Performance: Lower latency for users near the region.
 
-Availability Zones (AZs) are isolated infrastructure clusters within a region. Each AZ can fail independently, so applications deployed across multiple AZs remain available during an AZ outage.
+### Availability Zones (AZs)
 
-# Edge Locations
+**Definition**: Isolated infrastructure clusters within a region, each capable of independent failure.
 
-Edge locations are small data centers distributed globally, primarily used for content delivery (CloudFront), caching, and edge computing. There are more edge locations than regions, providing better performance for end users worldwide.
+**Resilience**: Applications deployed across multiple AZs remain available during single-AZ outages.
 
-# Service Resilience Levels
+## Edge Locations
 
-AWS services have different resilience levels depending on their architecture:
+**Definition**: Small data centers distributed globally, primarily used for content delivery (CloudFront), caching, and edge computing.
 
-- **Global Resilient**: Service remains available unless ALL regions fail (e.g., Route 53). Data automatically replicates across regions.
-- **Region Resilient**: Service remains available unless ALL AZs in a region fail (e.g., S3). Data automatically replicates across AZs.
-- **Availability Zone Resilient**: Service only works if that specific AZ is available (e.g., EC2 in a single AZ).
+**Scale**: More edge locations than regions, providing better performance for end users worldwide.
+
+## Service Resilience Levels
+
+AWS services fail at different scopes depending on architecture:
+
+- **Global Resilient**: Remains available unless ALL regions fail (e.g., Route 53 zone distribution).
+- **Region Resilient**: Remains available unless ALL AZs in a region fail (e.g., S3 multi-AZ replication).
+- **Availability Zone Resilient**: Only available if that specific AZ is available (e.g., single-AZ EC2 instance).

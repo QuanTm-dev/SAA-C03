@@ -1,48 +1,58 @@
-## Overview
+# AWS Control Tower
 
-- AWS Control Tower orchestrates multiple AWS services to automate setup of secure, multi-account environments based on AWS best practices.
+> Automation framework orchestrating AWS services to set up secure, multi-account environments following AWS best practices.
 
-## Key Components
+## Core Components
 
-- **Landing Zone**: Secure multi-account environment with shared services and standardized configurations.
-- **Guardrails**: Pre-packaged governance rules for security, operations, and compliance across all accounts.
-- **Account Factory**: Self-service portal to create and manage AWS accounts with standardized network and account templates.
-- **Dashboard**: Single-page view of landing zone health, compliance status, and guardrail violations.
+- **Landing Zone**: Secure multi-account foundation with shared services, standardized setup
+- **Guardrails**: Pre-packaged governance rules (security, operations, compliance)
+- **Account Factory**: Self-service portal for standardized account provisioning
+- **Dashboard**: Compliance and guardrail violation overview
 
 ## Architecture
 
 ### Management Account
 
-- Management account is the account where AWS Control Tower is set up and managed.
-- Uses CloudFormation to automate landing zone and guardrail configuration.
-- Uses AWS Config and SCPs to enforce guardrails across all accounts.
-- Integrated with IAM Identity Center (AWS SSO) for identity and access management.
+- Where Control Tower is configured and managed
+- Uses CloudFormation for automation
+- Uses AWS Config + SCPs for governance enforcement
+- Provides IAM Identity Center integration for identity management
 
-### AWS Organizations Structure
+### Organization Structure
 
-- **Foundation OU**: Contains shared management accounts:
-  - **Log Archive**: Stores logs (CloudTrail, Config) from all landing zone accounts.
-  - **Audit**: Monitors compliance across accounts (CloudTrail, Config violations).
-- **Custom OU**: Contains user-created accounts via Account Factory.
+**Foundation OU** (AWS-managed):
 
-## Landing Zone
+- **Log Archive Account**: Centralizes logs (CloudTrail, Config) from all accounts
+- **Audit Account**: Monitors compliance and guardrail violations across accounts
 
-- Multi-account environment built on AWS Organizations, CloudFormation, and AWS Config.
-- Foundation OU manages logs, audit, and compliance across all accounts.
-- Users create additional OUs and accounts based on organizational structure.
-- IAM Identity Center provides centralized identity and access management.
-- CloudWatch and SNS enable monitoring and notifications.
+**Custom OUs** (user-created):
+
+- Accounts provisioned via Account Factory
+
+## Landing Zone Architecture
+
+- Built on: AWS Organizations, CloudFormation, AWS Config
+- Foundation OU: Logs, audit, compliance centralization
+- Custom OUs: User-created organizational structure
+- Identity: IAM Identity Center for centralized access management
+- Monitoring: CloudWatch + SNS for alerts and notifications
 
 ## Guardrails
 
-- Pre-packaged governance rules for multi-account compliance in AWS Control Tower.
-- **Types**: Mandatory, Strongly Recommended, Elective.
-- **Categories**:
-  - **Preventive**: Block non-compliant actions (via SCPs and Config rules).
-  - **Detective**: Monitor and report on non-compliant resources across accounts.
+### Types
+
+- **Mandatory**: Always active; cannot be disabled
+- **Strongly Recommended**: AWS best practice; recommended but optional
+- **Elective**: Optional governance rules
+
+### Enforcement Methods
+
+- **Preventive**: Block non-compliant actions (SCPs, Config rules)
+- **Detective**: Monitor and report violations across accounts
 
 ## Account Factory
 
-- Self-service automation for account provisioning by admins or authorized end users.
-- Automatically applies guardrails and standardized configurations to new accounts.
-- Supports account closure/repurposing integrated with business SDLC processes.
+- Self-service account provisioning (admins or authorized end users)
+- Auto-applies guardrails and standardized templates
+- Supports account closure with business process integration
+- Enforces consistent network and security baseline

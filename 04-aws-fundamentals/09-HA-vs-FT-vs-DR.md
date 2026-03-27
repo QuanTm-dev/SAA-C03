@@ -1,14 +1,29 @@
-# High Availability (HA)
+# HA vs FT vs DR
 
-- HA minimizes downtime to maintain agreed-upon service levels, typically measured as a percentage of uptime (e.g., 99.9% = max 8.76 hours downtime per year).
-- HA does not guarantee zero downtime but tolerates brief interruptions and automatically recovers from them.
+> Three complementary strategies for maintaining system availability and recovering from failures.
 
-# Fault Tolerance (FT)
+## High Availability (HA)
 
-- FT enables systems to continue operating even when components fail by using redundancy and automatic failover mechanisms.
-- Unlike HA, FT focuses on the system absorbing failures seamlessly without any interruption.
+**Goal**: Minimize downtime to maintain agreed SLAs (e.g., 99.9% uptime = max 8.76 hours downtime/year).
 
-# Disaster Recovery (DR)
+**Approach**: Tolerate brief interruptions; automatically recover from failures.
 
-- DR comprises policies and procedures to recover or restore vital infrastructure after natural or human-induced disasters.
-- Effective DR requires pre-planning, regular testing, backups, off-site data storage, and clear stakeholder communication.
+**Example**: Multi-AZ load balancer redirecting traffic when one instance fails.
+
+## Fault Tolerance (FT)
+
+**Goal**: Continue operating seamlessly even when components fail.
+
+**Approach**: Use redundancy and automatic failover; detect and recover from failures transparently.
+
+**Key Difference from HA**: FT aims for zero interruption; HA tolerates brief interruptions.
+
+**Example**: Multi-site active-active replication where failure is imperceptible to users.
+
+## Disaster Recovery (DR)
+
+**Goal**: Restore vital infrastructure after major disasters (natural, human-induced, region outages).
+
+**Approach**: Pre-planning, regular testing, backups, off-site storage, stakeholder communication.
+
+**Scope**: Longer recovery times (measured in hours/days); focuses on data restoration.
