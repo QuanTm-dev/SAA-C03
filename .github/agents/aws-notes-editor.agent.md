@@ -13,6 +13,11 @@ tools:[
     "web", 
 ] 
 target: "vscode"
+handoffs:
+  - label: Convert to Anki Cards
+    agent: AWS Notes to Anki
+    prompt: "Convert the validated and improved notes into Anki flash cards"
+    send: true
 ---
 
 # AWS Notes Editor
