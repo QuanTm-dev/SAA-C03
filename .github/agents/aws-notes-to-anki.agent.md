@@ -3,6 +3,11 @@ description: "Convert AWS study notes to Anki flash cards with proper deck struc
 name: "AWS Notes to Anki"
 tools: ["read", "edit", "search"]
 target: "vscode"
+handoffs:
+  - label: Import into Anki
+    agent: agent
+    prompt: "Import the generated Anki txt files into Anki using the Anki Importer agent"
+    send: true
 ---
 
 # AWS Notes to Anki Converter Agent
