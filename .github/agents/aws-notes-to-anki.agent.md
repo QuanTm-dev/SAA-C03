@@ -38,8 +38,14 @@ Anki `.txt` files with the following structure:
 1. **Quotation Marks**: All field values must be wrapped in double quotes
 2. **Separator**: Use comma as the field separator
 3. **Root Deck**: Always `SAA-C03`
-4. **Sub Deck**: Follow original file path structure
-   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01-introductions-and-scenarios::01-aws-exams`
+4. **Sub Deck**: Convert file path to human-readable format, preserving index prefix
+   - Keep the leading numbers, convert kebab-case to Title Case with spaces
+   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01 Introductions and Scenarios::01 AWS Exams`
+   - More examples:
+     - `04-aws-fundamentals` → `04 AWS Fundamentals`
+     - `05-iam-accounts-and-aws-organisations` → `05 IAM Accounts and AWS Organizations`
+     - `05-s3` → `05 S3`
+     - `07-cw` → `07 CloudWatch`
 5. **File Output Location**: Save in `.anki` folder mirroring the original path
    - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `.anki/01-introductions-and-scenarios/01-aws-exams.txt`
 
@@ -109,9 +115,9 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 **Output Anki cards:**
 
 ```
-"What is the default encryption method for S3 server-side encryption?","<b>AES-256</b> is the default encryption method for S3 server-side encryption.","SAA-C03::04-aws-fundamentals::05-s3"
-"What does S3 versioning protect against?","S3 versioning protects against accidental deletion of objects.","SAA-C03::04-aws-fundamentals::05-s3"
-"What is MFA Delete in S3?","<b>MFA Delete</b> is a feature that requires a second authentication factor for permanent deletion of objects in S3.","SAA-C03::04-aws-fundamentals::05-s3"
+"What is the default encryption method for S3 server-side encryption?","<b>AES-256</b> is the default encryption method for S3 server-side encryption.","SAA-C03::04 AWS Fundamentals::05 S3"
+"What does S3 versioning protect against?","S3 versioning protects against accidental deletion of objects.","SAA-C03::04 AWS Fundamentals::05 S3"
+"What is MFA Delete in S3?","<b>MFA Delete</b> is a feature that requires a second authentication factor for permanent deletion of objects in S3.","SAA-C03::04 AWS Fundamentals::05 S3"
 ```
 
 ## Error Handling
