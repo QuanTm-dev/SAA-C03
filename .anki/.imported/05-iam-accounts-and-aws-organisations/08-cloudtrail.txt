@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"What is CloudTrail?","An API activity logging service that records who did what, when, and where across your AWS account.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is an Event in CloudTrail?","A record of a single API action including who, when, what, and where.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is a Trail in CloudTrail?","A configuration defining event capture and storage (e.g., S3 bucket, CloudWatch Logs destination).","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is included in CloudTrail's free features?","<b>Event History</b>: 90 days of free management event storage (auto-enabled); no cost for viewing/searching.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What are Management Events in CloudTrail?","Control plane operations (EC2 creation, IAM changes); logged by default.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What are Data Events in CloudTrail?","Resource-level calls (S3 GetObject, PutObject); must explicitly enable per trail.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What are Insights Events in CloudTrail?","Anomalous API activity detected by CloudTrail Insights for security issue detection.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is the delivery latency for CloudTrail events?","Approximately <b>15 minutes</b> (not real-time).","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is a Single-Region Trail in CloudTrail?","A trail that logs only its source region (e.g., us-west-2 trail logs only us-west-2).","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is a Multi-Region Trail in CloudTrail?","A trail that logs all regions and auto-captures events in new regions when launched (best practice).","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"Where are IAM and global service events logged in CloudTrail?","In <b>US East 1</b> (region-agnostic), regardless of source region.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"How do single-region trails handle global service logging?","Must explicitly enable global service logging in addition to regional logging.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"Do multi-region trails auto-capture global service events?","Yes, global service events are auto-captured in multi-region trails.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What are the storage destinations for CloudTrail events?","<b>S3</b> (long-term retention and analysis) and <b>CloudWatch Logs</b> (real-time monitoring).","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"
+"What is an Organization Trail in CloudTrail?","A single trail that logs events for all accounts in an organization, created in management account.","SAA-C03::05 IAM Accounts and AWS Organizations::08 CloudTrail"

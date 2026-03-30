@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"What is EC2?","<b>Elastic Compute Cloud</b> — an IaaS service providing virtual machines (instances) with configurable CPU, memory, storage, and network resources.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"Where do EC2 instances deploy?","Within a <b>VPC</b> to a specific <b>Availability Zone</b>.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What is the resilience level of EC2 instances?","<b>AZ-resilient</b> — an instance fails if its AZ fails.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What storage options are available for EC2 instances?","<b>EBS volumes</b> (persistent) or <b>Instance Store</b> (temporary).","SAA-C03::04 AWS Fundamentals::04 EC2"
+"How is EC2 billed when running?","Charged per second for the instance, EBS storage, and network transfers.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"How is EC2 billed when stopped?","Charged only for attached EBS storage.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What happens to an EC2 instance when terminated?","No charges; data is lost permanently and cannot be reversed.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What is an AMI (Amazon Machine Image)?","A template containing OS, filesystem, and pre-installed software, used to create EC2 instances.","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What are the permission types for AMIs?","<b>Public</b> (anyone can launch), <b>Private</b> (only owner), and <b>Shared</b> (specific AWS accounts).","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What is the Boot Volume in EC2?","The root EBS volume containing the OS and filesystem (e.g., C: drive in Windows, / in Linux).","SAA-C03::04 AWS Fundamentals::04 EC2"
+"What is Block Device Mapping?","Defines all attached storage volumes and identifies the boot volume, telling the OS how to recognize and mount devices.","SAA-C03::04 AWS Fundamentals::04 EC2"

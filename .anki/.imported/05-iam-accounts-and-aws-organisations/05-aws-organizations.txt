@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"What is AWS Organizations?","A centralized service to govern multiple AWS accounts for compliance, cost control, and simplified management.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"How is AWS Organizations set up?","Start with a standard AWS account and create an organization. That account becomes the <b>management account</b>.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is a Management Account in AWS Organizations?","The account with full control that manages the organization and all member accounts.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is a Member Account in AWS Organizations?","An account with separate billing consolidated into the management account and governed by organization policies.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is an Organizational Unit (OU)?","A hierarchical grouping of accounts that can be nested.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is the Organization Root?","The top-level container for all OUs and accounts.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"How do policies cascade in AWS Organizations?","Policies applied at root cascade down to all OUs and accounts.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is Consolidated Billing?","A single invoice for all member accounts with volume discounts applied across all accounts.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"Can Reserved Instances be shared across accounts in an organization?","Yes, Reserved Instances can be shared across accounts in the organization.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What are Service Control Policies (SCPs)?","Permission boundaries that restrict (not grant) actions at the account level in an organization.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"
+"What is the best practice for IAM users in AWS Organizations?","Centralize all IAM users in one account; use role switching for cross-account access to maintain a single identity source.","SAA-C03::05 IAM Accounts and AWS Organizations::05 AWS Organizations"

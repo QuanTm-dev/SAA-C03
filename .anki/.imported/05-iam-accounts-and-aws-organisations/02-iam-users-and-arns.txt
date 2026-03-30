@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"What is an IAM User?","An identity within an AWS account representing a person or application.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What is a Principal?","Any entity (user, role, service) requesting access to AWS resources.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What is the authentication and authorization process for IAM users?","1. Principal authenticates with credentials (password or access keys), 2. AWS evaluates all policies attached to the principal, 3. Action allowed only if policies permit it.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What is an Amazon Resource Name (ARN)?","A unique identifier for AWS resources in the format: arn:partition:service:region:account-id:resource-type/resource-id.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What does arn:aws:s3:::catgif refer to?","The S3 bucket itself, supporting bucket-level actions.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What does arn:aws:s3:::catgif/* refer to?","All objects in the bucket, supporting object-level actions (not bucket actions).","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What is the maximum number of IAM Users per account?","<b>5,000 IAM users</b> per account.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"What is the maximum number of groups per IAM user?","<b>Maximum 10 groups</b> per user.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"
+"How should you scale beyond 5,000 users?","Use <b>identity federation</b> (external identity providers) instead of creating individual IAM users.","SAA-C03::05 IAM Accounts and AWS Organizations::02 IAM Users and ARNs"

@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"What is High Availability (HA)?","A strategy to minimize downtime and maintain agreed SLAs (e.g., 99.9% uptime = max 8.76 hours downtime/year) by tolerating brief interruptions and automatically recovering.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is an example of High Availability?","A multi-AZ load balancer redirecting traffic when one instance fails.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is Fault Tolerance (FT)?","A strategy to continue operating seamlessly even when components fail using redundancy and automatic failover.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is the key difference between HA and FT?","<b>HA</b> aims for minimal downtime and tolerates brief interruptions; <b>FT</b> aims for zero interruption.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is an example of Fault Tolerance?","Multi-site active-active replication where failure is imperceptible to users.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is Disaster Recovery (DR)?","A strategy to restore vital infrastructure after major disasters through pre-planning, testing, backups, and off-site storage.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What is the scope of Disaster Recovery?","Longer recovery times measured in hours/days; focuses on data restoration.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
+"What are the three strategies complementary to each other?","<b>High Availability (HA)</b>, <b>Fault Tolerance (FT)</b>, and <b>Disaster Recovery (DR)</b> work together to maintain system availability.","SAA-C03::04 AWS Fundamentals::09 HA vs FT vs DR"
