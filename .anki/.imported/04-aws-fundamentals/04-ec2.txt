@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[EC2] What is EC2?","IaaS service providing virtual machines (instances) with configurable CPU, memory, storage, network resources","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] Where does EC2 deploy?","Within a VPC to a specific Availability Zone","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] What is the resilience level of an EC2 instance?","AZ-resilient (fails if its AZ fails)","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] What storage options are available?","<b>EBS volumes</b> (persistent) or <b>instance store</b> (temporary)","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] When does EC2 billing occur?","Per second when <b>Running</b> (instance, EBS, network transfers); only EBS when <b>Stopped</b>; no charges when <b>Terminated</b>","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] What happens to an instance in Running state?","Active and consuming resources","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] What happens to an instance in Stopped state?","Offline; EBS volumes retained; can restart with no data loss","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2] What happens to an instance in Terminated state?","Deleted permanently; data lost; <b>cannot be reversed</b>","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2/AMI] What is an Amazon Machine Image (AMI)?","Template containing OS, filesystem, pre-installed software; used to create EC2 instances","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2/AMI] What are the three AMI permission types?","<b>Public</b> (anyone), <b>Private</b> (owner only), <b>Shared</b> (specific AWS accounts)","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2/AMI] What is the boot volume?","Root EBS volume containing OS and filesystem (C: in Windows, / in Linux)","SAA-C03::04 - AWS Fundamentals::04 - EC2"
+"[EC2/AMI] What is block device mapping?","Defines all attached storage volumes and identifies boot volume; tells OS how to recognize/mount devices","SAA-C03::04 - AWS Fundamentals::04 - EC2"

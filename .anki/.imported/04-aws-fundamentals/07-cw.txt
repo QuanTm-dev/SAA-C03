@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[CW] What is CloudWatch (CW)?","Core AWS monitoring and management service providing real-time insights into resource performance, logs, events","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What are Metrics?","Numerical data points representing resource/application performance over time","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What are Logs?","Log data from AWS services, applications, custom sources","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What are Alarms?","Triggered when metrics exceed/fall below thresholds; send notifications or trigger actions","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What are Events?","Real-time stream of system events describing AWS resource changes","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What is a Namespace?","Container for metrics; each AWS service has its own namespace","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What is a Metric?","Time-ordered set of data points for a resource/application","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What is a Data Point?","Single measurement at a specific time","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What is a Dimension?","Name-value pair that uniquely identifies a metric","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"
+"[CW] What does an Alarm do?","Monitors metric against threshold; performs actions when threshold crossed","SAA-C03::04 - AWS Fundamentals::07 - CloudWatch"

@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[CFN] What is CloudFormation (CFN)?","Service for creating, updating, deleting AWS resources using templates (JSON/YAML); enables Infrastructure as Code","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the only required template section?","Resources","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the Parameters section?","Input variables with type and defaults","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the Mappings section?","Fixed key-value lookup tables (e.g., region → AMI ID)","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the Conditions section?","Logic to control resource creation","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the Outputs section?","Values returned after stack deployment","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the Metadata section?","Template metadata (e.g., UI hints)","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is a Logical Resource?","Resource defined in the template","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is a Physical Resource?","Actual AWS resource created by CloudFormation","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is a Stack?","Collection of logical and physical resources","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] How does CloudFormation detect changes?","Compares template against current stack; creates/updates/deletes resources as needed","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the benefit of reusable templates?","Provision identical stacks consistently","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"
+"[CFN] What is the benefit of stack deletion?","Remove all associated resources in one action","SAA-C03::04 - AWS Fundamentals::06 - CloudFormation"

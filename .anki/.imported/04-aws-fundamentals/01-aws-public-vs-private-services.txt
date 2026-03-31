@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[AWS] What are the three network zones in AWS infrastructure?","Public Internet Zone, AWS Public Zone, AWS Private Zone (VPC)","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] Define Public Services","Accessible from public internet (S3, DynamoDB, SNS)","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] Define Private Services","Run within VPCs, isolated from internet by default (EC2 in private subnets)","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] What is the Public Internet Zone?","Unrestricted internet outside AWS","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] What is the AWS Public Zone?","Where AWS public services operate; accessible from public internet","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] What is the AWS Private Zone?","Isolated VPC networks; cannot communicate with other VPCs or internet unless explicitly configured","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[AWS] How do private zone resources access public services/internet?","Via <b>Internet Gateway (IGW)</b> or <b>Public/Elastic IP</b>","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"
+"[IGW] What does Internet Gateway enable?","Bidirectional communication between VPC and public internet","SAA-C03::04 - AWS Fundamentals::01 - AWS Public vs Private Services"

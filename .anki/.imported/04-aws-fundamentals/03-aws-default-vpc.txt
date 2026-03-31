@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[VPC] What is a Virtual Private Cloud (VPC)?","Isolated virtual network within AWS region; resources isolated by default from internet and other VPCs","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] How many regions does a VPC operate across?","All availability zones in a single region","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] How are VPCs configured?","With IP address range (CIDR block, e.g., 172.31.0.0/16)","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What is a subnet, and where does it exist?","Division of VPC; each subnet is in a single AZ","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What does 'isolated by default' mean?","Requires explicit configuration (IGW, peering, NAT) to reach internet or other VPCs","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What is a Default VPC?","Automatically created per region; pre-configured, limited to 1 per region, can be deleted/recreated but not customized","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What is a Custom VPC?","User-created, fully customizable, multiple per region allowed","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What is the Default VPC CIDR block?","172.31.0.0/16","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] How many subnets does Default VPC have?","One /20 per AZ","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] What comes included with Default VPC?","Internet Gateway, Security Group, NACL","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"
+"[VPC] Does Default VPC assign public IPv4 to all resources?","Yes, public IPv4 assigned to all resources","SAA-C03::04 - AWS Fundamentals::03 - AWS Default VPC"

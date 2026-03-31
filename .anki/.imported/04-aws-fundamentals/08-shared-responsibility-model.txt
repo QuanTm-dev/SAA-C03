@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[AWS] What is the Shared Responsibility Model?","Security responsibilities divided: AWS secures infrastructure; customers secure data/applications","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[AWS] What is 'Security of the Cloud'?","AWS responsibility: physical infrastructure, network/hypervisor layer, AWS managed services","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[AWS] What is 'Security in the Cloud'?","Customer responsibility: data/encryption, applications/code, OS/patches, access management, network/firewalls","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[AWS] What is the key principle?","AWS manages foundation; customers manage what they deploy on it","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[AWS] How does responsibility vary by service type?","<b>IaaS</b> (EC2): customer manages more; <b>PaaS</b> (RDS): customer manages less; <b>SaaS</b> (S3): AWS manages most","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[IaaS] What does customer manage in IaaS (EC2)?","OS, patches, applications","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[PaaS] What does customer manage in PaaS (RDS)?","Data and access only","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"
+"[SaaS] What does customer focus on in SaaS (S3)?","Access control","SAA-C03::04 - AWS Fundamentals::08 - Shared Responsibility Model"

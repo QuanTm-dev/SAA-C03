@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an identity-based policy?","Policy attached to IAM user, group, or role that grants/denies access to AWS resources","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What are the required elements in a policy statement?","<b>Effect</b> (Allow/Deny), <b>Action</b> (service:action), <b>Resource</b> (ARN)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is the Effect field?","Either <b>Allow</b> or <b>Deny</b>","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] How is Action formatted?","Service:action format (e.g., s3:GetObject); wildcards allowed","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] How is Resource formatted?","AWS resource in ARN format (e.g., arn:aws:s3:::mybucket/*); wildcards allowed","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is a Condition element?","Optional; limits when statement applies","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is a Sid element?","Optional; statement identifier for reference","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is an Inline policy?","Attached to single identity; not reusable; deleted with identity","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is an AWS Managed policy?","Predefined policies maintained by AWS; reusable across multiple identities","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is a Customer Managed policy?","Custom policies you maintain/version; reusable across multiple identities","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is the first step in policy evaluation?","Check for <b>Explicit Deny</b> (blocks all access; overrides all allows)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is the second step in policy evaluation?","Check for <b>Explicit Allow</b> (grants access if no deny)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] What is the default policy evaluation?","<b>Default Deny</b> (access denied unless explicitly allowed)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] Does action/resource matching require both?","Yes; both must match request for policy to apply","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] How does action matching work?","s3:GetObject matches s3:GetObject, s3:*, or *:*","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM/Policy] How does resource matching work?","arn:aws:s3:::mybucket/myobject matches arn:aws:s3:::mybucket/*, arn:aws:s3:::*, or *","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"

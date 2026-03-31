@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[S3] What is S3?","Global object storage service with unlimited capacity (region-specific buckets)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is an object in S3?","File up to 5TB with a Key (unique name/path) and metadata","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is a bucket in S3?","Container for objects with globally unique name","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is the resilience level of S3?","Region-resilient (survives AZ failures in region)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is the minimum bucket name length?","3 characters","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is the maximum bucket name length?","63 characters","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What characters are allowed in bucket names?","Lowercase, numbers, hyphens, periods only; must start and end with letter or number","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What bucket naming restriction prevents?","Cannot be in IP address format (e.g., 192.168.1.1)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What is the default bucket limit per AWS account?","100 buckets (can increase to 1000 via support)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What object limit exists per bucket?","Unlimited objects","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] Are bucket names globally unique?","Yes, globally unique across all AWS accounts","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] Does S3 have real folder structure?","No; has flat structure; folders simulated using prefixes and delimiters in object keys","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What are S3 use cases?","Large-scale data storage, distribution, backup; input/output for AWS services; unstructured data (images, videos, logs, documents)","SAA-C03::04 - AWS Fundamentals::05 - S3"

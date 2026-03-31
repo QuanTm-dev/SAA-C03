@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an IAM Group?","Container for organizing users and applying policies to multiple users at once","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] Can users belong to multiple groups?","Yes; max 10 groups per user","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] What is the user limit per group?","Unlimited users per group","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] What is the default group quota per account?","300 groups (expandable to 500)","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] What is a benefit of groups?","Centralize permissions: assign once, apply to all members","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] Can groups be nested?","No; groups cannot contain other groups","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] Can groups be assumed as a principal?","No; groups are not true identities","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] Can groups be referenced in resource-based policies?","No; groups are not true identities","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM/Group] What policy types can attach to groups?","Identity-based policies only (not resource-based)","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
