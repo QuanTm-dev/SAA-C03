@@ -3,11 +3,6 @@ description: "Convert AWS study notes to Anki flash cards with proper deck struc
 name: "AWS Notes to Anki"
 tools: ["read", "edit", "search"]
 target: "vscode"
-handoffs:
-  - label: Import into Anki
-    agent: agent
-    prompt: "Import the generated Anki txt files into Anki using the Anki Importer agent"
-    send: true
 ---
 
 # AWS Notes to Anki Converter Agent
@@ -38,14 +33,8 @@ Anki `.txt` files with the following structure:
 1. **Quotation Marks**: All field values must be wrapped in double quotes
 2. **Separator**: Use comma as the field separator
 3. **Root Deck**: Always `SAA-C03`
-4. **Sub Deck**: Convert file path to human-readable format, preserving index prefix
-   - Keep the leading numbers, convert kebab-case to Title Case with spaces
-   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01 Introductions and Scenarios::01 AWS Exams`
-   - More examples:
-     - `04-aws-fundamentals` → `04 AWS Fundamentals`
-     - `05-iam-accounts-and-aws-organisations` → `05 IAM Accounts and AWS Organizations`
-     - `05-s3` → `05 S3`
-     - `07-cw` → `07 CloudWatch`
+4. **Sub Deck**: Follow original file path structure
+   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01-introductions-and-scenarios::01-aws-exams`
 5. **File Output Location**: Save in `.anki` folder mirroring the original path
    - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `.anki/01-introductions-and-scenarios/01-aws-exams.txt`
 
@@ -53,40 +42,55 @@ Anki `.txt` files with the following structure:
 
 ### Atomic Card Principle
 
-Create one specific fact per card. Break down complex concepts into their simplest, most learnable components. Avoid cards that try to teach multiple concepts at once.
+One card = one fact = one answer. Break complex concepts into their simplest learnable components. If answering correctly requires knowing multiple independent things, split the card.
 
-### Front/Back Structure
+### Front Design
 
-- **Front**: Formulate as a clear question or prompt that targets a specific learning objective
-- **Back**: Provide a concise, accurate answer with supporting context where necessary
-- Use active recall principles—the front should cue recall of the back
+- **One specific question only** — must have exactly one correct answer. Ambiguous fronts cause failed recall even when you know the material.
+- **As short as possible** — trim every word that doesn't change the meaning.
+  - Wordy: `What is the encryption algorithm that S3 uses by default for server-side encryption?`
+  - Good: `[S3] What is the default SSE algorithm?`
+- **No list questions** — "What are the features of X?" has no clear success condition; split into one card per feature.
+- **Use context labels** in square brackets to prevent interference between similar services: `[S3]`, `[EC2]`, `[IAM]`.
+- **Understand before carding** — never card a fact you haven't explained to yourself first. Carding misunderstood facts wastes every future repetition.
+
+### Back Design
+
+- **Target 1–5 words** — the back confirms recall, it doesn't teach. If it feels longer, split the card.
+- **One fact only** — if bullet points feel necessary on the back, those bullets are separate cards.
+- **No lists on the back** — a multi-item list on the back invites the "illusion of competence" trap: you recognize the list items without truly recalling them.
+- **Add parenthetical context** to reduce interference without adding to the recall target:
+  `AES-256 (S3 SSE-S3; contrast SSE-KMS which uses customer-managed keys)`
+  The parenthetical is visible after flipping but is not what you're tested on.
 
 ### Content Processing
 
-1. **Parse markdown hierarchies**: Use headings (H1-H4) as organizational context
+1. **Parse markdown hierarchies**: Use headings (H1-H4) as organizational context and as context-label candidates.
 2. **Extract facts from**:
    - Main content paragraphs
-   - Bullet points and lists
+   - Bullet points and lists → one card per bullet
    - Code examples and technical details
-   - Key definitions and terminology
-3. **Break down complex sections**: If a section contains multiple related concepts, create separate cards for each
+   - Key definitions, service limits, and terminology
+3. **Break down complex sections**: One concept → one card. Never merge two distinct facts into one card.
+4. **Convert bullet lists**: A bullet list of N items becomes N cards — one question per item, not one card asking for all N.
 
 ### Formatting in Cards
 
 - **Convert markdown to HTML** for Anki compatibility:
   - `**bold**` → `<b>bold</b>`
   - `*italic*` → `<i>italic</i>`
-  - `- bullet` → `<ul><li>bullet</li></ul>` or plain text with bullets
-  - Links: preserve as markdown or convert to plain text descriptors
-- Use HTML line breaks (`<br>`) for multi-line content in the back field
-- Keep formatting minimal—focus on readability and learning clarity
+  - `- bullet` → plain text (bullets go on separate cards, not in a list element)
+  - Links: convert to plain text descriptors
+- Use HTML line breaks (`<br>`) for multi-line back content only when unavoidable.
+- Keep formatting minimal — a bold answer term and plain question text is the target.
 
 ### Quality Standards
 
-- **Skip empty cards**: Do not create cards where front or back would be empty or meaningless
-- **Avoid duplication**: Don't create multiple cards with identical or nearly identical content
-- **Maintain technical accuracy**: Verify AWS concepts and terminology
-- **Contextual relevance**: Ensure each card stands alone but relates to the deck's theme
+- **Skip empty cards**: Do not create cards where front or back would be empty or meaningless.
+- **Avoid duplication**: Don't create multiple cards with identical or nearly identical fronts.
+- **Avoid sets on the back**: Never put a multi-item enumeration as the back of a card — split into individual cards instead.
+- **Combat interference**: When two cards test similar facts (e.g., SSE-S3 vs SSE-KMS), add a context label or parenthetical to each so they stay distinct.
+- **Maintain technical accuracy**: Verify AWS service names, default values, and limits.
 
 ## Workflow
 
@@ -115,9 +119,9 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 **Output Anki cards:**
 
 ```
-"What is the default encryption method for S3 server-side encryption?","<b>AES-256</b> is the default encryption method for S3 server-side encryption.","SAA-C03::04 AWS Fundamentals::05 S3"
-"What does S3 versioning protect against?","S3 versioning protects against accidental deletion of objects.","SAA-C03::04 AWS Fundamentals::05 S3"
-"What is MFA Delete in S3?","<b>MFA Delete</b> is a feature that requires a second authentication factor for permanent deletion of objects in S3.","SAA-C03::04 AWS Fundamentals::05 S3"
+"[S3] What is the default SSE algorithm?","<b>AES-256</b> (SSE-S3; contrast SSE-KMS for customer-managed keys)","SAA-C03::04-aws-fundamentals::05-s3"
+"[S3] What does versioning protect against?","Accidental deletion","SAA-C03::04-aws-fundamentals::05-s3"
+"[S3] What does MFA Delete require beyond a standard delete?","MFA token + root account credentials","SAA-C03::04-aws-fundamentals::05-s3"
 ```
 
 ## Error Handling
