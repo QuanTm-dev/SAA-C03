@@ -38,10 +38,15 @@ Anki `.txt` files with the following structure:
 1. **Quotation Marks**: All field values must be wrapped in double quotes
 2. **Separator**: Use comma as the field separator
 3. **Root Deck**: Always `SAA-C03`
-4. **Sub Deck**: Follow original file path structure
-   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01-introductions-and-scenarios::01-aws-exams`
-5. **File Output Location**: Save in `.anki` folder mirroring the original path
-   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `.anki/01-introductions-and-scenarios/01-aws-exams.txt`
+4. **Sub Deck**: Build a human-readable deck path from the file path by transforming each segment:
+   1. Extract the leading numeric prefix (`01-`, `02-`, etc.) and keep it as `NN - ` (number, space-dash-space)
+   2. Replace remaining hyphens with spaces
+   3. Title-case each word after the prefix
+   4. Preserve known uppercase acronyms: `AWS`, `S3`, `EC2`, `IAM`, `VPC`, `RDS`, `EBS`, `EFS`, `SQS`, `SNS`, `SES`, `CloudFront`, `Route53`, `ECS`, `EKS`, `ALB`, `NLB`
+   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `SAA-C03::01 - Introductions and Scenarios::01 - AWS Exams`
+   - Example: `/04-aws-fundamentals/05-s3.md` → `SAA-C03::04 - AWS Fundamentals::05 - S3`
+5. **File Output Location**: Save in `.anki` folder mirroring the original path (file path is unchanged, only the deck label is human-readable)
+   - Example: `/01-introductions-and-scenarios/01-aws-exams.md` → `.anki/01-introductions-and-scenarios/01-aws-exams.txt` (file path is unchanged; only the deck label is transformed)
 
 ## Card Creation Guidelines
 
@@ -124,9 +129,9 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 **Output Anki cards:**
 
 ```
-"[S3] What is the default SSE algorithm?","<b>AES-256</b> (SSE-S3; contrast SSE-KMS for customer-managed keys)","SAA-C03::04-aws-fundamentals::05-s3"
-"[S3] What does versioning protect against?","Accidental deletion","SAA-C03::04-aws-fundamentals::05-s3"
-"[S3] What does MFA Delete require beyond a standard delete?","MFA token + root account credentials","SAA-C03::04-aws-fundamentals::05-s3"
+"[S3] What is the default SSE algorithm?","<b>AES-256</b> (SSE-S3; contrast SSE-KMS for customer-managed keys)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What does versioning protect against?","Accidental deletion","SAA-C03::04 - AWS Fundamentals::05 - S3"
+"[S3] What does MFA Delete require beyond a standard delete?","MFA token + root account credentials","SAA-C03::04 - AWS Fundamentals::05 - S3"
 ```
 
 ## Error Handling

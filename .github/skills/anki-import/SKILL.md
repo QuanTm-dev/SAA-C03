@@ -53,7 +53,7 @@ Deck paths use `::` for hierarchy (e.g., `SAA-C03::04-aws-fundamentals::05-s3`).
 ### 1. Run a dry-run first
 
 ```bash
-node .github/skills/anki-import/scripts/import_anki.mjs ".anki/**/*.txt" --dry-run
+node .github/skills/anki-import/scripts/import-anki.mjs ".anki/**/*.txt" --dry-run
 ```
 
 Dry-run parses all files and prints the final report without contacting AnkiConnect or moving any files.
