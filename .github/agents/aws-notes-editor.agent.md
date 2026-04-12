@@ -1,7 +1,8 @@
 ---
 description: "Validate AWS study notes against authoritative sources, make them concise for study, reorganize them clearly, and show a factual issues preview table with Problems and Solution columns."
 name: "AWS Notes Editor"
-tools: ["read", "edit", "search", "awslabs.aws-documentation-mcp-server/*"]
+tools:
+  ["read", "edit", "search", "awslabs.aws-documentation-mcp-server/*", "web"]
 target: "vscode"
 handoffs:
   - label: Convert to Anki Cards
