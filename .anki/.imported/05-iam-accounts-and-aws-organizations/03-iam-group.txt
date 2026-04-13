@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an IAM group?","Container for organizing users and applying policies to multiple users","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] How many groups can a user belong to?","Maximum <b>10</b> groups per user","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What is the maximum users per group?","Unlimited","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What is the default quota for groups per account?","<b>300</b> (expandable to 500 via Service Quotas)","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What is the main benefit of using groups?","Centralize permissions; assign once, apply to all members","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What are IAM groups structures?","Groups are flat; non-nestable","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What is the nature of IAM groups as identities?","Groups are containers, not true identities; cannot be assumed as principals","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"
+"[IAM] What policy types can be attached to groups?","Identity-based policies only (not resource-based)","SAA-C03::05 - IAM Accounts and AWS Organisations::03 - IAM Group"

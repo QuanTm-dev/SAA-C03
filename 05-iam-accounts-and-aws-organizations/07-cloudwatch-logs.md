@@ -22,7 +22,7 @@
 ### Monitoring
 
 - **Metric Filters**: Pattern matching extracts metrics from logs
-- Matched events increment associated CloudWatch metrics
+- Matched events increase associated CloudWatch metrics
 - Enables alarms and automation based on log content
 
 ## Log Sources

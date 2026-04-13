@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an IAM role?","Set of permissions any entity can assume for temporary, limited access","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] How many entities can assume a role","Multiple","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What type of credentials do roles provide?","Temporary, short-lived credentials","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What are the two policy types in a role?","<b>Identity policies</b> (allowed actions) and <b>trust policies</b> (who can assume)","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What do identity policies in a role define?","What actions are allowed","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What do trust policies in a role define?","Who can assume the role","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What happens to original identity permissions when assuming a role?","Overwritten by the role Permissions","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[EC2] Why use roles instead of hardcoded keys on EC2?","Reduces compromise risk; AWS auto-rotates credentials","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What is a cross-account access use case?","Team in Account A needs Account B resources without separate IAM users","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] How do roles help with identity federation?","Eliminates 5,000-user limit","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] When would temporary access via roles be useful?","Contractor with time-limited access (credentials auto-expire)","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What is a service-linked role?","Predefined role created by AWS service with necessary permissions configured","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] Who manages service-linked role lifecycle?","AWS service manages creation and deletion","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] What is the <b>PassRole</b> permission?","Allow entity to pass existing role without creating/modifying roles","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"
+"[IAM] Why do we need the PassRole permission?","Distinguish who can create/edit roles from who can pass them","SAA-C03::05 - IAM Accounts and AWS Organisations::04 - IAM Role"

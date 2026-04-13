@@ -1,0 +1,19 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an identity-based policy?","Policy attached to user/group/role that grants or denies AWS access","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What are the required fields in an IAM policy statement?","<b>Effect</b>, <b>Action</b>, <b>Resource</b>","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What are the valid values for Effect?","Allow or Deny","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What does Condition do in a policy statement?","Specifies when/if the policy applies (e.g., IP address, time)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What does Sid do in a policy statement?","Optional identifier for the statement","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is the format for Action in a policy?","service:action (e.g., s3:GetObject; wildcards allowed)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is the format for Resource in a policy?","AWS ARN (e.g., arn:aws:s3:::mybucket/*; wildcards allowed)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What must match for a policy to apply?","Action and Resource","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is an <b>inline</b> policy?","Policy directly attached to a single user, group, or role (not reusable)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What happens to an inline policy when you delete the identity?","The inline policy is automatically deleted with it","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is an <b>AWS-managed</b> policy?","Reusable predefined policy maintained by AWS","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is a <b>customer-managed</b> policy?","Reusable custom policy you create and maintain","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is the priority order in policy evaluation?","<b>Explicit Deny</b> (highest) > <b>Explicit Allow</b> > <b>Default Deny</b> (lowest)","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What does explicit deny do?","Blocks all access; overrides all allows","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] When does explicit allow grant access?","When no deny statement exists","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+"[IAM] What is <b>default deny</b>?","Access denied if no explicit allow applies","SAA-C03::05 - IAM Accounts and AWS Organisations::01 - IAM Identity Policies"
+

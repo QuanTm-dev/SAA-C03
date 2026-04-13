@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is an IAM user?","Identity representing a person or application in AWS account","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What is a <b>principal</b>?","Any entity (user, role, service) requesting AWS resource access","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What are the steps for principal authentication and authorization?","Authenticate with credentials > AWS evaluates the princical policies","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What is an ARN?","Unique identifier for AWS resources","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What is the ARN format?","arn:partition:service:region:account-id:resource-type/resource-id","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What is the maximum number of IAM users per account?","<b>5,000</b>","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] What is the maximum number of groups per user?","<b>10</b>","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"
+"[IAM] How do you scale beyond 5,000 users?","Use identity federation (external identity providers)","SAA-C03::05 - IAM Accounts and AWS Organisations::02 - IAM Users and ARNs"

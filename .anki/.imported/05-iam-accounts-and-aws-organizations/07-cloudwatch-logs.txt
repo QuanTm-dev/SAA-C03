@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[CloudWatch] What is CloudWatch Logs?","Centralized logging service for monitoring and analyzing logs","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is a log event?","Single log entry containing message and timestamp","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is a log stream?","Time-ordered sequence of log events from one source","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is a log group?","Collection of streams with shared settings (retention, permissions)","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is the scope of a CloudWatch Log Group?","Regional","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is the default retention for a log group?","Infinite","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What happens if you set retention on a log group?","All streams inherit the retention period","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] How are permissions applied in CloudWatch Logs?","At log group level; apply to all streams within","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is a metric filter?","Pattern matching that extracts metrics from logs","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What happens when a metric filter matches?","Matched events increase associated CloudWatch metrics","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] Can alarms be based on log content?","<b>Yes</b>, via metric filters extracting metrics","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What are the sources of CloudWatch logs?","AWS services or external apps (via API/Agent)","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What is the typical latency for CloudWatch Logs?","Near real-time, typically seconds","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"
+"[CloudWatch] What does the retention setting do?","Automatically delete logs after specified period","SAA-C03::05 - IAM Accounts and AWS Organisations::07 - CloudWatch Logs"

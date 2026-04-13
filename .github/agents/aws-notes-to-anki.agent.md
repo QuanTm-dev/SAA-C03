@@ -51,7 +51,7 @@ One card = one fact = one answer. Prefer several tiny cards over one overloaded 
 - **As short as possible** — trim every word that doesn't change the meaning
   - Wordy: `What is the encryption algorithm that S3 uses by default for server-side encryption?`
   - Good: `[S3] What is the default SSE algorithm?`
-- **No yes/no questions** — ask for the default state, required condition, missing capability, or named relationship instead
+- **No yes/no questions** — Avoid asking questions starting with "Is", "Does", "Can", etc. that have a binary answer; instead, ask for the specific fact that confirms recall
 - **No list questions** — "What are the features of X?" has no clear success condition; split into one card per fact
 - **Put conditions in the question** — move `if`, `when`, `unless`, `except` into the front or create a separate card
 

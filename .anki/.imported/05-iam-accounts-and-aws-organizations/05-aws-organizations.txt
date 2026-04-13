@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[AWS Orgs] What is AWS Organizations?","Centralized service governing multiple AWS accounts","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What becomes the management account?","Original AWS account where organization was created","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What is a member account?","Separate AWS account governed by organization policies and SCPs","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] How does consolidated billing work in AWS Organization?","Single invoice for all accounts; volume discounts apply","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What is an Organizational Unit (OU)?","Hierarchical grouping of accounts (can nest)","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What is the Organization Root?","Top-level container for all OUs and accounts","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] How does the root policies affect the child OUs and accounts?","Policies applied at root cascade down","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What are Service Control Policies (SCPs)?","Permission boundaries that restrict (never grant) account actions","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"
+"[AWS Orgs] What is the best practice for cross-account identity?","Centralize IAM users in one account; use role switching for access","SAA-C03::05 - IAM Accounts and AWS Organisations::05 - AWS Organizations"

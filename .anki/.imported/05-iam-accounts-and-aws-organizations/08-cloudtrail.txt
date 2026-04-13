@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[CloudTrail] What is CloudTrail?","API activity logging service","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is an event?","Record of a single API action","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What information does an event record?","User, time, action, region","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is a trail?","Configuration defining event capture and storage destination","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What free features does CloudTrail provide?","<b>90 days</b> of management event storage; no cost for viewing/searching recent events","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Which event type is logged by default?","Management events (control plane operations)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Which event type must be explicitly enabled per trail?","Data events (resource-level calls, e.g., S3 GetObject/PutObject)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is the delivery latency?","Approximately <b>15 minutes</b> (not real-time)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is a single-region trail?","Logs only source region (e.g., us-west-2)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is a multi-region trail?","Logs all regions; auto-captures new regions when launched","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Which trail scope is recommended as best practice?","<b>Multi-region trail</b> (captures all regions)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Which region are global service events logged to?","<b>US East 1</b> (IAM, STS, CloudFront region-agnostic)","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Which trail scope requires explicitly enabling global service logging?","Single-region trails","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What storage destinations does CloudTrail support?","<b>S3</b> and/or <b>CloudWatch Logs</b>","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] What is an organization trail?","Single trail logging events for all organization accounts","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"
+"[CloudTrail] Where is an organization trail created?","In the management account","SAA-C03::05 - IAM Accounts and AWS Organisations::08 - CloudTrail"

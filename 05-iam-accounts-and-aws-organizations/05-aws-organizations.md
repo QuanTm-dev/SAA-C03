@@ -23,7 +23,6 @@
 
 - Single invoice for all member accounts
 - Volume discounts applied across all accounts
-- Reserved Instances can be shared across accounts in organization
 
 ## Compliance and Governance
 

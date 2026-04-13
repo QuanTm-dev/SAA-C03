@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[IAM] What is a Service Control Policy (SCP)?","Account-level permission boundary restricting organization actions","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] Where can SCPs be applied?","Organization root, OUs, or individual accounts","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] Which account is exempted from SCPs","Management account","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] What identities does SCPs restrict?","All identities including root","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] What is the <b>denylist</b> SCP strategy?","Allow all by default; explicitly deny specific actions","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] What is the <b>allowlist</b> SCP strategy?","Block all by default; explicitly allow specific actions","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] When is denylist strategy recommended?","Starting point; lower maintenance as new services auto-allowed","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] When is allowlist strategy recommended?","Higher security; higher maintenance (requires updates for new services)","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] Which two policy types must both permit an action for it to be allowed?","SCP and IAM policies","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
+"[IAM] What happens if either SCP or IAM policy denies?","Action is denied","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
