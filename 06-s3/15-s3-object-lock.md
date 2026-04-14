@@ -1,29 +1,42 @@
 # S3 Object Lock
 
-- S3 Object Lock prevents objects from being deleted or overwritten for a specified period of time or indefinitely.
+> Write-once-read-many (WORM) protection for objects. Prevents deletion or modification for a specified period or indefinitely.
 
-## Characteristics
+## Requirements
 
-- Object Lock needs to be enabled when creating a bucket and cannot be enabled on an existing bucket.
-- When Object Lock is enabled, versioning is automatically enabled for the bucket.
-- When Object Lock is enabled, you cannot disable it or suspend versioning for the bucket.
-- Object Lock follows a write-once-read-many (WORM) model, which means that once an object is locked, it cannot be modified or deleted until the lock is removed or expires.
-- Object Lock applies to individual object versions.
-- There are 2 retention modes:
-  - Retention Period: You can specify a retention period in days or years, during which the object is protected from deletion or overwriting.
-  - Legal Hold: You can apply a legal hold to an object, which prevents it from being deleted or overwritten until the legal hold is removed, regardless of the retention period.
-- One object version can have both, 1 or none of the retention modes applied to it.
-- A bucket can have a default Object Lock Settings.
+- Must be enabled at bucket creation; cannot be added to existing buckets.
+- Automatically enables versioning on the bucket.
+- Versioning cannot be suspended once Object Lock is enabled.
+- Applies per object version, not to the bucket as a whole.
 
-### Retention Period
+## Retention Period
 
-- You can specify a retention period in days or years.
-- There are 2 types of retention periods:
-  - Governance Mode: Users with s3:BypassGovernanceRetention permission can override or remove the retention settings. When to use: For general data protection, for example, to protect data from accidental deletion or overwriting by users who do not have the necessary permissions.
-  - Compliance Mode: No user, including the root user, can override or remove the retention settings until they expire. When to use: For compliance purposes, for example, compliance laws require finance or medical records need to be retained for a certain period of time.
+### Governance Mode
 
-### Legal Hold
+- Users with `s3:BypassGovernanceRetention` permission can override or remove retention.
+- Use for: General accidental deletion protection.
 
-- Set on object version, can be ON or OFF.
-- Users with s3:PutObjectLegalHold permission can remove a legal hold.
-- When to use: For legal purposes, for example, when an object is under investigation or involved in a legal case, you can apply a legal hold to prevent it from being deleted or overwritten until the investigation or case is resolved.
+### Compliance Mode
+
+- No user, including root, can remove retention until expiry.
+- Use for: Regulatory compliance (e.g., SEC 17a-4, FINRA, CFTC requirements).
+
+### Specification
+
+- Set in days or years.
+- Can be set per object or as bucket default.
+- Bucket policy can enforce min/max retention periods via `s3:object-lock-remaining-retention-days` condition key.
+
+## Legal Hold
+
+- Independent of retention period.
+- Can be ON or OFF per object version.
+- No expiration date — persists until explicitly removed.
+- Users with `s3:PutObjectLegalHold` permission can remove.
+- Use for: Legal investigations, litigation holds.
+
+## Key Behavior
+
+- One object version can have retention period, legal hold, both, or neither.
+- Retention periods and legal holds don't prevent new versions or delete markers.
+- Protected versions remain locked even after new versions are created.

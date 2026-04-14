@@ -1,20 +1,24 @@
-# S3 Sekect and Glacier Select
+# S3 Select and Glacier Select
 
-- S3 Select and Glacier Select are features that allow you to retrieve a subset of data from an object in S3 or Glacier using SQL-like queries.
+> S3 Select and Glacier Select query a subset of data from objects using SQL without downloading the entire object.
 
-## Problems
+## Status
 
-- You have 5TB of CSV data in S3 and you want to retrieve only the rows where the value in the "status" column is "active".
-- Downloading the entire 5TB of data, and filtering it on the client-side would be time-consuming and costly.
+- **S3 Select is no longer available to new customers.** Existing customers can continue using the feature. Consider using Amazon Athena or EventBridge for new workloads.
 
-## Solution
+## Use Case
 
-- Use S3 Select/Glacier Select to query the data directly in S3 or Glacier and retrieve only the relevant rows.
-- This can significantly reduce the amount of data transferred and the time it takes to get the results. Upto 400% faster and 80% less expensive than downloading the entire object.
+- Problem: Downloading 5TB of CSV data to filter for specific rows is slow and costly.
+- Solution: Query data directly in S3 or Glacier to retrieve only relevant rows. Significantly reduces data transferred and processing time.
 
-## Supported formats
+## Supported Input Formats
 
-- CSV
-- JSON
-- Parquet
-- BZIP2 for CSV and JSON
+- CSV (including BZIP2 compression)
+- JSON (including BZIP2 compression)
+- Parquet (with GZIP or Snappy compression only)
+
+## Key Limits
+
+- Can query up to 5 TB per object
+- Cannot query objects in Glacier Flexible Retrieval, Deep Archive, or RRS storage classes
+- Parquet output not supported (use CSV or JSON output only)
