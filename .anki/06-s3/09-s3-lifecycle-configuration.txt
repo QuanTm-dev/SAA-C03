@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[S3] What is lifecycle configuration?","Automated rules for transitioning objects to lower storage classes or deleting them","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What does a lifecycle filter do?","Selects which objects a rule applies to (prefix, tags, or both)","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What are transition actions?","Move objects to a lower storage class after a specified time","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What are expiration actions?","Permanently delete objects after a specified time","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] Can objects transition to a higher storage class?","No, transitions are one-way (lower classes only)","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] Can you skip intermediate storage classes during transition?","Yes, can transition directly (e.g., Standard → Glacier Deep Archive)","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What is the minimum storage duration before transitioning to Standard-IA?","30 days","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What is the minimum storage duration before transitioning to One Zone-IA?","30 days","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What happens when you transition an object before its class's minimum billable duration expires?","You incur charges for the remainder of the minimum duration","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What is the default behavior for objects smaller than 128 KB?","They cannot transition to any storage class","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] How can you allow small objects (<128 KB) to transition?","Use ObjectSizeGreaterThan or ObjectSizeLessThan filters","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] Why might transition be costly for small objects?","Transition request costs can exceed storage savings","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"
+"[S3] What is the key difference: Lifecycle Configuration vs. Intelligent-Tiering?","Lifecycle = time-based transitions; Intelligent-Tiering = access-based","SAA-C03::06 - S3::09 - S3 Lifecycle Configuration"

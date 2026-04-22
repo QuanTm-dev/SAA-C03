@@ -21,8 +21,7 @@
 
 ### Custom Domain Names
 
-- **With AWS Route 53**: Use an **alias record** pointing to the S3 endpoint (bucket name does **not** need to match domain)
-- **With other DNS providers**: Use CNAME record pointing to the S3 endpoint for HTTP, or use CloudFront for HTTPS support
+- **With AWS Route 53**: Use Alias record to point to a S3 bucket. The bucket name must exactly match the custom domain name.
 
 ## Use Cases
 

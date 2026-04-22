@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[S3 Events] What are the core supported event types?","<b>Object created, Object deleted, Object restored, Object replication issues,</b> plus object tagging, ACL changes, lifecycle transitions, Intelligent-Tiering archival","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What are the supported operations of Object created?","<b>Put, Post, Copy, CompleteMultipartUpload</b>","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What are the supported operations of Object deleted?","<b>Delete, DeleteMarkerCreated</b>","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What are the supported operations of Object restored?","<b>Restore, RestoreCompleted</b>","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What are the supported operations of Object replication issues?","<b>OperationMissedThreshold, OperationReplicatedAfterThreshold, OperationNotTracked, OperationFailedReplication</b>","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What other event types are tracked?","Object tagging, ACL changes, lifecycle transitions, Intelligent-Tiering archival","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What destinations does S3 support for event notifications?","<b>AWS Lambda, SNS topics, SQS (standard), EventBridge</b>","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] Does S3 support sending notifications to SQS FIFO queues?","No; only standard queues (use EventBridge for FIFO routing)","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] How do you configure S3 event notifications?","Specify event types and destination on the bucket; S3 sends notifications when events occur","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What must be configured on the destination resource?","<b>Resource-based policy</b> allowing S3 principal to invoke it","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] What is the delivery guarantee for S3 event notifications?","<b>At least once</b>, typically within seconds","SAA-C03::06 - S3::13 - S3 Events"
+"[S3 Events] When should you use EventBridge instead of direct S3 notifications?","Need SQS FIFO routing, advanced filtering, multiple targets, or integration with unsupported AWS services","SAA-C03::06 - S3::13 - S3 Events"

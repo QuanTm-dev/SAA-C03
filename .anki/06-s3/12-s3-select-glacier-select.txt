@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[S3 Select] What is S3 Select?","Tool to query a subset of data from objects using SQL without downloading the entire object","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What is the current availability for new customers?","No longer available, existing customers may continue","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What are S3 Select alternatives?","Amazon Athena or EventBridge","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] Why use S3 Select instead of downloading entire objects?","Significantly reduces data transferred and processing time; lowers costs","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What compression formats are supported for CSV input?","<b>BZIP2</b>","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What compression formats are supported for JSON input?","<b>BZIP2</b>","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What compression formats are supported for Parquet input?","<b>GZIP or Snappy</b> (these only)","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What is the maximum amount of data queryable per object?","<b>5 TB</b> per object","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] Which Glacier storage classes cannot be queried with S3 Select?","Glacier Flexible Retrieval, Deep Archive, and RRS (Reduced Redundancy Storage)","SAA-C03::06 - S3::12 - S3 Select Glacier Select"
+"[S3 Select] What output formats are supported?","<b>CSV</b> and <b>JSON</b> only (Parquet output not supported)","SAA-C03::06 - S3::12 - S3 Select Glacier Select"

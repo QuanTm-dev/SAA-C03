@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[VPC] What is the CIDR block size range for a VPC?","/16 minimum (65,536 IPs) to /28 maximum (16 IPs)","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] What are the three RFC 1918 private IP ranges?","<b>10.0.0.0/8</b>, <b>172.16.0.0/12</b>, <b>192.168.0.0/16</b>","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] Why should you use RFC 1918 private ranges for VPC CIDR blocks?","Private addresses are non-routable on the internet; prevent conflicts with public IP space","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] What CIDR range is recommended to start with for VPC design?","<b>10.16.y.z</b>","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] What CIDR range is not recommended to start with for VPC design?","common ranges like 10.0.y.z, 192.168.y.z, 172.16.y.z","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] What must you identify before designing a VPC?","Existing on-premises and cloud network CIDR ranges to avoid IP conflicts","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] How many availability zones should you plan capacity for per region?","<b>4</b>: 3 active AZs + 1 reserved for future expansion","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] How many application tiers should you allocate per availability zone?","<b>4</b>: database, application, web, plus 1 spare tier","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] How many subnets should you have per region?","4 AZs × 4 tiers = 16 subnets","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] How many networks should you reserve per region per account?","<b>2</b> networks","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[VPC] What subnet size accommodates 4 AZs with 4 tiers each within a /16?","/20 subnets (divides /16 into 16 equal /20 blocks)","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"

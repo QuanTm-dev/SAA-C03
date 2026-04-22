@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[S3] What does S3 Bucket Key do?","Reduces KMS encryption costs by caching a bucket-level key","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] How much can S3 Bucket Key reduce KMS API calls?","Up to 99%","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] What is the main cost problem with SSE-KMS without S3 Bucket Key?","Each object encryption requires a KMS call, incurring per-request costs","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] What performance risk exists with high-volume SSE-KMS encryption?","KMS throttling limits can be exceeded","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] How does S3 Bucket Key reduce KMS traffic?","S3 generates a short-lived bucket-level key, caches it, and uses it to create unique DEK","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] What CloudTrail change occurs when S3 Bucket Key is enabled?","KMS CloudTrail events log the <b>bucket ARN</b> instead of the object ARN as the encryption context","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] What IAM/KMS policies must be updated when enabling S3 Bucket Key?","Policies using object ARN for encryption context must be updated to use <b>bucket ARN</b>","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] What happens to encryption settings when replicating encrypted objects?","Encryption settings are <b>preserved</b> in the destination bucket","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] When replicating unencrypted objects to a bucket with default encryption, what occurs?","Replica objects are encrypted using the destination bucket's encryption configuration","SAA-C03::06 - S3::07 - S3 Bucket Key"
+"[S3] Why does a replica object's ETag differ from the unencrypted source when S3 Bucket Key is involved?","Due to encryption changes during replication (source unencrypted → destination encrypted)","SAA-C03::06 - S3::07 - S3 Bucket Key"

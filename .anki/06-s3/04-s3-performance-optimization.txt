@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[S3] What is the size limit for a single PutObject upload?","<b>5 GB</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What must happen if a single-stream upload fails?","Entire file must be <b>re-uploaded</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What problem can single-stream uploads have with network throughput?","May not <b>saturate available bandwidth</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is multipart upload?","Breaking large files into <b>parts</b> for <b>parallel upload</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is the key retry benefit of multipart upload?","Only failed <b>part</b> needs re-upload, not entire file","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is the maximum object size with multipart upload?","<b>48.8 TiB</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is the minimum part size in multipart upload (except last)?","<b>5 MiB</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is the maximum part size in multipart upload?","<b>5 GiB</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] When should you consider using multipart upload?","File size exceeds <b>100 MB</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is the maximum number of parts per multipart upload?","<b>10,000 parts</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] How is overall throughput calculated in multipart upload?","<b>Combined speed</b> of all parallel parts","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] What is S3 Transfer Acceleration?","Routes uploads through nearest <b>CloudFront edge location</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] How many CloudFront edge locations can S3 Transfer Acceleration use?","<b>50+ locations</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] Is S3 Transfer Acceleration enabled by default?","<b>No</b>, must be explicitly enabled","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] How long until S3 Transfer Acceleration is fully active after enabling?","<b>Up to 20 minutes</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"
+"[S3] How is S3 Transfer Acceleration pricing calculated?","Based on <b>data transferred</b> and <b>source-to-destination distance</b>","SAA-C03::06 - S3::04 - S3 Performance Optimization"

@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[S3] What are S3 Access Logs?","Detailed request records for bucket access","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What is a source bucket?","The bucket being logged","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What is a target bucket?","The bucket where access logs are stored","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What permission must be granted for S3 Access Logs?","Log Delivery group write permission on target bucket using ACL","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] How can S3 Access Logs be enabled?","Via S3 Console, CLI, or PutBucketLogging API","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What is the delivery guarantee for S3 Access Logs?","Best-effort; logs may take time to appear after enabling","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What optional setting can organize S3 log objects?","Prefix (e.g., <b>logs/</b>)","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] How are individual records formatted in S3 Access Log files?","Space-delimited with attributes: requester, bucket name, request time, action, response status, error code, etc.","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] How are S3 Access Log files organized?","Newline-delimited records","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] Can you configure date-based partitioning in S3 Access Log object keys?","Yes","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What Region requirement applies to source and target buckets for logging?","Must be in same Region","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What AWS account requirement applies to source and target buckets for logging?","Must be owned by same account","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] What is prohibited on the target bucket for S3 Access Logs?","Object Lock default retention or Requester Pays must not be enabled","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] Can one target bucket receive logs from multiple source buckets?","Yes; use prefixes to distinguish","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] Does S3 automatically manage S3 Access Log lifecycle?","No; must configure deletion via lifecycle policies","SAA-C03::06 - S3::14 - S3 Access Logs"
+"[S3] When logging source to target bucket in same account/region, what risk must be avoided?","Logging to the same bucket as source (Infinite log loops); use a prefix if unavoidable","SAA-C03::06 - S3::14 - S3 Access Logs"

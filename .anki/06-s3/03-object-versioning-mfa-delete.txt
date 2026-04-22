@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"[S3] At what level is versioning controlled?","Bucket level","SAA-C03::06 - S3"
+"[S3] What are the valid versioning states for a bucket?","Disabled, Enabled, Suspended","SAA-C03::06 - S3"
+"[S3] What is the versioning state cycle after a bucket has enabled versioning?","Enabled → Suspended → Enabled → Suspended","SAA-C03::06 - S3"
+"[S3] Can a bucket return to Disabled after versioning is enabled?","No, only suspend","SAA-C03::06 - S3"
+"[S3] What happens when you overwrite an object without versioning?","The old version is completely replaced","SAA-C03::06 - S3"
+"[S3] What happens when you overwrite an object with versioning enabled?","A new version is created with a distinct version ID","SAA-C03::06 - S3"
+"[S3] How many versions of an object can coexist in a versioned bucket?","Multiple versions (all stored)","SAA-C03::06 - S3"
+"[S3] What does a Get request return when no version ID is specified?","The latest version","SAA-C03::06 - S3"
+"[S3] What happen when you delete an object without specifying a version ID?","A delete marker is created as the latest version","SAA-C03::06 - S3"
+"[S3] How can you retrieve prior versions after a delete marker is added?","Specify the prior version ID in the request","SAA-C03::06 - S3"
+"[S3] What happens when you delete a delete marker?","The previous version becomes the latest again","SAA-C03::06 - S3"
+"[S3] How do you permanently delete a specific object version?","Specify the version ID in the delete request","SAA-C03::06 - S3"
+"[S3] What consumes bucket storage in a versioned bucket?","All versions of all objects, including delete markers","SAA-C03::06 - S3"
+"[S3] Are you charged for storing delete markers?","Yes, delete markers consume storage","SAA-C03::06 - S3"
+"[S3] What are the two operations that require MFA Delete?","<b>1)</b> Permanently delete a specific object version <b>2)</b> Change the versioning state of a bucket (enable or suspend)","SAA-C03::06 - S3"

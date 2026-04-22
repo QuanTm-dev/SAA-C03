@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[S3] What does Static Website Hosting create?","<b>HTTP(S) endpoint</b> for website access","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] How is it cheaper than EC2 hosting?","No compute resources; only storage & transfer costs","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] What is the index document?","<b>Default page</b> served at root (e.g., index.html)","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] What is the error document?","<b>Page for 404s</b> and errors (e.g., error.html)","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] What is the default endpoint format?","<b>http://<bucket-name>.s3-website-<region>.amazonaws.com/</b>","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] With Route 53, what record type points to S3?","<b>Alias record</b>","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] With Route 53, what is the naming convention when assign a custom domain name to a S3 bucket?","<b>The bucket name must exactly match the custom domain name</b>","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] What is an out-of-band page?","<b>Accessible to users</b> but outside main application (e.g., maintenance)","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3 Static Hosting] Why use out-of-band pages?","Users can access status when main app is unavailable","SAA-C03::06 - S3::02 - S3 Static Hosting"
+"[S3] What are the main pricing components?","Storage (per GB/month), data transfer out (per GB), requests (per 1K)","SAA-C03::06 - S3::02 - S3 Static Hosting"

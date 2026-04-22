@@ -31,7 +31,7 @@ Managing this with a single bucket policy becomes complex. Access points solve t
 
 - Restrict access to specific VPC (requires VPC endpoint).
 - Configure VPC endpoint policies to restrict access to specific access points only.
-- Each access point can have custom block public access settings.
+- Each access point can have its own block public access settings.
 
 ## Creating Access Points
 

@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[S3] What are access points?","<b>Named network endpoints</b> with customized policies for simplified access control","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What key problem do access points solve?","Managing complex access requirements across multiple teams/applications without overcomplicating bucket policy","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What does each access point have?","<b>Unique DNS name</b>","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What S3 object operations can access points perform?","<b>GetObject, PutObject</b>, and other S3 object operations","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What AWS resources do access points work with?","S3 buckets, FSx for NetApp ONTAP, FSx for OpenZFS","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What non-object operations cannot use access points?","Bucket deletion, bucket policy changes","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] By what criteria can access point policies restrict access?","<b>S3 object prefixes, tags, or specific actions</b>","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What is the relationship between access point and bucket policy?","Access point policy must not grant more than bucket policy allows (bucket policy is the ceiling)","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] What is the best practice for access point + bucket policy setup?","Allow all actions in bucket policy; use access points to enforce restrictions","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] How do you restrict access point access at the VPC endpoint level?","Configure VPC endpoint policies to restrict to specific access points only","SAA-C03::06 - S3::16 - S3 Access Points"
+"[S3] Can each access point have different public access block settings?","Yes; each access point can have <b>its own block public access settings</b>","SAA-C03::06 - S3::16 - S3 Access Points"

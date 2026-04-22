@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[S3] What is a presigned URL?","Time-limited, signed HTTP request granting access to a specific S3 object","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] What AWS credentials does the recipient of a presigned URL need?","None; they can access the object using just the URL","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] Whose permissions are checked when a presigned URL is used?","The creator's permissions","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] What HTTP methods can a presigned URL support?","<b>GET</b> (download), <b>PUT</b> (upload), <b>HEAD</b> (read metadata), and others","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] What three things must an AWS user specify to generate a presigned URL?","S3 object, HTTP method, expiration time","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] Can you generate a presigned URL for an object you don't have access to?","Yes, but access will be denied when the URL is used","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] Can you generate a presigned URL for an object that doesn't exist?","Yes, but S3 would return a 404 Not Found error","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] What causes access denial when using a presigned URL?","Creator never had permission OR has since lost it","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] When do presigned URLs created with IAM role credentials expire?","When the URLs expires or the IAM role session expires (even if longer expiration was specified)","SAA-C03::06 - S3::11 - S3 Presigned URL"
+"[S3] What credential type should NOT be used to generate presigned URLs?","IAM role credentials (they expire with the role session)","SAA-C03::06 - S3::11 - S3 Presigned URL"

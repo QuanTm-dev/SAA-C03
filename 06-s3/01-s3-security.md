@@ -12,7 +12,6 @@
 
 - Attach to **identities** (users, roles, groups) in the same AWS account
 - Use when managing permissions for identities across multiple AWS services
-- Use when managing permissions for resources within the same account
 
 ### Bucket Policies (Resource-Based)
 
@@ -22,7 +21,6 @@
   - Other AWS accounts
   - Anonymous users (public access)
 - Use when managing S3-only permissions across accounts or for public access
-- Can reference identities or accounts external to the bucket's AWS account
 
 ### Access Control Lists (ACLs)
 
