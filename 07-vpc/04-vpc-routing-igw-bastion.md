@@ -2,64 +2,62 @@
 
 ## VPC Router
 
-- Every VPC has a router that routes traffic between subnets and to the internet.
-- VPC run on all AZs in the region, so the router is highly available.
-- The router has a network interface in each subnet, and it routes traffic based on the routing table associated with each subnet, the `address + 1` address.
-- By default, without other configurations, the router is used to route traffic between subnets.
-- The router use route tables to determine where to send traffic. Each subnet must be associated with a route table, which contains rules that specify how to route traffic.
-- VPC has a main route table. If no specific route table is associated with a subnet, the main route table is used by default.
-- 1 subnet can only be associated with 1 route table, but a route table can be associated with multiple subnets.
+- Every VPC has a router that handles traffic between subnets and to the internet, available across all AZs in the region.
+- Each subnet must be associated with one route table; a route table can serve multiple subnets.
+- VPC has a main route table; subnets use the main route table by default if no custom table is assigned.
 
-### How VPC routing works
+### Route Table Priority
 
-1. A packet is sent from an instance in a subnet.
-2. The packet is sent to the router, which checks the routing table associated with the subnet to determine where to send the packet.
-3. The router checks the routing table for a matching route. If a match is found, the router forwards the packet to the specified destination.
+**Matching order:**
 
-**Matching priority**: The router checks the routing table in the following order (Higher CIDR prefix length has higher priority):
+1. Local route (VPC CIDR blocks)
+2. Specific routes (narrower CIDR)
+3. Default route (0.0.0.0/0 for IPv4 or ::/0 for IPv6)
 
-1. Local routes (routes for the VPC itself)
-2. Specific routes (routes for a particular destination)
-3. Default route (route for all other destinations)
+- All route tables always include a local route for the VPC IPv4 CIDR block (and IPv6 if enabled).
 
-- A route table always has a local route for the VPC IPV4 CIDR block.
-- If IPV6 is enabled, there will also be a local route for the VPC IPV6 CIDR block.
+### How VPC Routing Works
+
+1. Instance sends packet to the router.
+2. Router checks the subnet's route table for a matching route.
+3. Router forwards the packet to the target (IGW, NAT, peering connection, etc.).
+
+---
 
 ## Internet Gateway (IGW)
 
-- IGW is a service attached to a VPC that allows communication between instances in the VPC and the internet or AWS public zone.
-- IGW is regional resilient.
-- 1 IGW can be attached to only 1 VPC, and a VPC can have only 1 IGW attached.
-- IGW runs from AWS public zone
-- AWS managed IGW performance.
+- Attached to a VPC to allow communication between instances and the internet (or AWS services).
+- AWS manages IGW performance.
+- One VPC can have only one IGW; one IGW can attach to only one VPC.
+- No charge for the IGW itself, but data transfer charges apply to EC2 instances using it.
 
-### Using IGW
+### Setting Up IGW
 
 1. Create an IGW.
-2. Attach the IGW to the VPC.
-3. Create a custom route table.
-4. Associate the route table with a subnet.
-5. Add a default route which points to the IGW in the route table.
-6. Allocate an IPV4 to the instances in the subnet.
+2. Attach it to the VPC.
+3. Create a custom route table (or modify the main one).
+4. Add a default route (0.0.0.0/0 for IPv4 or ::/0 for IPv6) pointing to the IGW.
+5. Associate the route table with a subnet (creates a public subnet).
+6. Assign a public IPv4 address or Elastic IP to instances (or enable auto-assign).
 
-### IPV4 addresses with IGW
+### IPv4 and IPv6 Address Handling
 
-- **IMPORTANT**: IPV4 allocated to an instance, the IPV4 is not configured in the instance OS, a record is added to the IGW, which map private IP to public IP.
+### Traffic Flow through IGW
 
-- **IMPORTANT**: IPV6 by default is public, so the instance OS is configured with the public IPV6 address, and there is no mapping in the IGW.
+**Outbound:**
 
-#### How it works?
+1. Instance sends packet to router.
+2. Router forwards packet to IGW (per route table).
+3. IGW translates source private IP → public IP and sends to internet.
 
-- Outbound traffic from the instance to the internet:
-  1. The instance sends a packet to the router
-  2. The router checks the routing table and forwards the packet to the IGW.
-  3. The IGW checks its mapping table for the private IP address of the instance and replaces it with the public IP address before sending it to the internet.
-- Inbound traffic from the internet to the instance:
-  1. The IGW receives a packet from the internet with the public IP address of the instance.
-  2. The IGW checks its mapping table for the public IP address and replaces it with the private IP address of the instance before sending it to the router.
-  3. The router checks the routing table and forwards the packet to the instance.
+**Inbound:**
+
+1. IGW receives packet destined for instance's public IP.
+2. IGW translates destination public IP → private IP.
+3. Router forwards packet to instance.
+
+---
 
 ## Bastion Host
 
-- A bastion host (jumpbox) is a special instance in a public subnet that is used to securely access private VPC resources.
-- Bastion is often the only way IN to a VPC.
+- A public-subnet instance used to securely access private subnet resources.

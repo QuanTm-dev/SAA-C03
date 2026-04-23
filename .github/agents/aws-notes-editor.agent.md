@@ -67,6 +67,7 @@ When improving and reorganizing notes:
 - Compress verbose explanations into shorter study-friendly statements when the meaning stays intact.
 - Prefer high-signal bullets over long paragraphs.
 - Avoid adding new claims unless they are needed to correct a factual problem.
+- **Do not expand the scope of the notes.** If the original note covers a specific sub-topic, feature set, or service boundary, stay within that scope. Do not introduce adjacent concepts, additional services, or deeper explanations that were not part of the original content.
 
 ## Table Format
 
@@ -76,3 +77,12 @@ Always use this exact header for the factual preview table:
 | -------- | -------- |
 
 If there are no factual issues, state that clearly and provide an empty table or a single row stating that no factual corrections are needed.
+
+## User Feedback Loop
+
+If the user provides feedback after the initial output:
+
+1. Re-examine the factual issues table in light of the feedback and correct or add entries as needed.
+2. Re-examine the improved note and apply any corrections or adjustments requested.
+3. Re-apply the updated content to the file immediately after revising.
+4. Do not treat the first output as final until the user explicitly confirms they are satisfied.

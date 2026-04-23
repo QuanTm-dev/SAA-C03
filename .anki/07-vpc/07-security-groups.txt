@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[Security Groups] What are security groups?","Stateful, instance-level firewalls for EC2 instances via ENI","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What rule types do security groups support?","<b>Allow rules only</b>; no explicit deny rules (must use NACLs for deny)","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] To block specific traffic, what must you use instead of security groups?","<b>NACLs</b> (Network ACLs)","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What are security groups technically attached to?","<b>Elastic Network Interfaces (ENI)</b>, not directly to instances","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What are the two directions of security group rules?","<b>Inbound</b> (ingress) and <b>outbound</b> (egress)","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What types of sources/destinations do rules support?","<b>IP/CIDR ranges</b> and <b>AWS logical resources</b> (other security groups)","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What happens when a rule references another security group?","Allows traffic from/to instances using that group","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] How are rules evaluated when an instance has multiple security groups?","All rules from all groups are <b>aggregated</b> and evaluated together","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What is a self-referencing security group rule?","A rule where a security group references <b>itself</b>","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] What does a self-referencing rule allow?","Traffic between instances using the same security group via private IP addresses","SAA-C03::07 - VPC::07 - Security Groups"
+"[Security Groups] Compared to NACLs, what is an advantage of security group references during auto-scaling?","<b>Automatic IP handling</b>—no manual CIDR range updates needed when instances are added or removed","SAA-C03::07 - VPC::07 - Security Groups"

@@ -51,7 +51,7 @@ One card = one fact = one answer. Prefer several tiny cards over one overloaded 
 - **As short as possible** — trim every word that doesn't change the meaning
   - Wordy: `What is the encryption algorithm that S3 uses by default for server-side encryption?`
   - Good: `[S3] What is the default SSE algorithm?`
-- **No yes/no questions** — Avoid asking questions starting with "Is", "Does", "Can", "Would" and similar that have a binary answer; instead, ask for the specific fact that confirms recall
+- **Minimize yes/no questions** — Always try to rephrase as a factual question first. Use a yes/no question only when no meaningful factual rephrasing exists.
 - **No list questions** — "What are the features of X?" has no clear success condition; split into one card per fact
 - **Put conditions in the question** — move `if`, `when`, `unless`, `except` into the front or create a separate card
 
@@ -74,6 +74,7 @@ One card = one fact = one answer. Prefer several tiny cards over one overloaded 
 1. Parse markdown headings (H1–H4) to determine topic context for square-bracket labels
 2. Extract source units from: sentences, paragraphs, bullet points, code examples, key definitions, service limits, and terminology
 3. Treat source units as raw material — one sentence or bullet may yield multiple cards
+4. **Use only the provided note as input** — do not supplement with external knowledge, documentation, or assumed facts not present in the note
 
 ### Splitting Rules
 
@@ -82,6 +83,7 @@ Split any source unit that contains multiple independent facts:
 - **Multi-fact signals**: `and`, `but`, `while`, `whereas`, `if`, `when`, `unless`, `except`, multiple predicates, or multiple services/features/limits in one sentence
 - **Bullets**: one atomic bullet → one card; one compound bullet → multiple cards; nested bullets become separate cards when they add new facts
 - **Definitions, defaults, and exceptions**: separate what something is, where it applies, what it does by default, what it does not do, and what configuration changes that behavior
+- **Sequential steps**: numbered lists representing a process or flow — create one card per step; prefix every card front with a flow context label `[<Service> <flow name>]`; for all steps after the first, include the previous step's outcome as context in the question so cards chain naturally
 
 Example source: `VPC (Virtual Private Cloud) is an isolated virtual network within AWS. VPCs cannot communicate with other VPCs or the internet unless explicitly configured.`
 
@@ -152,6 +154,56 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 "[VPC] What is the default connectivity between separate VPCs?","No direct connectivity","SAA-C03::04 - AWS Fundamentals::06 - VPC"
 "[VPC] What is a VPC's default internet connectivity?","No internet access","SAA-C03::04 - AWS Fundamentals::06 - VPC"
 ```
+
+### Minimizing yes/no questions example
+
+**Binary (avoid):**
+
+```
+"[S3] Does S3 encrypt data at rest by default?","Yes","SAA-C03::04 - AWS Fundamentals::05 - S3"
+```
+
+**Factual (prefer):**
+
+```
+"[S3] What is S3's default encryption state for data at rest?","Encrypted by default (SSE-S3)","SAA-C03::04 - AWS Fundamentals::05 - S3"
+```
+
+**Acceptable yes/no (no meaningful factual rephrasing exists):**
+
+```
+"[IAM] Can an IAM role be attached to multiple EC2 instances simultaneously?","Yes","SAA-C03::04 - AWS Fundamentals::06 - IAM"
+```
+
+### Sequential steps example
+
+**Input:**
+
+```markdown
+## Internet Gateway
+
+Internet Gateway Outbound flow:
+
+1. Send packet to router
+2. Router forwards packet to IGW
+3. IGW translates source private IP to public IP, then sends it to the internet
+```
+
+**Output:**
+
+```
+"[IGW Outbound flow] What is step 1?","Send packet to router","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
+"[IGW Outbound flow] After sending packet to router, what is step 2?","Router forwards packet to IGW","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
+"[IGW Outbound flow] After router forwards packet to IGW, what is the final step?","IGW translates source private IP to public IP, then sends to internet","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
+```
+
+Pattern rules:
+
+- Label: `[<Service> <flow name>]` at the start of every card in the sequence
+- First card: `[<label>] What is step 1?`
+- Middle cards: `[<label>] After <previous step outcome>, what is step N?`
+- Last card: `[<label>] After <previous step outcome>, what is the final step?`
+- The back for each card is the step's action only — do not repeat context from the front
 
 ## Workflow
 

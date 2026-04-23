@@ -1,0 +1,9 @@
+#deck column:3
+#separator:Comma
+"[VPC] What does 'stateful' mean for a firewall?","Automatically allows return traffic for permitted connections","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[VPC] What does 'stateless' mean for a firewall?","Evaluates inbound and outbound directions independently; no connection tracking","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[Security Groups] Are Security Groups stateful or stateless?","Stateful","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[NACLs] Are Network ACLs stateful or stateless?","Stateless","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[NACLs] What are ephemeral ports?","Temporary port numbers selected by client for return traffic responses","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[VPC] Which has lower admin overhead: Security Groups or NACLs?","Security Groups (stateful; automatic return traffic handling)","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
+"[NACLs] What is a key configuration challenge vs. Security Groups?","Must explicitly configure both directions plus account for ephemeral port ranges","SAA-C03::07 - VPC::05 - Stateful Stateless Firewall"
