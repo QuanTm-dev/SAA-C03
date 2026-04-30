@@ -1,21 +1,38 @@
 # EBS Volume Types - Provisioned IOPS
 
-- There are 3 types of EBS volumes that support Provisioned IOPS:
-  - io1
-  - io2
-  - io2 Block Express
-- These volumes are designed for applications that require high performance and consistent low latency.
-- Provisioned IOPS volumes can configure IOPS independently of storage capacity.
-- io1 and io2 can provision up to 64,000 IOPS per volume (4x the baseline of GP2/3), with a maximum throughput of 1,000 MB/s.
-- io2 Block Express can provision up to 256,000 IOPS per volume, with a maximum throughput of 4,000 MB/s.
-- io1 and io2 storage capacity can range from 4 GiB to 16 TiB, while io2 Block Express can range from 4 GiB to 64 TiB.
-- There are a maximum IOPS to storage ratio:
-  - io1: 50 IOPS per GiB
-  - io2: 500 IOPS per GiB
-  - io2 Block Express: 1000 IOPS per GiB
-- There is a per instance performance limit, which is the maximum IOPS that can be achieved by all volumes attached to a single instance:
-  - For io1, 260,000 IOPS and 7,500 MB/s
-  - For io2, 160,000 IOPS and 4,750 MB/s
-  - For io2 Block Express, 260,000 IOPS and 7,500 MB/s
-  - For comparision, the per instance performance limit for GP2/GP3 is 260,000 IOPS and 7,000 MB/s
-- Use Provisioned IOPS for high performance, low latency, IO intensive workloads such as databases.
+> High-performance SSD volumes designed for IOPS-intensive workloads requiring consistent low latency.
+
+## Overview
+
+- Provisioned IOPS volumes allow independent configuration of IOPS and storage capacity.
+- As of April 30, 2025, AWS only offers **io2 Block Express** for new Provisioned IOPS volumes (io2 legacy is retired).
+- Current types: **io1** and **io2 Block Express**.
+
+## Volume Specifications
+
+### io1 (Provisioned IOPS SSD)
+
+- Max IOPS: 64,000 per volume
+- Max throughput: 1,000 MiB/s (at 64,000 IOPS on Nitro instances)
+- Storage capacity: 4 GiB – 16 TiB
+- IOPS:GiB ratio: 50:1 (max)
+
+### io2 Block Express (Provisioned IOPS SSD)
+
+- Max IOPS: 256,000 per volume (Nitro instances); 32,000 (other instance types)
+- Max throughput: 4,000 MiB/s
+- Storage capacity: 4 GiB – 64 TiB
+- IOPS:GiB ratio: 1,000:1 (max)
+
+## Per-Instance Performance Limits
+
+Aggregate IOPS and throughput across all EBS volumes attached to a single instance are bounded by instance type limits:
+
+- For io1, 260,000 IOPS and 7,500 MB/s
+- For io2 Block Express, 260,000 IOPS and 7,500 MB/s
+
+## Use Cases
+
+- I/O-intensive workloads requiring sustained IOPS performance.
+- Databases and mission-critical applications with strict latency requirements.
+- io2 Block Express preferred for new deployments (io1 is legacy for new volumes).
