@@ -19,6 +19,7 @@
 
 - Can burst up to 3,000 IOPS when demand exceeds baseline.
 - I/O credit system governs burst capacity:
+  - Each credit represent 16 KiB of data.
   - Each volume starts with 5.4 million I/O credits.
   - Credits accumulate at baseline IOPS rate per second (minimum 100/second).
   - Burst for up to 30 minutes at 3,000 IOPS before credits exhaust.
