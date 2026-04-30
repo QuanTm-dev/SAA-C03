@@ -13,7 +13,7 @@
 - Scales linearly: 3 IOPS per GiB (minimum 100, maximum 16,000 IOPS).
 - Volumes ≤33.33 GiB: 100 IOPS baseline.
 - Volumes >33.33 GiB: 3 IOPS per GiB baseline.
-- Volumes ≥5,334 GiB: 16,000 IOPS baseline.
+- Maximum baseline is 16,000 IOPS.
 
 ### Burst Performance (Credit System)
 
