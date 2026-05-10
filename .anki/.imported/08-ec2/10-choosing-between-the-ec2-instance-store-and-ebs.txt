@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[Choosing Between Instance Store and EBS] You need storage that persists when the instance terminates. Which storage?","EBS","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] Your app cannot replicate data across instances. Which storage for resilience?","EBS","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] You need isolation from instance lifecycle. Which storage?","EBS","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] Your app is fault-tolerant with multi-instance replication. Which storage is cost-effective?","Instance Store","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] You need ephemeral, high-performance storage (no persistence). Which storage?","Instance Store","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] You require >260,000 IOPS performance. Which storage?","Instance Store","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing Between Instance Store and EBS] You want cost optimization with storage included in instance price. Which storage?","Instance Store","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] You need the most cost-effective EBS volume for data access. Which volume type should you choose?","<b>st1</b> (throughput optimized) or <b>sc1</b> (cold storage)","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] Can st1 or sc1 be used as boot volumes?","No","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] Your application requires up to 16,000 IOPS. Which EBS volume type is suitable?","<b>gp2</b>","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] Your application requires up to 80,000 IOPS. Which EBS volume type is suitable?","<b>gp3</b>","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] Your application requires up to 256,000 IOPS. Which EBS volume type is suitable?","<b>io2 Block Express</b>","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"
+"[Choosing EBS Volume Types] Your application requires beyorn 256,000 IOPS. What storage solution should you choose?","<b>Instance store</b>","SAA-C03::08 - EC2::10 - Choosing Between The EC2 Instance Store And EBS"

@@ -22,7 +22,7 @@
 ### Cross-Account Access
 
 - Team in Account A needs Account B resources without creating separate IAM users
-- **Solution**: Trust relationship allows account switching; maintains audit trails
+- **Solution**: Role in Account B trusts Account A; users in A assume role to access B resources
 
 ### Identity Federation
 

@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[EC2] What do system status checks detect?","Infrastructure issues requiring AWS intervention","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What do instance status checks detect?","OS and application issues requiring user intervention","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What do attached EBS status checks monitor?","Whether EBS volumes can reach instance and complete I/O operations","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What is Auto Recovery?","Automatically restarts failed instance on new host when system status check fails","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What does Auto Recovery preserve?","Instance configuration (IP addresses, etc...)","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What does Auto Recovery not protect against?","Availability Zone failures","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What is required for Auto Recovery to function?","Spare capacity in the same AZ","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] Which EC2 instance types support Auto Recovery?","Specific instance type families only","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"
+"[EC2] What is not preserved during Auto Recovery?","Instance store volumes","SAA-C03::08 - EC2::16 - Instance Status Checks Auto Recovery"

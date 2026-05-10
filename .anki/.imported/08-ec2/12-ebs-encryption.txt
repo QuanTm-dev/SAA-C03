@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[EBS] What is EBS Encryption?","Encryption at rest for volumes and snapshots using AWS KMS keys","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] What is step 1?","Specify a KMS key when creating the encrypted volume","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] After specifying a KMS key, what is step 2?","EC2 calls <b>GenerateDataKeyWithoutPlaintext</b>","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] After EC2 calls GenerateDataKeyWithoutPlaintext, what is step 3?","The encrypted DEK is stored with the volume metadata","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] After the encrypted DEK is stored, what is step 4?","EC2 sends the encrypted DEK to KMS for decryption (on volume attachment)","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] After EC2 sends the encrypted DEK to KMS, what is step 5?","KMS decrypts and returns the plaintext DEK to the EC2 host","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS Encryption flow] After KMS returns the plaintext DEK, what is the final step?","EC2 host encrypts/decrypts all disk I/O using the plaintext DEK","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] What is the effect of enabling region-wide encryption?","All new volumes are encrypted using your default KMS key","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] What KMS key types can you specify when creating an encrypted volume?","AWS-managed key or customer-managed key","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] How many encrypted DEKs does each encrypted EBS volume have?","One unique encrypted DEK per volume","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] When restoring a snapshot with the same KMS key, what DEK is used?","The same DEK as the original snapshot","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] When restoring a snapshot with a different KMS key, what happens to the DEK?","AWS generates a new DEK for the new volume","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] Is it possible to remove encryption from an encrypted EBS volume?","No (cannot convert encrypted volume to unencrypted)","SAA-C03::08 - EC2::12 - EBS Encryption"
+"[EBS] Does EBS encryption have performance impact?","No (OS unaware of encryption)","SAA-C03::08 - EC2::12 - EBS Encryption"

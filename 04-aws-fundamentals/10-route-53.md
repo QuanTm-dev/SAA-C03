@@ -11,8 +11,8 @@
 ## Resilience
 
 - **Global Service**: Available everywhere globally.
-- **Globally Resilient**: Remains available even if all regions fail (zone data distributed across multiple AWS regions).
-- **Name Servers**: Typically 4 per hosted zone, distributed globally for redundancy.
+- **Globally Resilient**: Remains available even if all regions fail (zone data replicated across multiple AWS regions).
+- **Name Servers**: Typically 4 per hosted zone, replicated globally for redundancy.
 
 ## Hosted Zones
 

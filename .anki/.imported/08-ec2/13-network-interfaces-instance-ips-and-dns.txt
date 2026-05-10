@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[ENI] What types of addresses does an ENI have?","MAC address, primary private IPv4, and optional secondary private IPv4","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] How many public IPv4 addresses does each ENI receive?","One","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] How many Elastic IPs can be assigned per private IPv4 address?","One","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] How many IPv6 addresses can each ENI receive?","One or more","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] How many security groups can be attached to an ENI?","One or more","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[EC2] What is a private DNS hostname?","DNS hostname for the primary private IPv4 address; resolves only within the VPC","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[EC2] How does a public DNS hostname resolve?","To public IP from the internet; to private IP from within the VPC","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[Elastic IP] What happens to the original public IPv4 address when assigning an Elastic IP?","AWS releases it and it <b>cannot be recovered</b>","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] How can software licenses tied to MAC addresses be moved between instances?","By detaching/reattaching ENIs","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[Elastic IP] What should be used for persistent public IP addressing?","Elastic IPs (public IPv4 addresses are dynamic)","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[EC2] Can the OS see the public IPv4 address directly?","No","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"
+"[ENI] What is the advantage of attaching multiple ENIs to a single instance?","Each ENI can have different security groups for different network purposes","SAA-C03::08 - EC2::13 - Network Interfaces Instance IPs and DNS"

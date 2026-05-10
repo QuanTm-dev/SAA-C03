@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[Snapshot] What are EBS snapshots?","<b>Incremental backups</b> of EBS volumes stored in S3","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] What does the first snapshot of a volume contain?","<b>All data</b> on the volume","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] What data do subsequent snapshots store?","Only <b>changes</b> since the previous snapshot","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] How much data is captured in a snapshot?","Only <b>used data</b>; unallocated space is excluded","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] What can a new volume be created from?","An existing <b>snapshot</b>","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] How can snapshots be made available in another region?","<b>Copy</b> the snapshot across regions","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] How does data load during snapshot restoration?","<b>On-demand (lazily)</b> when first read","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] When accessing unrequested blocks after restoration, what is the latency impact?","<b>High latency</b>; blocks needs to be fetched from S3 on-demand","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[Snapshot] What method forces pre-loading of all snapshot data into a volume?","<b>`dd`</b> or similar tools (for predictable performance)","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[FSR] What is Fast Snapshot Restore?","Enables <b>fast restore</b> of snapshots without manual initialization","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[FSR] What is the regional limit for FSR?","Up to <b>50 FSR</b> per region","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[FSR] What comprises each FSR?","A <b>snapshot</b> + an <b>availability zone</b>","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"
+"[FSR] How do FSR and manual initialization (dd) compare in cost and effort?","FSR costs more but saves effort; <b>`dd`</b> saves cost but requires manual work","SAA-C03::08 - EC2::11 - Snapshots Restore Fast Snapshot Restore"

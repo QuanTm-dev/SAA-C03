@@ -37,7 +37,7 @@
 - Latest General Purpose SSD, 20% lower cost per GiB than GP2.
 - Volume size: 1 GiB to 64 TiB.
 - **Key advantage**: Performance (IOPS/throughput) scales independently of volume size.
-- **No burst needed**: Indefinitely sustains provisioned performance.
+- You provision the performance you need by paying more.
 - Use cases: Same as GP2 (transactional, general workloads).
 
 ## GP3 Performance

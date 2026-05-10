@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[EBS] What allows independent configuration of IOPS and storage capacity?","Provisioned IOPS volumes","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io1] Maximum IOPS per volume?","<b>64,000</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io1] Maximum throughput?","<b>1,000 MiB/s</b> (at 64,000 IOPS on Nitro instances)","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io1] Storage capacity range?","<b>4 GiB – 16 TiB</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io1] Maximum IOPS:GiB ratio?","<b>50:1</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io2 Block Express] Maximum IOPS on Nitro instances?","<b>256,000</b> per volume","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io2 Block Express] Maximum IOPS on non-Nitro instance types?","<b>32,000</b> per volume","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io2 Block Express] Maximum throughput?","<b>4,000 MiB/s</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io2 Block Express] Storage capacity range?","<b>4 GiB – 64 TiB</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS io2 Block Express] Maximum IOPS:GiB ratio?","<b>1,000:1</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS] What limits aggregate IOPS and throughput across all volumes on a single instance?","Instance type limits","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS Provisioned IOPS] io1 and io2 Per-instance aggregate IOPS limit?","<b>260,000</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS Provisioned IOPS] io1 and io2 Per-instance aggregate throughput limit?","<b>7,500 MB/s</b>","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"
+"[EBS] What workloads require Provisioned IOPS volumes?","I/O-intensive workloads with sustained IOPS performance requirements (databases, mission-critical apps)","SAA-C03::08 - EC2::07 - EBS Volume Types Provisioned IOPS"

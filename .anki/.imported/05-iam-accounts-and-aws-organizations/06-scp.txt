@@ -1,6 +1,5 @@
 #deck column:3
 #separator:Comma
-"[IAM] What is a Service Control Policy (SCP)?","Account-level permission boundary restricting organization actions","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
 "[IAM] Where can SCPs be applied?","Organization root, OUs, or individual accounts","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
 "[IAM] Which account is exempted from SCPs","Management account","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"
 "[IAM] What identities does SCPs restrict?","All identities including root","SAA-C03::05 - IAM Accounts and AWS Organisations::06 - SCP"

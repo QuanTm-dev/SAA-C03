@@ -1,0 +1,7 @@
+#deck column:3
+#separator:Comma
+"[Instance Store] Are instance store volumes charged separately from the instance?","No; <b>included in the instance price</b>","SAA-C03::08 - EC2::09 - Instance Store Volumes Architecture"
+"[Instance Store] How does instance store performance compare to EBS?","<b>Higher throughput and IOPS</b> than EBS","SAA-C03::08 - EC2::09 - Instance Store Volumes Architecture"
+"[Instance Store] When can instance store volumes be attached to an instance?","<b>Only at instance launch time</b>; cannot be attached later","SAA-C03::08 - EC2::09 - Instance Store Volumes Architecture"
+"[Instance Store] What instance store volume configuration that can be affected by instance type?","Type, size, and quantity","SAA-C03::08 - EC2::09 - Instance Store Volumes Architecture"
+"[Instance Store] Can multiple instance store volumes on one instance have different storage types?","No; all volumes on an instance must be <b>the same type</b> (HDD or SSD)","SAA-C03::08 - EC2::09 - Instance Store Volumes Architecture"

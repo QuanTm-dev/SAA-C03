@@ -1,0 +1,8 @@
+#deck column:3
+#separator:Comma
+"[EC2 Instance Metadata] What is instance metadata?","<b>Service</b> providing EC2 instance information","SAA-C03::08 - EC2::18 - Instance Metadata"
+"[EC2 Instance Metadata] Where can the service be accessed?","Within the instance itself","SAA-C03::08 - EC2::18 - Instance Metadata"
+"[EC2 Instance Metadata] What is the instance metadata endpoint URL?","<b>http://169.254.169.254/latest/meta-data/</b>","SAA-C03::08 - EC2::18 - Instance Metadata"
+"[EC2 Instance Metadata] What information categories does instance metadata provide?","Instance details, network configuration, permissions, user data, SSH keys","SAA-C03::08 - EC2::18 - Instance Metadata"
+"[EC2 Instance Metadata] How is instance metadata authenticated?","<b>Not authenticated</b> (no credentials required)","SAA-C03::08 - EC2::18 - Instance Metadata"
+"[EC2 Instance Metadata] What is the encryption status of instance metadata?","<b>Unencrypted</b> (plaintext)","SAA-C03::08 - EC2::18 - Instance Metadata"

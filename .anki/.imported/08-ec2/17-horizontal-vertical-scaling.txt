@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[EC2 Vertical scaling] What happens to an instance during a resize?","Instance reboot (causes disruption)","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Vertical scaling] What is the limitation when scale vertically?","You can't scale more than hardware limit","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Vertical scaling] Do applications require changes when scaling vertically?","No","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Horizontal scaling] What distributes traffic among instances?","Load balancer","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Horizontal scaling] Are application sessions shared across instances?","No","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Horizontal scaling] How are non-shared sessions handled?","Application changes or off-host session storage (e.g., database)","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Horizontal scaling] Does scaling cause instance disruption?","No","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2 Horizontal scaling] Are there limits to how much you can scale?","No (no real limits)","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
+"[EC2] Which scaling approach is more cost-effective: horizontal or vertical?","<b>Horizontal</b> scaling (better cost-effectiveness)","SAA-C03::08 - EC2::17 - Horizontal Vertical Scaling"
