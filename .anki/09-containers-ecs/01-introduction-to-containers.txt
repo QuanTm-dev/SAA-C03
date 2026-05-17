@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[Containers] What storage and memory problem do virtual machines have?","Each VM requires a full OS and file system, consuming significant storage and memory","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Containers] What resource contention issue occurs with multiple VMs on a host?","Multiple VMs on a host compete for resources, limiting application capacity","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Containers] How do containers differ from VMs regarding OS requirements?","Containers run on the host OS without requiring their own OS, drastically reducing resource overhead","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Containers] What advantage do shared OS layers provide?","Makes containers lightweight and efficient compared to virtual machines","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Docker Images] What are Docker images composed of?","Stacks of read-only layers, where each layer contains changes from the previous one","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Docker Images] How are read-only layers utilized across containers?","Read-only layers in images are shared between multiple containers","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Docker Containers] What is added to an image when a container is created?","A read-write layer on top of the image","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"
+"[Docker Containers] Where are changes isolated within a container?","To its read-write layer, not affecting the image","SAA-C03::09 - Containers ECS::01 - Introduction to Containers"

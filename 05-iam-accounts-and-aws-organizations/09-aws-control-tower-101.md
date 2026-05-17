@@ -53,6 +53,5 @@
 ## Account Factory
 
 - Self-service account provisioning (admins or authorized end users)
-- Auto-applies guardrails and standardized templates
+- Auto-applies guardrails and standardized configurations.
 - Supports account closure with business process integration
-- Enforces consistent network and security baseline
