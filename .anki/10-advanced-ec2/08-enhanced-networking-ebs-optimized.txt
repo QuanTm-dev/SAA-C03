@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[Enhanced Networking] What technology does enhanced networking use?","<b>SR-IOV</b>","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] How are instances provisioned with enhanced networking?","Each instance gets exclusive access to part of a physical NIC","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] What I/O benefit does enhanced networking provide?","Higher I/O due to lower CPU utilization","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] What networking performance benefit does enhanced networking provide?","More bandwidth, higher packets per second (PPS)","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] What latency characteristic does enhanced networking provide  when instances need to communicate with NIC?","Consistent low latency","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] What is the cost for enhanced networking?","No charge","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[Enhanced Networking] On which EC2 types is enhanced networking available?","Most EC2 types","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[EBS Optimized] What was the historical problem with EC2 networking and EBS?","Network stack was shared for data and EBS traffic, causing contention","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[EBS Optimized] What does EBS Optimized provide?","<b>Dedicated network capacity</b> for EBS storage connection","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[EBS Optimized] What is the default EBS optimization state on most instances?","Enabled by default","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"
+"[EBS Optimized] Does EBS optimization cost extra on some older instance types?","Yes","SAA-C03::10 - Advanced EC2::08 - Enhanced Networking EBS Optimized"

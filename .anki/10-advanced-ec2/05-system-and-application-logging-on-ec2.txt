@@ -1,0 +1,9 @@
+#deck column:3
+#separator:Comma
+"[System and Application Logging on EC2] What is CloudWatch's limitation for capturing data from EC2 instances?","Cannot natively capture metrics, logs, or traces from inside EC2","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[System and Application Logging on EC2] What tool enables CloudWatch to capture data from inside an EC2 instance?","<b>CloudWatch Agent</b>","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[CloudWatch Agent] What IAM permissions does the agent need?","Permissions to send data to <b>CloudWatch</b>","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[CloudWatch Agent] What is the best practice for granting IAM permissions to the agent?","Attach an <b>IAM Role</b> to the EC2 instance","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[CloudWatch Agent] What does the agent configuration file specify?","Which <b>metrics</b> and <b>logs</b> to collect","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[CloudWatch Agent] What AWS service can automate the setup of CloudWatch Agent?","<b>CloudFormation</b>","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"
+"[CloudWatch Agent] What AWS service provides centralized agent configuration management?","<b>SSM</b> (Systems Manager)","SAA-C03::10 - Advanced EC2::05 - System And Application Logging On EC2"

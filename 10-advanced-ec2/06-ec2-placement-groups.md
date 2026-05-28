@@ -1,55 +1,48 @@
 # EC2 Placement Groups
 
-- EC2 Placement Groups are a feature that allows you to influence the placement of your EC2 instances on the underlying hardware.
-- There are 3 types of placement groups:
-  - Cluster
-  - Spread
-  - Partition
+- Placement Groups influence EC2 instance placement on hardware.
+- Three types: Cluster, Spread, Partition.
 
 ## Cluster Placement Group
 
-- Designed so that instances within the same cluster are physically close together.
-
-- Achieves the highest level of performance possible inside EC2.
-
-- Best practice is to launch all of the instances within that group at the same time. If you launch with 9 instances and AWS places you in a place with capacity for 12, you are now limited in how many you can add.
-
-- Cluster placements need to be part of the same AZ. Cluster placement groups are generally the same rack, but they can even be the same EC2 host.
-
-- All members have direct connections to each other. They can achieve 10 Gbps single stream vs 5 Gbps normally. They also have the lowest latency and max packets-per-second (PPS) possible in AWS.
-
-- If the hardware fails, the entire cluster will fail.
-
-- Clusters can't span AZs. The first AZ used by any instances will lock down the cluster.
-- They can span VPC peers but might impact performance.
-- Not all instance types are supported, requires a supported instance type.
-- Best practice to use the same type of instance (not mandatory).
-- Best practice to launch all instances at once (not mandatory).
-- This is the only way to achieve 10Gbps SINGLE stream performance.
-- Use cases: Performance, fast transfer speeds, and low consistent latency.
+- Instances placed physically close together.
+- Provides highest performance inside EC2.
+- Must be in the same Availability Zone.
+- Typically same rack or even same host.
+- All members have direct connections.
+- Achieves 10 Gbps single stream vs 5 Gbps normally.
+- Lowest latency and maximum packets-per-second.
+- Hardware failure causes entire cluster failure.
+- Cannot span multiple AZs.
+- First AZ used by any instances locks the cluster.
+- Can span VPC peers but performance may drop.
+- Requires supported instance types.
+- Only way to achieve 10 Gbps single stream.
+- Use cases: high performance, fast transfers, low latency.
+- Best practice:
+  - Use same instance type.
+  - Launch all instances at once.
 
 ## Spread Placement Group
 
-- Instances spread apart
-
-- This provides the best resilience and availability. Spread groups can span multiple AZs. Instances will be put on distinct racks with their own network or power supply. There is a limit of 7 instances per AZ. The more AZs in a region, the more instances inside a spread placement group.
-
-- Provides the highest level of availability and resilience.
-
-- Each instance by default runs from a different rack.
-- 7 instances per AZ is a hard limit.
-
+- Instances placed on distinct racks.
+- Each rack has separate network and power supply.
+- Provides highest availability and resilience.
+- Can span multiple Availability Zones.
+- Limit of 7 instances per AZ.
+- More AZs allow more total instances.
 - Not supported for dedicated instances or hosts.
-
-- Use case: small number of critical instances that need to be kept separated from each other. Several mirrors of an application; different nodes of an application; etc.
+- Use case: small number of critical instances.
+- Examples: mirrors of applications, separated nodes.
 
 ## Partition Placement Group
 
-- Groups of instances spread apart.
-- Designed for when you have more than 7 instances per AZ but still want to spread them apart.
-- Can be created across multiple AZs.
-- Instances are divided into groups called partitions. Each partition has its own rack, so distinct network and power source. You can have up to 7 partitions per AZ.
-- Key differences between spread and partition:
-  - You can have more than 7 instances per AZ.
-  - You can choose which partition to place an instance in (but you can also let AWS choose for you).
-- Partition Placement Group allows you to see which instances are in which partition.
+- Designed for more than 7 instances per AZ but still want to spread them apart.
+- Instances divided and grouped into partitions.
+- Each partition has its own rack, network, power.
+- Up to 7 partitions per AZ.
+- Can span multiple Availability Zones.
+- You can assign instances to partitions manually.
+- AWS can also auto-assign partitions.
+- Lets you see which instances belong to which partition.
+- Key difference from Spread: supports more than 7 instances per AZ.

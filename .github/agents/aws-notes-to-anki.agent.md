@@ -62,9 +62,11 @@ One card = one fact = one answer. Prefer several tiny cards over one overloaded 
 
 ### Context Labels and Interference
 
-- **Front**: use square-bracket labels to disambiguate similar services: `[S3]`, `[EC2]`, `[IAM]`, `[VPC]`. Use the closest relevant AWS service from the heading hierarchy.
+- **Front**: use the lesson's main H1 header as a square-bracket prefix. If the header is very long (>20 characters), create a shortened version that preserves the core topic.
+  - Example: `# SSM Parameter Store` → `[SSM Parameter Store]`
+  - Example: `# Some Very Long and Detailed Heading About Topic` → shorten to `[Topic Name]` or similar
 - **Back**: add parenthetical context to reduce interference without adding a second recall target:
-  `AES-256 (S3 SSE-S3; contrast SSE-KMS which uses customer-managed keys)`
+  `AES-256 (SSE-S3; contrast SSE-KMS which uses customer-managed keys)`
   Parentheticals clarify or contrast after the flip but must not carry their own recall target.
 
 ## Content Processing
@@ -143,16 +145,16 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 **Wrong — overloaded card:**
 
 ```
-"[VPC] What is a VPC?","Isolated virtual network within AWS; no communication with internet or other VPCs unless configured","SAA-C03::04 - AWS Fundamentals::06 - VPC"
+"[Virtual Private Cloud] What is a VPC?","Isolated virtual network within AWS; no communication with internet or other VPCs unless configured","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
 ```
 
 **Correct — split cards:**
 
 ```
-"[VPC] What does VPC stand for?","Virtual Private Cloud","SAA-C03::04 - AWS Fundamentals::06 - VPC"
-"[VPC] What kind of AWS construct is a VPC?","Isolated virtual network","SAA-C03::04 - AWS Fundamentals::06 - VPC"
-"[VPC] What is the default connectivity between separate VPCs?","No direct connectivity","SAA-C03::04 - AWS Fundamentals::06 - VPC"
-"[VPC] What is a VPC's default internet connectivity?","No internet access","SAA-C03::04 - AWS Fundamentals::06 - VPC"
+"[Virtual Private Cloud] What does VPC stand for?","Virtual Private Cloud","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[Virtual Private Cloud] What kind of AWS construct is a VPC?","Isolated virtual network","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[Virtual Private Cloud] What is the default connectivity between separate VPCs?","No direct connectivity","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
+"[Virtual Private Cloud] What is a VPC's default internet connectivity?","No internet access","SAA-C03::07 - VPC::01 - VPC Sizing and Structure"
 ```
 
 ### Minimizing yes/no questions example
@@ -172,7 +174,7 @@ and encryption. **AES-256** is the default encryption method for server-side enc
 **Acceptable yes/no (no meaningful factual rephrasing exists):**
 
 ```
-"[IAM] Can an IAM role be attached to multiple EC2 instances simultaneously?","Yes","SAA-C03::04 - AWS Fundamentals::06 - IAM"
+"[Identity and Access Management] Can an IAM role be attached to multiple EC2 instances simultaneously?","Yes","SAA-C03::05 - IAM Accounts and AWS Organizations::04 - IAM Role"
 ```
 
 ### Sequential steps example
@@ -192,17 +194,17 @@ Internet Gateway Outbound flow:
 **Output:**
 
 ```
-"[IGW Outbound flow] What is step 1?","Send packet to router","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
-"[IGW Outbound flow] After sending packet to router, what is step 2?","Router forwards packet to IGW","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
-"[IGW Outbound flow] After router forwards packet to IGW, what is the final step?","IGW translates source private IP to public IP, then sends to internet","SAA-C03::04 - AWS Fundamentals::07 - Internet Gateway"
+"[Internet Gateway] Internet Gateway Outbound flow: What is step 1?","Send packet to router","SAA-C03::04 - AWS Fundamentals::10 - Internet Gateway"
+"[Internet Gateway] Internet Gateway Outbound flow: After sending packet to router, what is step 2?","Router forwards packet to IGW","SAA-C03::04 - AWS Fundamentals::10 - Internet Gateway"
+"[Internet Gateway] Internet Gateway Outbound flow: After router forwards packet to IGW, what is the final step?","IGW translates source private IP to public IP, then sends to internet","SAA-C03::04 - AWS Fundamentals::10 - Internet Gateway"
 ```
 
 Pattern rules:
 
-- Label: `[<Service> <flow name>]` at the start of every card in the sequence
-- First card: `[<label>] What is step 1?`
-- Middle cards: `[<label>] After <previous step outcome>, what is step N?`
-- Last card: `[<label>] After <previous step outcome>, what is the final step?`
+- Label: `[<Main Header>] <Flow Name>:` at the start of every card in the sequence
+- First card: `[<Main Header>] <Flow Name>: What is step 1?`
+- Middle cards: `[<Main Header>] <Flow Name>: After <previous step outcome>, what is step N?`
+- Last card: `[<Main Header>] <Flow Name>: After <previous step outcome>, what is the final step?`
 - The back for each card is the step's action only — do not repeat context from the front
 
 ## Workflow

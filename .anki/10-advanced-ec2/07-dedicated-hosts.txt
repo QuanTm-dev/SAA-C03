@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[Dedicated Hosts] What physical components dictate how many instances can run?","Sockets and cores","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What are dedicated hosts designed for?","Specific instance family and size","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] When must you configure instance type and size on a host?","In advance","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What is the instance size mixing capability on older EC2 systems?","Cannot mix instance sizes","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What does the <b>Nitro system</b> allow for instance sizes?","Mixing and matching instance sizes","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What AMI limitation exists for dedicated hosts?","Some versions (e.g., RHEL) are not supported","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What AWS database service is not supported on dedicated hosts?","<b>Amazon RDS</b>","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What EC2 feature is not supported on dedicated hosts?","<b>Placement groups</b>","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"
+"[Dedicated Hosts] What AWS service allows hosts to be shared with other accounts?","<b>Resource Access Manager (RAM)</b>","SAA-C03::10 - Advanced EC2::07 - Dedicated Hosts"

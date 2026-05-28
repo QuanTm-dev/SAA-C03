@@ -1,0 +1,9 @@
+#deck column:3
+#separator:Comma
+"[EC2 Instance Roles & Profile] What is an EC2 Instance Role?","An IAM role assigned to an EC2 instance","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] What is an Instance Profile?","A container that holds an IAM role and is attached to an EC2 instance","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] How is an IAM role attached to an EC2 instance?","Via an <b>Instance Profile</b> (IAM role → Instance Profile → EC2 instance)","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] What happens when an EC2 instance assumes a role?","All applications on the instance inherit its permissions","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] Where do applications on EC2 instances retrieve temporary credentials?","Instance metadata at <code>http://169.254.169.254/latest/meta-data/iam/security-credentials/role-name</code>","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] How is EC2 instance credentials rotated?","<b>Temporary</b> and automatically rotated by AWS","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"
+"[EC2 Instance Roles & Profile] How do AWS CLI and SDKs use instance role credentials?","Automatically retrieve and use them (no manual configuration needed)","SAA-C03::10 - Advanced EC2::03 - EC2 Instance Roles Profile"

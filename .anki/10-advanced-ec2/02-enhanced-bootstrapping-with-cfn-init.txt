@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"[cfn-init] What is cfn-init?","<b>Helper script</b> installed on EC2 OS","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] What are 2 script types?","Procedure and Desired State","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How does the Procedure script type work?","Runs line by line (user-data style)","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How does the Desired State script work?","Define desired system state; and the script (cfn-init) will figure out how to get there","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How is cfn-init executed?","Via <b>User Data</b>","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] Where are cfn-init instructions defined in a CloudFormation template?","Under <b>AWS::CloudFormation::Init/Metadata</b> section","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] Can cfn-init watch for stack updates?","Yes; it can install new packages on updates without restarting","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How it works: What is the first step when using cfn-init?","Pass <b>stack ID and region</b> to cfn-init","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How it works: After passing stack ID and region, what does cfn-init do?","<b>Queries CloudFormation API</b> for stack instructions","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-init] How it works: After querying the API, what is the final step?","<b>Execute</b> the instructions to configure instance","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[CreationPolicy] What problem does CreationPolicy and Signals solve?","CloudFormation doesn't know when instance is ready to use","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[CreationPolicy] What does CloudFormation check initially?","Only that the <b>instance is created</b> (not if user-data is ready)","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[cfn-signal] What does cfn-signal do?","Sends a <b>signal back to CloudFormation</b> when instance is ready","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[CreationPolicy] What does CreationPolicy specify in the template?","<b>How many signals to wait for</b> and <b>timeout duration</b>","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"
+"[CreationPolicy] How does CloudFormation decide when instance creation is complete?","When signals are received <b>OR</b> timeout is reached","SAA-C03::10 - Advanced EC2::02 - Enhanced Bootstrapping with CFN INIT"

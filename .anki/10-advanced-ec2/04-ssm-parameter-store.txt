@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[SSM Parameter Store] What is SSM Parameter Store?","Service for storing configurations","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What are the 3 supported parameter types?","String, StringList, SecureString","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What does the String parameter type contain?","Plain text configuration data","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What does the StringList parameter type contain?","Comma-separated values","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What does the SecureString parameter type contain?","KMS-encrypted configuration data","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] How does Parameter Store organize data?","Hierarchical path-like structure (e.g., `/myapp/dev/db/password`)","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] How are permissions managed?","At individual parameter or path level via IAM","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What happens when configuration changes?","EventBridge events trigger for automation and notifications","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
+"[SSM Parameter Store] What are AWS public parameters?","Parameters created and maintained by AWS for anyone to use","SAA-C03::10 - Advanced EC2::04 - SSM Parameter Store"
