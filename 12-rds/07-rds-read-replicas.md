@@ -1,18 +1,17 @@
 # RDS Read-Replicas
 
-- Read Replicas are used to **scale read traffic** for RDS databases.
-- They can only be used for **read operations** until **promoted**.
-- Each Read replica has its own endpoint.
-- Applications need to be configured to use the Read Replica endpoint for read operations.
-- Data is **asynchronously replicated** from the primary database to the Read Replica. Meaning once a write operation is performed on the primary database, it's viewed as committed, then the data is replicated to the Read Replica. This can lead to **replication lag**.
-- Read Replicas can be created in the same region or in a different region than the primary database known as **cross-region replication**.
+- Used to **scale read traffic** off the primary — offload read-heavy queries to a separate instance.
+- **Read-only** until manually **promoted** to a standalone, writable instance.
+- Each replica has its **own endpoint**; apps must be explicitly configured to send reads there (RDS doesn't auto-route reads).
+- Replication is **asynchronous**: primary commits the write, _then_ ships it to the replica → causes **replication lag**.
+- **Replication lag** is the time it takes for the replica to catch up to the primary database.
+- Can be **same-region** or **cross-region**.
 
-## Read Performance Improvements
+## Read Scaling
 
-- You can provide upto 5 Read Replicas for a single RDS database instance.
-- Each replica provides an additional instance of read performance.
+- Up to **15 read replicas** per RDS database instance.
 - Read Replicas can also have their own Read Replicas, but the **replication lag** can increase with each additional replica.
-- Read Replicas improve global read performance by allowing you to place replicas in different regions closer to your users.
+- Placing replicas in regions close to users improves global read latency.
 
 ## RPO/RTO Improvements
 

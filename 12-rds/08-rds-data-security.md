@@ -3,7 +3,7 @@
 ## Encryption in Transit
 
 - SSL/TLS is used by RDS to encrypt data in transit between the database and the application.
-- Can be set to mandatory on a per user basis.
+- Can be set to mandatory at the **instance level** or **per DB user**.
 
 ## Encryption at Rest
 
@@ -20,11 +20,10 @@
 
 - MSSQL and Oracle support native encryption at rest using TDE (Transparent Data Encryption).
 - Encryption is handled within the database engine.
-- Oracle supports TDE with CloudHSM. This is more secure as CloudHSM is fully managed by the customer, no key exposure to AWS.
 
 ## Authentication
 
-- Beside the standard username/password authentication, RDS supports IAM database authentication.
+- Two options: standard username/password, or **IAM database authentication**.
 - How IAM database authentication works:
   1. RDS Local DB Account configured to use AWS Authentication Token.
   2. Policy attached to IAM user/role map that IAM user/role to the RDS Local DB Account.

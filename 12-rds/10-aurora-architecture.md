@@ -1,36 +1,47 @@
 # Aurora Architecture
 
-- Aurora built on top of a cluster by default.
-- There are 1 primary instance and up to 15 read replicas in a cluster. Any read replica can be promoted to primary if the primary fails.
-- Aurora doesn't use local storage for the compute instances. An Aurora cluster has a shared cluster volume. This improves provisioning, availability, and performance.
-- Aurora cluster functions across different availability zones.
-- The cluster volume has maximum size of 128 TB, 6 replicas across multiple AZs.
-- All Aurora instances have access to all of the cluster volume's storage nodes.
-- By default the primary instance is the only one who can write. The replicas will have read access. Replication happens at the storage level. No extra resources are consumed in the Aurora instance during replication.
-- Aurora automatically detect hardware failures on the shared storage. If there is a failure, it immedietly repairs that area of disk using data from other storage nodes. It automatically recreates that data with no corruption.
-- Cluster shared volume is based on SSD storage by default so high IOPS and low latency.
-- Aurora cluster does not specify the amount of storage needed. You're billed based on **high water mark** of storage used - the maximum amount of storage used by the cluster volume. For example, if you have a 10 GB database and it grows to 15 GB, you will be billed for 15 GB. If it shrinks back to 10 GB, you will still be billed for 15 GB until the next billing cycle.
-- Storage which is freed up can be re-used.
-- Replicas can be added and removed without requiring storage provisioning.
+## Cluster Basics
+
+- Aurora runs on a **cluster** by default: 1 primary (writer) instance + up to **15 read replicas**.
+- Any replica can be automatically promoted to primary if the primary fails.
+- Compute instances have no local storage — all instances share one **cluster volume**, which improves provisioning, availability, and performance.
+- A cluster spans multiple Availability Zones.
+
+## Storage
+
+- Cluster volume auto-scales up to **128 TiB**.
+- There are **6 replicas across 3 AZs**;
+- A write is acknowledged once 4 of 6 replicas confirm (quorum model).
+- All instances (primary + replicas) can access the entire cluster volume.
+- Only the primary can write by default; replicas are read-only.
+- Replication happens at the storage layer, so it consumes no extra compute resources on the instances.
+- Self-healing: Aurora detects storage-node failures and repairs the affected disk area automatically from other nodes, with no corruption.
+- SSD-backed by default → high IOPS, low latency.
+- Replicas can be added/removed without separately provisioning storage.
+- Freed-up storage can be reused.
 
 ## Endpoints
 
-- Cluster endpoint - points at the primary instance
-- Reader endpoint - will load balance over the available replicas
-- Custom endpoint - point to a specific instance in the cluster.
+| Endpoint | Points to                                                              |
+| -------- | ---------------------------------------------------------------------- |
+| Cluster  | The current primary (writer) instance                                  |
+| Reader   | Load-balances read traffic across all available replicas               |
+| Custom   | A chosen subset/group of instances you define (e.g. by instance class) |
+| Instance | One specific instance — used for diagnostics/tuning on that instance   |
 
 ## Costs
 
-- No free-tier option
-- Aurora doesn't support micro instances
-- Beyond RDS singleAZ (micro) Aurora provides best value.
-- Compute - hourly charge, per second, 10 minute minimum
-- Storage - GB-Month consumed, IO cost per request
-- 100% DB size in backups are included. Meaning you have a free backup storage equal to the size of your database.
+- No free tier for Aurora (free tier only covers standard RDS on micro instances).
+- Aurora doesn't support micro instance sizes.
+- Beyond RDS Single-AZ (micro), Aurora gives the best value.
+- Compute: hourly charge, per second, 10 minutes minimum.
+- Storage: billed per GB-month, based on the **high-water mark** (max storage used). **High-water-mark** can shrink when enough storage is freed up.
+- I/O: charged per request (Aurora Standard configuration).
+- Backup storage: free up to 100% of your database size while the cluster exists.
 
-## Aurora Restore, Clone and Backtrack
+## Restore, Clone, and Backtrack
 
-- Backups in Aurora work in the same way as RDS
-- Restores create a new cluster.
-- Backtrack allows for you to roll back the DB to a previous point in time.
-- Fast clones make a new database much faster than copying all the data. It references the original storage and only write the differences between those two. It only copies the difference and only store changes between the source data and the clone.
+- Backups work the same way as standard RDS.
+- Restore (from backup or point-in-time) always creates a **new cluster**.
+- **Backtrack** rewinds the cluster to an earlier point in time without a full restore..
+- **Fast clones** make a new database much faster than copying all the data. It references the original storage and only write the differences between those two. It only copies the difference and only store changes between the source data and the clone.
