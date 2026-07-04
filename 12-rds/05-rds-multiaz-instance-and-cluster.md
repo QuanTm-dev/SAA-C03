@@ -26,9 +26,9 @@
   - Data written to Writer, then replicated to at least one Reader before view as committed.
   - Faster than block-level replication in Multi-AZ instance mode.
 - **Endpoints**:
-  - **Cluster endpoint** → Writer (read/write, admin).
-  - **Reader endpoint** → load-balanced across Readers (read-only).
-  - **Instance endpoint** → specific instance (testing/troubleshooting).
+  - **Cluster endpoint**: point to the Writer. Used for read/write/admin operations.
+  - **Reader endpoint**: point to one of the Readers. Used for read operations.
+  - **Instance endpoint**: point to a specific instance . Used for testing/troubleshooting of a specific instance.
 - **Performance**:
   - Faster hardware than Multi-AZ instance.
   - Writer commits locally first, then flushes to EBS.
