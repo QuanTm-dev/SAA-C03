@@ -1,23 +1,39 @@
 # EFS Architectures
 
-- EFS is a network-based file system for Linux.
-- EFS is an implementation of NFSv4.1.
-- EFS File Systems can be mounted on multiple EC2 instances.
-- EFS is a private service that is only accessible from within a VPC via mount targets.
-- EFS can be accessed from on-premises servers via AWS Direct Connect or VPN.
-- EFS uses POSIX permissions for its file system.
-- Mount targets receive an IP address from the subnet in which they are created.
-- Each mount target is associated with a single Availability Zone (AZ).
-- You can create multiple mount targets in different AZs to provide high availability.
-- EC2 instances can mount the EFS file system using the mount targets.
-- EFS only supports Linux.
-- EFS supports 2 performance modes:
-  - General Purpose: Default performance mode. It is ideal for latency-sensitive use cases such as web serving environments, content management systems, and home directories.
-  - Max I/O: This performance mode is ideal for applications that require high levels of aggregate throughput and operations per second, such as big data and analytics workloads.
-- There are 2 Throughput modes:
-  - Bursting Throughput: Works the same like EBS's GP2 Bursting mode.
-  - Provisioned Throughput: Works the same like EBS's GP3 Provisioned mode.
-- There are 2 storage classes:
-  - Standard: Default storage class. It is ideal for files that are accessed frequently.
-  - Infrequent Access (IA): This storage class is ideal for files that are not accessed frequently. It has a lower cost than the standard storage class, but it has a retrieval fee.
-- Lifecycle Policies can be used to automatically move files between the Standard and Infrequent Access storage classes.
+## Basics
+
+- EFS is a network-based file system, an implementation of **NFSv4.1**.
+- Uses **POSIX permissions**.
+- Supports **Linux and macOS**.
+- File systems can be mounted on **multiple EC2 instances** simultaneously.
+
+## Networking
+
+- EFS is a **private service**, only accessible from within a VPC via mount targets.
+- EFS can be accessed from on-premises servers via **Direct Connect or VPN**.
+- Each mount target gets an IP from its subnet and is tied to a **single AZ**.
+- Create multiple mount targets in **multiple AZs** for high availability.
+- EC2 instances mount the EFS through mount targets.
+
+## Performance Modes
+
+| Mode                          | Use case                                                  |
+| ----------------------------- | --------------------------------------------------------- |
+| **General Purpose** (default) | Latency-sensitive like web serving, CMS, home directories |
+| **Max I/O**                   | High aggregate throughput/ops: big data, analytics        |
+
+## Throughput Modes
+
+- **Bursting**: like EBS GP2 bursting — scales with storage size.
+- **Provisioned**: like EBS GP3 provisioned — set a fixed throughput level.
+- **Elastic** (default/recommended): auto-scales throughput to match workload demand, no need to provision or monitor burst credits.
+
+## Storage Classes
+
+| Class                      | Use case                                                                    |
+| -------------------------- | --------------------------------------------------------------------------- |
+| **Standard** (default)     | Frequently accessed files                                                   |
+| **Infrequent Access (IA)** | Rarely accessed files; lower storage cost, retrieval fee applies            |
+| **Archive**                | Accessed a few times a year or less; cheaper than IA, retrieval fee applies |
+
+- **Lifecycle Policies** automatically move files between storage classes: Standard → IA → Archive based on access patterns.
