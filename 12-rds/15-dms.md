@@ -1,39 +1,41 @@
 # Database Migration Service (DMS)
 
-## Problems
+## Why DMS (manual migration problems)
 
-- Migration is a complex process.
-- Some challenges if you need to do it manually:
-  - Setting up a real time replication between source and target databases.
-  - Or take a snapshot of the source database and restore it to the target database. But you will need to handle the changes after the snapshot is taken.
-  - How should you handle migration between different database engines? For example, from Oracle to PostgreSQL.
-  - How do you handle the downtime of the application during the migration process?
+- Setting up real-time replication between source/target manually is complex.
+- Alternative: snapshot + restore, but you still need to handle changes made after the snapshot.
+- Handling engine-to-engine migration (e.g. Oracle → PostgreSQL) manually is hard.
+- Handling application downtime during migration is hard.
 
-## Introduce DMS
+## DMS Basics
 
 - DMS is a managed database migration service.
-- DMS uses a replication instance which run on EC2 to perform 1 or more migration tasks.
-- You need to define source and target endpoints which point to the source and target databases.
-- IMPORTANT: 1 of the endpoints must be on AWS.
-- Migration types:
-  - Full load: Migrate existing data from source to target.
-  - Full load + CDC (Change Data Capture): Migrate existing data and replicate ongoing changes from source to target. (This is the most common migration type.)
-  - CDC only: Replicate ongoing changes from source to target. (Use when you have already migrated the existing data using other methods.)
-- DMS doesn't support schema conversion (from one database engine to another).
+- Uses a **replication instance** (runs on EC2) to perform 1+ migration tasks.
+- You define **source and target endpoints** pointing to the source/target databases.
+- **IMPORTANT:** at least 1 endpoint must be on AWS (can't migrate on-prem → on-prem).
+
+### Migration types
+
+| Type            | What it does                                        | When to use                                   |
+| --------------- | --------------------------------------------------- | --------------------------------------------- |
+| Full load       | Migrates existing data only                         | One-time migration, downtime acceptable       |
+| Full load + CDC | Migrates existing data + replicates ongoing changes | **Most common** — minimizes downtime          |
+| CDC only        | Replicates ongoing changes only                     | Existing data already migrated by other means |
 
 ## Schema Conversion Tool (SCT)
 
-- SCT is used when converting one database engine to another. For example, from Oracle to PostgreSQL.
-- SCT does not migrate data, it only converts the schema.
-- SCT can also be used to extract data to a Snowball device for large database migration.
-- Support both OLTP (Mysql, Oracle, etc...) and OLAP (Teradata, Vertica, etc...) databases.
+- Used to convert schema between different database engines (e.g. Oracle → PostgreSQL).
+- Primarily converts schema.
+- Can extract data locally and move them to a Snowball device for large migrations.
+- Supports both OLTP (MySQL, Oracle, etc.) and OLAP (Teradata, Vertica, etc.) databases.
 
-## DMS and Snowball
+## DMS + Snowball (large migrations)
 
-- Problem: Large database migration with multi TB in size takes time and bandwidth to migrate.
-- Solution: Use DMS with Snowball.
-- Steps:
-  1.  Use SCT to extract data locally and move to a Snowball device.
-  2.  Ship the Snowball device to AWS. They load the data to S3.
-  3.  DMS migrates the data from S3 to the target database.
-  4.  Change Data Capture (CDC) is used to replicate ongoing changes from source to target database.
+**Problem:** multi-TB database migrations take too much time/bandwidth over the network.
+
+**Steps:**
+
+1. Use SCT to extract data locally and load it onto a Snowball device.
+2. Ship the Snowball device to AWS — data gets loaded to S3.
+3. DMS migrates the data from S3 to the target database.
+4. CDC replicates ongoing changes from source to target to catch up.

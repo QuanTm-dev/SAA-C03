@@ -1,33 +1,41 @@
 # RDS Proxy
 
-## Why should you use RDS Proxy?
+## Why use RDS Proxy?
 
-- Opening and Closing database connections takes time and resources. Example with AWS Lambda: Every function invocation opens a new connection and closes it at the end of the invocation.
-- Handling faliure of database connections is hard. Example: How long should you wait for a connection to work? What should you do while waiting?
-- Build a database proxy yourself is not a trivial task.
+- Opening/closing DB connections is slow and resource-intensive (e.g. AWS Lambda opens a new connection per invocation and closes it at the end).
+- Handling connection failures yourself is hard (how long to wait? what to do while waiting?).
+- Building a database proxy yourself is non-trivial.
 
-## How does RDS Proxy work?
+## How it works
 
-- RDS Proxy maintains a pool of long-term established connections to the database. Applications will connect to the proxy instead of the database directly.
-- Connection Flow: Application → RDS Proxy → Database.
+- RDS Proxy maintains a pool of long-lived connections to the database.
+- Connection flow: **Application → RDS Proxy → Database**.
+- Applications connect via a **Proxy Endpoint**, not the DB directly.
 
-## RDS Proxy Characteristics
+## Key characteristics
 
-- Connect to RDS Proxy is much faster than connecting to the database directly.
-- RDS Proxy's connection pool can be shared across multiple applications. This is called **multiplexing**. This reduces the time and resources needed to establish/terminate new connections.
-- Connection to database is abstracted away from the application. If a database connection fails, RDS Proxy will automatically retry the connection to the database. If the application has connected to the RDS Proxy, it just needs to wait for the connection to be re-established.
-- Fully managed service. AWS handles the scaling, availability, etc...
-- Only accessible from a VPC.
-- Applications use Proxy Endpoint to connect to RDS Proxy.
-- Support SSL/TLS.
-- Can reduce upto 60% of failover time.
+**Connections & pooling**
 
-## When should you use RDS Proxy?
+- Connecting to RDS Proxy is faster than connecting directly to the database.
+- **Multiplexing**: RDS Proxy reuses a database connection once a client's transaction finishes, so many client connections can share a smaller pool of underlying DB connections — reducing time/resources spent opening and closing connections.
 
-- When you hit too many database connections errors.
-- When you use AWS Lambda
-- When you need low latency database connections.
-- When resilience to database connection failures is important.
+**Resilience**
+
+- Connection to the database is abstracted away from the app. If a DB connection fails, RDS Proxy automatically retries — the app just waits for reconnection instead of handling retry logic itself.
+- Can reduce failover time by **up to 66%**.
+
+**Management & security**
+
+- Fully managed — AWS handles scaling, availability, etc.
+- Only accessible from within a VPC (never publicly accessible).
+- Supports SSL/TLS.
+
+## When to use it
+
+- Hitting "too many connections" errors.
+- Using AWS Lambda.
+- Need low-latency database connections.
+- Resilience to connection failures matters.
 
 ## How RDS Proxy Improves Resilience
 
