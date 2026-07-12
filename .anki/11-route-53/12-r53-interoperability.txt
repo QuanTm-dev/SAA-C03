@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[R53 Interop] What is R53's job related to domains (not DNS)?","<b>Domain registration</b>","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] What is R53's job related to DNS (not domains)?","<b>DNS hosting</b>","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Can R53 be used for just one of its two jobs instead of both?","<b>Yes</b>","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Both Jobs Flow: What is step 1?","<b>Accept payment and register the domain</b> with the appropriate registry","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Both Jobs Flow: After registering the domain, what is step 2?","<b>Allocate 4 name servers</b> for the domain","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Both Jobs Flow: After allocating 4 name servers, what is step 3?","<b>Create a zone file</b> on those name servers","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Both Jobs Flow: After creating the zone file, what is the final step?","<b>Set the TLD registry's NS records</b> to the 4 name servers","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Domain Registration Only Flow: What is step 1?","<b>Accept payment and register the domain</b> with the appropriate registry","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Domain Registration Only Flow: After registering the domain, what is step 2?","<b>You pass your DNS hosting provider's NS records</b> to R53","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] Domain Registration Only Flow: After receiving your provider's NS records, what is the final step?","<b>Set the TLD registry's NS records</b> to your provider's NS records","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] DNS Hosting Only Flow: What is step 1?","<b>You register the domain</b> with any registrar","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] DNS Hosting Only Flow: After registering the domain, what is step 2?","<b>R53 allocates 4 name servers</b> for the domain","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] DNS Hosting Only Flow: After allocating 4 name servers, what is step 3?","<b>R53 creates a zone file</b> on those name servers","SAA-C03::11 - Route 53::12 - R53 Interoperability"
+"[R53 Interop] DNS Hosting Only Flow: After creating the zone file, what is the final step?","<b>You pass R53's NS records</b> to your registrar","SAA-C03::11 - Route 53::12 - R53 Interoperability"#deck column:3

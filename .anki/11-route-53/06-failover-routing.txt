@@ -1,0 +1,6 @@
+#deck column:3
+#separator:Comma
+"[Route 53 Failover Routing] How many resources can you specify for a domain?","A primary and multiple secondary resources","SAA-C03::11 - Route 53::06 - Failover Routing"
+"[Route 53 Failover Routing] Where does Route 53 route traffic when the primary resource is healthy?","To the primary resource","SAA-C03::11 - Route 53::06 - Failover Routing"
+"[Route 53 Failover Routing] Where does Route 53 route traffic when the primary resource is unhealthy?","To the secondary resources","SAA-C03::11 - Route 53::06 - Failover Routing"
+"[Route 53 Failover Routing] What use case does failover routing support?","Active-passive failover","SAA-C03::11 - Route 53::06 - Failover Routing"

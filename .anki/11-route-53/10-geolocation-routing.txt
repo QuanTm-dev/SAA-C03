@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[Geolocation Routing] How many resources can you specify for a domain?","A <b>Multiple</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What do you tag resources with in Geolocation Routing?","A <b>geographic location</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What two location factors determine which resource traffic is routed to?","<b>Resource location and user location</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] How many location types does Geolocation Routing support?","<b>4: Continent, Country, State, Default</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] Resolution flow: What is step 1?","Determine the user's location via <b>IP lookup</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] Resolution flow: After determining location via IP lookup, what is step 2?","Check records in order: <b>State, Country, Continent, Default (optional)</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] Resolution flow: After checking records in order, what happens when a match is found?","A <b>record is returned</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] Resolution flow: After a match is found, what happens to the upper (higher) levels?","They are <b>not checked</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What is one use case involving controlling access by region?","<b>Regional restrictions</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What is one use case involving delivering content by user language?","<b>Language-specific content</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What is one use case involving distributing traffic by geography?","<b>Load balancing based on geographic distribution of users</b>","SAA-C03::11 - Route 53::10 - Geolocation Routing"
+"[Geolocation Routing] What is Geolocation Routing NOT based on?","The <b>closest resource</b> (proximity)","SAA-C03::11 - Route 53::10 - Geolocation Routing"

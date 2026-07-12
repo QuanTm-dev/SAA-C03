@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[Route 53 Multi Value Routing] How many resources can you specify for a domain?","Multiple resources for the same record","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] What is associated with each record?","A health check","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] How many healthy records can be returned?","Up to 8","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] What does a client do after receiving returned healthy records?","Chooses one of the returned healthy records to route traffic to","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] What does multi-value routing improve?","Availability","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] Is multi-value routing a true load balancer?","No","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] How does it differ from failover routing?","It can return multiple healthy records","SAA-C03::11 - Route 53::07 - Multi Value Routing"
+"[Route 53 Multi Value Routing] What use case does it support?","Active-active availability for multiple servers","SAA-C03::11 - Route 53::07 - Multi Value Routing"

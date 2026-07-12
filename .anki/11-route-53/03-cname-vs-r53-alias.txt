@@ -1,0 +1,9 @@
+#deck column:3
+#separator:Comma
+"[CNAME vs R53 Alias] What type of domain can a CNAME record not be created for?","<b>Apex/naked domain</b> (e.g. example.com)","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] What do many AWS services give you instead of an IP address?","<b>A domain name</b>","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] If only a CNAME exists for www.example.com, what happens when a user accesses the apex domain example.com?","<b>It will not work</b> (no CNAME record for apex domain)","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] What do R53 Alias records map a name to?","<b>Another AWS resource</b>","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] Can an Alias record be used for the apex domain?","<b>Yes</b> (also usable for normal records like www.example.com)","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] Is there a charge for queries to Alias records mapped to AWS resources?","<b>No charge</b>","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"
+"[CNAME vs R53 Alias] What record type should you use when pointing to an AWS resource?","<b>Alias record</b>","SAA-C03::11 - Route 53::03 - CNAME vs R53 Alias"

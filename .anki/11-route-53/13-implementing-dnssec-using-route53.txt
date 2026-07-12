@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[Route 53 DNSSEC] DNSSEC Setup flow: What is step 1?","Route53 creates a <b>public/private KSK pair</b> in AWS KMS","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] Which AWS region must the KSK be created in?","<b>us-east-1</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] DNSSEC Setup flow: After creating the KSK pair, what is step 2?","Route53 creates the <b>ZSK</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] Who handles ZSK rotation?","Route53 (handled <b>internally</b>)","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] DNSSEC Setup flow: After creating the ZSK, what is step 3?","Route53 adds the <b>KSK and ZSK records</b> to the hosted zone","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] DNSSEC Setup flow: After adding the KSK/ZSK records, what is step 4?","Route53 asks KMS to sign the keys using the <b>private KSK</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] What record type does KMS signing generate?","<b>RRSIG</b> records","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] DNSSEC Setup flow: After KMS signs the records, what is the final step?","User adds the <b>DS record</b> of the public KSK to the parent zone","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] What alarm should be created for internal DNSSEC failures?","<b>DNSSECInternalFailure</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] What alarm alerts when a KSK needs action?","<b>DNSSECKeySigningKeysNeedingAction</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] Where is DNSSEC Validation enabled?","<b>VPC resolver</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"
+"[Route 53 DNSSEC] Why enable DNSSEC Validation in the VPC resolver?","Ensures records <b>failing validation are not returned</b>","SAA-C03::11 - Route 53::13 - Implementing Dnssec Using Route53"

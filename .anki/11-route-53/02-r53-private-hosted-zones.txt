@@ -1,0 +1,5 @@
+#deck column:3
+#separator:Comma
+"[R53 Private Hosted Zones] What kind of hosted zone is a private hosted zone?","A zone hosted by R53 private name servers","SAA-C03::11 - Route 53::02 - R53 Private Hosted Zones"
+"[R53 Private Hosted Zones] Who can access a private hosted zone?","Only the VPCs associated with the zone","SAA-C03::11 - Route 53::02 - R53 Private Hosted Zones"
+"[R53 Private Hosted Zones] What does split-view support?","Separate public and internal use with the same zone name","SAA-C03::11 - Route 53::02 - R53 Private Hosted Zones"

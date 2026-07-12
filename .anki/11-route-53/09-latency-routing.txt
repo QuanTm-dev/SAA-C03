@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[Latency Routing] How many resources can you specify for a domain?","<b>Multiple resources</b>","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] What is each resource in latency routing tied to?","A specific <b>AWS region</b>","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] For a given record name, how many records can one region have?","<b>One</b> record","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] What does AWS maintain to enable latency routing?","A database of <b>latency measurements</b> between user locations and AWS regions","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] DNS Query Flow: What is step 1?","Route 53 determines the user's location via <b>IP lookup</b>","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] DNS Query Flow: After determining the user's location via IP lookup, what is step 2?","Selects the record with the <b>lowest latency</b> that is also healthy","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] DNS Query Flow: If the lowest-latency record is unhealthy, what is the final step?","Route 53 returns the <b>next best healthy</b> option","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] How often is latency measurement data updated?","<b>Periodically</b> (not real-time)","SAA-C03::11 - Route 53::09 - Latency Routing"
+"[Latency Routing] What is the main use case for latency routing?","Optimizing <b>performance</b> and user experience by routing to the lowest-latency region","SAA-C03::11 - Route 53::09 - Latency Routing"

@@ -1,0 +1,6 @@
+#deck column:3
+#separator:Comma
+"[Simple Routing] How many records can Simple Routing support per DNS name?","<b>One</b> record","SAA-C03::11 - Route 53::04 - Simple Routing"
+"[Simple Routing] How are multiple values returned for a record?","<b>In random order</b>","SAA-C03::11 - Route 53::04 - Simple Routing"
+"[Simple Routing] When should you use Simple Routing?","<b>To route traffic to a single resource</b>","SAA-C03::11 - Route 53::04 - Simple Routing"
+"[Simple Routing] Does Simple Routing support health checks?","<b>No</b>","SAA-C03::11 - Route 53::04 - Simple Routing"

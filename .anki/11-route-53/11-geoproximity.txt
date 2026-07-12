@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[Geoproximity] How many resources can you specify for a domain?","Multiple","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What does Geoproximity routing route traffic to?","<b>Closest resource</b> to the end user","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What do you define for AWS resources in Geoproximity routing?","<b>AWS region</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What do you define for non-AWS (external) resources in Geoproximity routing?","<b>Latitude/longitude</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What does a bias do to a region's size?","<b>Expands or shrinks</b> it","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What is bias useful for?","Routing <b>more traffic</b> to a better-performing resource","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] Geoproximity routing process: What is step 1?","Route 53 determines user's location via <b>IP lookup</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] Geoproximity routing process: After determining user location via IP lookup, what is step 2?","Route 53 <b>calculates distance</b> between user and resources (including bias)","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] Geoproximity routing process: After calculating distance, what is the final step?","Route 53 returns the record for the <b>closest resource</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] Geoproximity routing process: After calculating distance, what is the final step?","Route 53 returns the record for the <b>closest resource</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What is the main usse case?","When you want to route users to the physically closest server","SAA-C03::11 - Route 53::11 - Geoproximity"

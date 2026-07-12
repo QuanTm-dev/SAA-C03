@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[Weighted Routing] How many resources can you specify for a domain?","Multiple","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] In weighted routing, what can you assign to each resource sharing a record?","A weight","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] How does Route 53 decide traffic distribution in weighted routing?","Based on each resource's weight vs the total weight","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] With weight 50 out of a total weight of 100, what traffic percentage does that resource get?","~50%","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] What happens to a record with a weight of 0?","Never returned in response to DNS queries","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] What happens if all records in a weighted routing set have 0 weight?","Traffic is routed to all records with equal probability","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] If the resource chosen by weighted routing is unhealthy, where does Route 53 send traffic?","<b>Next available resource</b>, based on weights of remaining healthy resources","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] What is a use case for weighted routing involving traffic distribution?","Simple load balancing","SAA-C03::11 - Route 53::08 - Weighted Routing"
+"[Weighted Routing] What is a use case for weighted routing involving application deployment?","Testing new versions of applications","SAA-C03::11 - Route 53::08 - Weighted Routing"

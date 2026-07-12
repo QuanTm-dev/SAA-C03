@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[R53 Public Hosted Zones] What is a hosted zone?","DNS database (zone file) for a domain","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] When are hosted zones created automatically?","When you register a domain with R53","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] Can Hosted Zones be created separately for domains registered elsewhere?","Yes","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] What are the two fees associated with hosted zones?","A fee for hosting the zone and a fee for each DNS query","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] What does it mean that hosted zones are authoritative for a domain?","They contain the DNS records that define how to route traffic for the domain","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] What is a R53 public hosted zone?","A zone hosted by R53 public name servers","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] Who can access a R53 public hosted zone?","The public internet and VPCs","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] How does a VPC access a public hosted zone?","Directly via the R53 Resolver at the VPC CIDR block +2 IP address","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
+"[R53 Public Hosted Zones] What can the R53 Resolver query?","R53 public and internet hosted zones","SAA-C03::11 - Route 53::01 - R53 Public Hosted Zones"
