@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[Aurora Global DB] What does Aurora Global Database enable?","Replication across multiple <b>AWS regions</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What is Aurora Global Database great for regarding disaster recovery?","<b>Cross-region disaster recovery</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What is Aurora Global Database great for regarding continuity?","<b>Business continuity</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What benefit does it offer international customers?","<b>Low latency</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What is the typical replication lag between regions?","<b>~1 second</b> or less","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What is the direction of replication?","<b>One-way</b>, from primary to secondary regions","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] At what level does replication happen?","<b>Storage level</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] How many replicas can a secondary region have?","Up to <b>16</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What is the maximum number of secondary regions?","<b>5</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"
+"[Aurora Global DB] What can a secondary region be promoted to during disaster recovery?","<b>Primary region</b>","SAA-C03::12 - RDS::12 - Aurora Global Database"

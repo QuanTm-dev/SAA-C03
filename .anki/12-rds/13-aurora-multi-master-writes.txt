@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[Aurora Multi-Master] How many writer instances can a multi-master cluster have?","<b>Multiple</b> writer instances in a single cluster","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] How do applications connect to writer instances?","<b>Directly</b>, to one or more writer instances","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What single endpoint does a multi-master cluster provide?","<b>None</b> (no single endpoint)","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] Does a multi-master cluster have built-in load balancing?","<b>No</b>","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What happens immediately after a write is acknowledged by the cluster?","Sent to <b>other writers</b> to update their in-memory data","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What does propagating writes to other writer instances ensure?","All writer instances have the <b>latest in-memory data</b>","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What does failover require in a single-master cluster?","<b>Promoting a reader</b> to writer","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What is the failover impact in a single-master cluster?","<b>Brief downtime</b>","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What happens if one writer fails in a multi-master cluster?","<b>Another writer</b> continues accepting writes","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"
+"[Aurora Multi-Master] What is the failover impact in a multi-master cluster?","<b>No downtime</b>","SAA-C03::12 - RDS::13 - Aurora Multi Master Writes"

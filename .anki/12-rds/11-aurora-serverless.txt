@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[Aurora Serverless] What type of database capacity does Aurora Serverless provide?","On-demand, <b>autoscaling</b> capacity","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] What unit measures Aurora Serverless compute capacity?","<b>Aurora Capacity Unit (ACU)</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] What does one ACU represent?","A set amount of <b>CPU and memory</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] What range do you configure to control Aurora Serverless scaling?","<b>Minimum and maximum ACU</b> range","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] How is Aurora Serverless billed?","<b>Per second</b>, based on actual usage","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] How many storage replicas does an Aurora Serverless volume maintain?","<b>Six copies</b> (same as provisioned Aurora)","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Across how many Availability Zones does Aurora Serverlesss's 6 storage replicas distributed?","<b>Three AZs</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] What does Aurora Serverless do to ACUs when load increases?","<b>Automatically allocates more</b> ACUs","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] What does Aurora Serverless do to ACUs when demand drops?","<b>Automatically reduces</b> ACUs","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Which use case benefits from paying only when the database is active?","<b>Infrequent workloads</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Which use case avoids the need to guess capacity upfront?","<b>New applications</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Which use case benefits from automatic scaling up and down?","<b>Variable/unpredictable workloads</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Which use case scales back when idle to save cost?","<b>Development & testing</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
+"[Aurora Serverless] Which use case lets you charge customers based on their database usage?","<b>Multi-tenant applications</b>","SAA-C03::12 - RDS::11 - Aurora Serverless"
