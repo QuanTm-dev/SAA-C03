@@ -7,7 +7,7 @@
 - ACU represents a certain amount of CPU and memory.
 - You set a **minimum and maximum ACU range**; Aurora scales within that range.
 - **Billing:** charged per second for actual usage.
-- **Resilience:** same as provisioned Aurora — six copies of data across three AZs.
+- **Storage Resilience:** same as provisioned Aurora — six copies of data across three AZs.
 - Aurora automatically allocates more ACUs when load increases and reduces them when demand drops.
 
 ## Use Cases

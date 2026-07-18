@@ -24,7 +24,7 @@
 
 - Two types of networking:
   - **Storage Networking**: For connecting to storage resources like EBS.
-  - **Data Networking**: For instance connectivity via ENI in the subnet.
+  - **Data Networking**: For instance communication via ENI.
 - When launched, an instance receives a primary **Elastic Network Interface (ENI)** in its subnet, which maps to the Data Networking.
 - Instances can have multiple ENIs, even in different subnets, as long as they are in the same AZ.
 - You cannot connect an instance from one AZ to an ENI or EBS volume in another AZ.
