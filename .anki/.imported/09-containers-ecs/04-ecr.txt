@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[ECR] What is the registry structure for each AWS account?","One <b>public</b> registry and one <b>private</b> registry","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Registry Structure] What does each registry contain?","Multiple repositories","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Registry Structure] What do repositories contain?","Multiple images","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Registry Structure] What can each image have?","Multiple tags","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Access Control] What are the read and write requirements for a private ECR registry?","Both read <b>and</b> write require <b>IAM permissions</b>","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Access Control] What is the default read access for a public ECR registry?","<b>Anyone</b> can read (public read-only access)","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Access Control] What permissions are required to write to a public ECR registry?","<b>IAM permissions</b>","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Image Scanning] What does basic scanning check for?","<b>OS</b> vulnerability scanning only","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR Image Scanning] What does enhanced scanning check for?","<b>OS and software package</b> vulnerability scanning","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR] What does ECR report to CloudWatch?","Metrics (near real-time)","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR] What does ECR log to CloudTrail?","API actions","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR] What does ECR emit to EventBridge and when?","Events for automation workflows (<b>Enhanced scanning only</b>)","SAA-C03::09 - Containers ECS::04 - ECR"
+"[ECR] What replication scenarios does ECR support?","<b>Cross-Region</b> and <b>cross-account</b> image replication","SAA-C03::09 - Containers ECS::04 - ECR"

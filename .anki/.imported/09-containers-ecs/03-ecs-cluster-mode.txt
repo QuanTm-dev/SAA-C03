@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[ECS] What are the 2 primary launch types?","<b>EC2</b> and <b>Fargate</b>","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS] What 3 management components are included in both modes?","<b>Scheduling and Orchestration</b>, <b>Cluster manager</b>, <b>Placement engine</b>","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] How do you manage instances in EC2 launch type?","Directly within a VPC","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] What manages capacity in an EC2 cluster?","<b>Auto Scaling Groups</b>","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] Do you pay for EC2 instances when no containers run?","Yes","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] Who manages EC2 instances in this launch type?","You (the customer)","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] What level of control does EC2 mode provide?","Full control over instance types and configurations","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS EC2] When should you use EC2 launch type?","When you have large workloads and care more about price","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS Fargate] What type of compute does Fargate provide?","<b>Serverless</b> compute (containers on AWS-managed infrastructure)","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS Fargate] How are Fargate containers integrated into a VPC?","Injected into the VPC via <b>ENI</b> (Elastic Network Interface)","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS Fargate] Who manages the container host infrastructure?","<b>AWS</b>","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS Fargate] What determines Fargate billing?","Container resources used (<b>CPU/memory</b>), not the host","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"
+"[ECS Fargate] When should you use Fargate launch type","Variable/unpredictable workloads like burst or periodic and minimizing operational overhead","SAA-C03::09 - Containers ECS::03 - ECS Cluster Mode"

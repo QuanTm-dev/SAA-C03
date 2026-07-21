@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[EKS] What is EKS?","AWS's implementation of <b>Kubernetes</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] Where can EKS run on?","AWS Cloud, AWS Outposts, EKS Hybrid Nodes, EKS Anywhere, EKS Distro","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What is EKS on AWS Outposts?","AWS-managed infrastructure <b>on-premises</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What is EKS Hybrid Nodes?","AWS-managed control plane with customer-managed <b>on-premises/edge nodes</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What is EKS Anywhere?","<b>On-premises</b> EKS deployment","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What is EKS Distro?","<b>Open source</b> EKS","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] How is the EKS Control Plane distributed?","Across <b>multiple AZs</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] Where is etcd distributed in EKS?","Across <b>multiple AZs</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What are Self-Managed Nodes?","EC2 instances you <b>provision and manage</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What are Managed Node Groups?","EC2 AWS manages; user chooses <b>instance types and scaling</b>","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What are Fargate nodes in EKS?","<b>AWS-managed shared infrastructure</b>; no decisions on server type/scaling","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] What is EKS Auto Mode?","<b>Fargate-like</b> EC2-based option; replaces Fargate","SAA-C03::09 - Containers ECS::06 - EKS 101"
+"[EKS] How do EKS Control Plane and nodes communicate?","Via <b>Kubernetes API server endpoint</b> (private ENI or public)","SAA-C03::09 - Containers ECS::06 - EKS 101"

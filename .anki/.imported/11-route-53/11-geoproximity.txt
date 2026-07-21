@@ -10,4 +10,4 @@
 "[Geoproximity] Geoproximity routing process: After determining user location via IP lookup, what is step 2?","Route 53 <b>calculates distance</b> between user and resources (including bias)","SAA-C03::11 - Route 53::11 - Geoproximity"
 "[Geoproximity] Geoproximity routing process: After calculating distance, what is the final step?","Route 53 returns the record for the <b>closest resource</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
 "[Geoproximity] Geoproximity routing process: After calculating distance, what is the final step?","Route 53 returns the record for the <b>closest resource</b>","SAA-C03::11 - Route 53::11 - Geoproximity"
-"[Geoproximity] What is the main usse case?","When you want to route users to the physically closest server","SAA-C03::11 - Route 53::11 - Geoproximity"
+"[Geoproximity] What is the main use case?","When you want to route users to the physically closest server","SAA-C03::11 - Route 53::11 - Geoproximity"

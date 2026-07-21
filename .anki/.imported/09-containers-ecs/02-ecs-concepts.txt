@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[ECS] What is ECS?","A service that accepts containers and instructions to decide where or how to run them","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is an ECS Cluster?","Where tasks and services run","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is ECR?","<b>AWS-provided container image registry</b>","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is a Task Definition?","<b>Blueprint</b> for the environment the containers will run on","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What does a Task Definition include?","Task Role, resources (CPU, memory), networking mode, compatibility (EC2/Fargate)","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is a Container Definition?","Specifies container image location, port the container uses, and other container settings","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What does a Task represent?","A <b>self-contained application</b> that can contain 1 or many containers","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is a Task Role?","<b>IAM role</b> that a task can assume to access AWS resources","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What is an ECS Service?","Specifies how to scale a task (e.g., desired number of task replicas)","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] What are the ECS launch types?","<b>EC2</b> (instance-based) and <b>Fargate</b> (serverless container computing)","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
+"[ECS] Where are tasks and services deployed?","To <b>ECS Clusters</b>","SAA-C03::09 - Containers ECS::02 - ECS Concepts"
