@@ -1,4 +1,4 @@
-# Application Load balancing (ALB) vs Network Load Balancing (NLB)
+# Application Load Balancer (ALB) vs Network Load Balancer (NLB)
 
 ## Load Balancer Consolidation
 
@@ -8,21 +8,25 @@
 
 ## Application Load Balancer (ALB)
 
+**Protocol support**
+
 - ALB is a Layer 7 load balancer.
-- Supports HTTP and HTTPS protocols.
-- Does not support other layer 7 protocols like SSH, SMTP,...
-- Does not support Layer 4 protocols like TCP, UDP, TLS, etc.
-- Understand Layer 7 content like cookies, headers, etc...
-- HTTP/HTTPS always terminate at the ALB, ALB makes a new HTTP/HTTPS connection to the backend server. This means no _unbroken SSL_ connection (which means that the backend server will not see the original SSL connection from the client).
-- Must have SSL certificate installed on the ALB if HTTPS is used.
-- ALB is slower than NLB because it has more network stack to process.
-- Support application health checks.
+- Supports HTTP and HTTPS only.
+- Does not support other Layer 7 protocols (SSH, SMTP, etc.) or Layer 4 protocols (TCP, UDP, TLS).
+- Understands Layer 7 content: cookies, headers, etc.
+
+**Connection behavior**
+
+- HTTP/HTTPS always terminates at the ALB — it opens a _new_ connection to the backend. This means no _unbroken SSL_ connection (which means that the backend server will not see the original SSL connection from the client).
+- SSL certificate must be installed on the ALB if HTTPS is used.
+- Slower than NLB — more of the network stack to process.
+- Supports application-aware health checks.
 
 ### ALB Rules
 
-- Rules direct connections which arrive at a listener.
-- Processed in priority order, from the lowest to the highest.
-- Lowest priority rule is the default rule, which is catch-all rule.
+- Rules direct connections arriving at a listener.
+- Processed in priority order, **lowest number evaluated first**.
+- The default rule is the catch-all, applied when no other rule matches.
 - Rule conditions define whether a rule applies to a request. Conditions can be based on:
   - Host header
   - Path
@@ -37,22 +41,34 @@
 
 ## Network Load Balancer (NLB)
 
+**Protocol support**
+
 - NLB is a Layer 4 load balancer.
-- Supports TCP, TLS, UDP protocols.
-- Does not support Layer 7 protocols like HTTP, HTTPS, SSH, SMTP,...
-- Does not understand Layer 7 content like cookies, headers, etc...
+- Supports TCP, TLS, UDP.
+- Does not support Layer 7 protocols (HTTP, HTTPS, SSH, SMTP, etc.) — no understanding of cookies, headers, etc.
+- Good fit for SMTP, SSH, game servers, and financial apps that don't use web protocols.
+
+**Performance**
+
 - NLBs are super fast, about 25% of ALB latency.
-- Good for SMTP, SSH, game servers which don't use web protocols, financial apps which don't use web protocols.
-- Health checks are not aware of application health, only check IMCP/TCP/UDP connectivity.
-- NLB supports elastic IP addresses which is useful for whitelistin. For example, sending the IP address of the NLB to a third party to whitelist it for access to their service.
-- Can forward TCP to the instance => Supports unbroken SSL connection (which means that the backend server will see the original SSL connection from the client).
-- Can be used with private link to provide services to other VPCs.
 
-## ALB vs NLB, when to use which?
+**Health checks**
 
-- Need unbroken encryption? NLB
-- Static IP for whitelisting? NLB
-- Best performance? NLB
-- Operate on non-HTTP/S? NLB
-- Private Link? NLB
-- Otherwise... ALB
+- Health checks are not aware of application health, only check network connectivity.
+
+**Networking features**
+
+- Supports Elastic IP addresses — useful for IP whitelisting with third parties. For example, sending the IP address of the NLB to a third party to whitelist it for access to their service.
+- Can forward TCP directly to the instance → supports unbroken SSL (backend sees the original client connection).
+- Can be used with PrivateLink to expose services to other VPCs.
+
+## ALB vs NLB — when to use which?
+
+| Requirement                                          | Choice |
+| ---------------------------------------------------- | ------ |
+| Unbroken encryption                                  | NLB    |
+| Static IP for whitelisting                           | NLB    |
+| Best raw performance                                 | NLB    |
+| Non-HTTP/S protocols                                 | NLB    |
+| PrivateLink                                          | NLB    |
+| Everything else (content-based routing, HTTP/S apps) | ALB    |

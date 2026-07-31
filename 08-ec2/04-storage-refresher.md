@@ -19,7 +19,7 @@
 
 - **IO Size:** The size of a single data block (read/write).
 - **IOPS:** Total Input/Output operations per second (how many blocks handled).
-- **Throughput:** Total data volume per second (how much total data moved).
+- **Throughput:** Total data transfer per second (how much total data moved).
 
 ### The Golden Formula
 

@@ -1,56 +1,58 @@
 # Auto-Scaling Groups
 
-- Auto-Scaling Groups provides auto-scaling for EC2.
-- They can also be used to implement a self-healing architecture.
-- Uses launch templates or configs to launch all instances.
-- There can only be 1 launch configurations or 1 launch template version associated with an auto-scaling group at a time.
-- Auto-scaling group has three important values: Minimum size, desired capacity, maximum size (eg 1:2:4)
-- Auto-scaling keeps running instances at the DESIRED capacity by provisioning/terminating instances
-- You can configure which subnets the auto-scaling group can launch instances in.
-- Auto Scaling Groups will try to keep the AZs equal with the number of EC2 instances.
+## Core concepts
+
+- Auto-Scaling Groups (ASG) provide auto-scaling for EC2.
+- Can be used to implement a self-healing architecture.
+- Launches instances using a launch template.
+- An ASG can only be associated with one specific launch template version, at a time.
+- Three key values define an ASG: minimum size, desired capacity, maximum size (e.g. 1:2:4).
+- ASG keeps running instances at the DESIRED capacity by provisioning/terminating instances.
+- You can configure which subnets the ASG launches instances into.
+- ASG tries to keep instance counts balanced across AZs (via the AZRebalance process).
 
 ## Scaling Policies
 
-- Scaling Policies are rules that define how to automatically adjust the desired capacity of an auto-scaling group.
-- Scaling Policies are optional.
-- Three ways you can scale auto-scaling groups:
-  - Manual Scaling. Manually adjust desired capacity. Good for testing or urgent situations (e.g urgent cost control measure).
-  - Scheduled Scaling. Time based adjustment. Good for predictable load changes (eg. business hours).
-  - Dynamic Scaling. Rules which react to CloudWatch alarms and adjust desired capacity:
-    - Simple Scaling. Often a pair of rules (1 for provision and 1 for termination): "CPU above 50%, +1. CPU below 50%, -1."
-    - Stepped Scaling. Similar to simple scaling but allows for multiple steps (eg. CPU above 50%, +1. CPU above 70%, +2. CPU above 90%, +3). Generally use this over Simple unless simplicity is the priority.
-    - Target Tracking. You define a desired metric value (eg. CPU 50%) and auto-scaling will try to maintain that value by adjusting the number of instances.
-- Cooldown Periods: How long to wait at the end of a scaling action before doing another.
+- Scaling policies are rules that define how to automatically adjust an ASG's desired capacity.
+- Scaling policies are optional.
+- Three ways to scale an ASG:
+  - **Manual Scaling** — manually adjust desired capacity. Good for testing or urgent situations (e.g. urgent cost control).
+  - **Scheduled Scaling** — time-based adjustment. Good for predictable load changes (e.g. business hours).
+  - **Dynamic Scaling** — reacts to CloudWatch alarms and adjusts desired capacity:
+    - **Simple Scaling** — a pair of rules (one to provision, one to terminate), e.g. "CPU above 50%, +1. CPU below 50%, -1."
+    - **Step Scaling** — like simple scaling but with multiple thresholds/steps (e.g. CPU above 50%, +1; CPU above 70%, +2; CPU above 90%, +3). Prefer this over simple scaling unless simplicity is the priority.
+    - **Target Tracking** — define a target metric value (e.g. CPU 50%) and ASG maintains it by adjusting instance count.
+- **Cooldown periods** — how long to wait after a scaling action before allowing another.
 
-## Health checks
+## Health Checks
 
-- ASG performs healths checks on instances.
-- Self healing: If ASG detects a failed instance, it will replace the failed instance with a newly provisioned one.
-- Trick: You can utilize self healing to make a simple self-healing architecture. Make an ASG with min=1, desired=1, max=1 and choose subnets in different AZs. If the instance fails, it will be replaced automatically in another AZ.
+- ASG performs health checks on instances.
+- Self-healing: if an instance fails its health check, ASG replaces it with a newly provisioned one.
+- Trick: build a simple self-healing single-instance architecture with min=1, desired=1, max=1, using subnets across multiple AZs. If the instance fails, ASG replaces it automatically in another AZ.
 
 ## ASG + Load Balancers
 
-- When ASG is used with a LB, instances are automatically added to or removed from the target group as they are provisioned or terminated.
-- ASG can be configured to use Load Balancer health checks instead of EC2 health checks; which make it to be application-aware (which ec2 health checks are not).
+- When used with a load balancer, instances are automatically added to or removed from the target group as they're provisioned or terminated.
+- ASG can be configured to use load balancer health checks instead of EC2 health checks — this makes health checks application-aware, which EC2 health checks alone are not.
 
 ## Scaling Processes
 
-- Think of Scaling Processes as functions that ASG can call to perform scaling actions. They can be suspended or resumed.
-- Scaling processes include:
-  - LAUNCH and TERMINATE: Provision and terminate instances
-  - AddToLoadBalancer: Add to LB on launch
-  - AlarmNotification: Whether ASG should react to CloudWatch alarms
-  - AZRebalance: Balances instances evenly across all AZs
-  - HealthCheck: health checks on/off
-  - ReplaceUnhealthy: Replace unhealthy instances
-  - ScheduledActions: Whether ASG should react to scheduled actions
-  - Standby or InService: Controls whether instances are in service or in standby. Standby instances are not affected by ASG actions.
+- Think of scaling processes as functions ASG calls to perform scaling actions. Each can be suspended or resumed independently.
+- Processes include:
+  - **Launch / Terminate** — provision and terminate instances.
+  - **AddToLoadBalancer** — add newly launched instances to the LB.
+  - **AlarmNotification** — whether ASG reacts to CloudWatch alarms.
+  - **AZRebalance** — balances instances evenly across all AZs.
+  - **HealthCheck** — turns health checks on/off.
+  - **ReplaceUnhealthy** — replaces unhealthy instances.
+  - **ScheduledActions** — whether ASG reacts to scheduled actions.
+  - **InstanceRefresh** — terminates and replaces instances as part of an instance refresh (e.g. rolling out a new launch template version).
+- Instances can be set to **Standby** or **In Service**. Standby instances are excluded from ASG actions.
 
-## Final points
+## Cost & Practical Notes
 
-- ASG is free.
-- Only created instances are charged.
-- Use cooldown periods to avoid rapid scaling (which can cost more money).
-- Use smaller instance to have more granular scaling (eg. 4 t2.micro instead of 1 t2.large).
-- Use ASG with LB to have an elastic architecture.
-- ASG defines WHEN and WHERE to scale, launch templates/configurations define WHAT to scale.
+- ASG itself is free — you're only billed for the instances it creates.
+- Use cooldown periods to avoid rapid scaling (which can drive up cost).
+- Prefer smaller instances for more granular scaling (e.g. 4x t2.micro instead of 1x t2.large).
+- Pair ASG with a load balancer for an elastic architecture.
+- Mental model: ASG decides **WHEN** and **WHERE** to scale; the launch template/configuration defines **WHAT** gets launched.
