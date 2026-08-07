@@ -5,9 +5,9 @@
 ## How it works
 
 1. When creating an encrypted volume, specify a KMS key (AWS-managed or customer-managed).
-2. EC2 calls KMS GenerateDataKeyWithoutPlaintext, which generates and encrypts a DEK under the specified KMS key.
+2. EC2 Control Plane (Managed by AWS) calls KMS GenerateDataKeyWithoutPlaintext, which generates and encrypts a DEK under the specified KMS key.
 3. The encrypted DEK is stored with the volume metadata.
-4. On volume attachment, EC2 sends the encrypted DEK to KMS for decryption.
+4. On volume attachment, **yours** EC2 sends the encrypted DEK to KMS for decryption.
 5. KMS decrypts and returns the plaintext DEK to the EC2 host.
 6. The EC2 host encrypts/decrypts all disk I/O using the plaintext DEK.
 
