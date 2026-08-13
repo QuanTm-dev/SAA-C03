@@ -16,6 +16,7 @@ Different ways to pay for EC2 instances based on usage patterns and commitment l
 - Up to 90% discount vs On-Demand pricing (based on spare capacity).
 - You set maximum price; instance terminates if Spot price exceeds it.
 - Charged only the actual Spot price (not your maximum price).
+- AWS can reclaim the instance if capacity is needed for On-Demand customers.
 - Best for workloads that tolerate interruption: batch jobs, distributed tasks, burst capacity, cost-sensitive apps.
 
 ## Reserved Instances (Standard Reserved Instances)
