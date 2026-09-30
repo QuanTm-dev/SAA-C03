@@ -8,11 +8,11 @@
 
 - DNSSEC: Domain Name System Security Extensions
 - RRSET: Resource Record Set: A set of DNS records of the same name and type for a domain name. E.g., all A records for www.example.com form an RRSET.
-- RRSIG: Resource Record Signature: A digital signature for a DNS RRSET.
+- DNSKEY RRSET: A record that contains the public key (ZSK or KSK) used to verify signatures in DNSSEC.
+- RRSIG: Resource Record Signature: A digital signature for a DNS RRSET or DNSKEY RRSET.
 - Zone Signing Key (ZSK): A key used to sign the RRSETs in a DNS zone.
 - Key Signing Key (KSK): A key used to sign the ZSKs.
 - DS Record: Delegation Signer Record: A record in the parent zone that points to the KSK of the child zone.
-- DNSKEY Record: A record that contains the public key (ZSK or KSK) used to verify signatures in DNSSEC.
 
 # How DNSSEC works?
 
