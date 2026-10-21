@@ -1,13 +1,20 @@
-# Amazon MQ 101
+# Amazon MQ
+
+## Overview
 
 - AWS MQ allows you to migrate existing on-premise Message or Queueing system to AWS without rewriting code.
-- AWS MQ is an opensource message broker.
-- AWS MQ is based on Apache ActiveMQ.
+- Based on Apache ActiveMQ
+- Is a private service
+- Offers fewer AWS-native integrations than services like SQS, SNS, or EventBridge
+
+## Messaging models
+
 - Provides both Queueing (1-to-1) and Message (1-to-many) system.
+
+## Deployment architectures
+
 - Support both **Single Instance** and **Active-Standby (Like RDS)** architecture.
 - In **Active-Standby (Like RDS)** architecture, use EFS for shared storage between Active and Standby instance.
-- AWS MQ is a private service.
-- Does not support native integration with other AWS services.
 
 ## AWS MQ vs SQS + SNS: When to use which?
 

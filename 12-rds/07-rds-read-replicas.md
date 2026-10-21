@@ -13,11 +13,9 @@
 - Read Replicas can also have their own Read Replicas, but the **replication lag** can increase with each additional replica.
 - Placing replicas in regions close to users improves global read latency.
 
-## RPO/RTO Improvements
+## RPO Improvements
 
-- Problems: Backups and Snapshots can improve RPO but not RTO.
-- Read Replicas offer near 0 RTO since Read Replicas can be promoted to become the primary database quickly.
 - Read Replicas also offer near 0 RPO since the replication is performed immediately after the write operation is committed on the primary database.
-- Read Replicas are great for reducing RTO in case of **failure only**.
-- In case of **data corruption**, Read Replicas will also replicate the corrupted data to the Read Replica.
+- Read Replicas are great as failover instance in case of **failure only**.
+- In case of **data corruption**, the corrupted data will also be replicated to the Read Replica.
 - Read Replicas enable **global resiliency**.

@@ -1,16 +1,33 @@
 # Kinesis Video Streams
 
-- Kinesis Video Streams ingests live video streams from producers.
-- Some common producers include:
-  - Security cameras, drones, smartphones, cars.
-  - Non-video but time-serialized data: audio, thermal, depth and radar data.
-- **Consumers can access data in two ways:**
-  - **Frame‑by‑frame:** Process each frame continuously in real time.
-  - **On‑demand:** Retrieve only specific portions of the stream when needed.
-- Can persist data.
-- Can encrypt data in-transit and at rest.
-- Kinesis is fully managed by AWS.
-- Data can not be accessed directly via Kinesis Video Steams storage. They can only be accessed via Kinesis Video Steams APIs.
+## Overview
+
+- Fully managed by AWS
+- Ingests live video streams from producers
+
+## Producers
+
+- Common video producers: security cameras, drones, smartphones, cars
+- Also ingests non-video, time-serialized data: Audio, thermal, depth, and radar data
+
+## Consumption
+
+- Frame-by-frame access: processes each frame continuously in real time
+- On-demand access: retrieves only specific portions of the stream when needed
+
+## Storage and security
+
+- Can persist data
+- Encrypts data in transit
+- Encrypts data at rest
+
+## Data access
+
+- Data cannot be accessed directly via Kinesis Video Streams storage
+- Data is accessible only through Kinesis Video Streams APIs
+
+## Integrations
+
 - Can be integrated with other AWS services for further analysis. For example:
   - Rekogition: For Deep-learning analysis like facial recoginition.
   - Connect: For voice mail or other audio streaming.

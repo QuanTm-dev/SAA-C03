@@ -1,28 +1,45 @@
 # Kinesis Data Firehose
 
-- Context: Kinesis Data Streams does not store data for long periods of time.
-- Kinesis Data Firehose is a service that can be used to load data from Kinesis Data Streams into other AWS services like S3, Redshift, and Elasticsearch for long-term storage or other processing.
-- Kinesis Data Firehose is a fully managed by AWS.
-- Kinesis Data Firehose is highly available and scalable.
-- Kinesis Data Firehose offers near real-time data delivery to destinations (~60 seconds).
-- **Navtively** supports data transformation using AWS Lambda before delivery to destinations.
-- Unmodfied data can be delivered to a S3 backup bucket.
-- Billed based on the amount of data ingested.
-- Data can be sent from Kinesis Data Streams, or directly from producers to Kinesis Data Firehose.
-- Kinesis Data Firehose can buffer incoming streaming data before delivering it to destinations.
-- Data is delivered to destinations when the buffer size is filled or when the buffer time limit is reached.
-- Default buffer size is 1MB.
-- Default buffer time limit is 60s.
+## Overview
 
-## When to use Kinesis Data Firehose
+- Fully managed by AWS
+- Highly available and scalable
+- Billed based on the amount of data ingested
 
-- When you need long-term storage of streaming data.
-- When you need to transform streaming data (not complex transformation) before delivery to destinations.
+## Problem with Kinesis Data Streams
 
-## When not to use Kinesis Data Firehose
+- Context: Kinesis Data Streams does not store data for long periods of time
+- Firehose loads data from Kinesis Data Streams into other AWS services for long-term storage or other processing
+- Data can come from Kinesis Data Streams or directly from producers
 
-- When you need real-time processing of streaming data.
-- When you need to deliver streaming data to multiple destinations.
+## Destinations
+
+- Supported destinations include S3, Redshift, and OpenSearch Service
+- Each delivery stream delivers to a single destination
+
+## Buffering and latency
+
+- Buffers incoming streaming data before delivering it to destinations
+- Delivers when the buffer size is filled or the buffer time limit is reached
+- Default buffer size for S3 is 5 MB
+- Default buffer time limit for S3 is 300 seconds
+- Offers near real-time delivery to destinations (~60 seconds)
+
+## Data transformation
+
+- Natively supports data transformation with AWS Lambda before delivery
+- Suited to simple transformations, not complex ones
+- Unmodified source data can be delivered to an S3 backup bucket
+
+## When to use
+
+- Long-term storage of streaming data is needed
+- Simple transformation of streaming data is needed before delivery
+
+## When not to use
+
+- Real-time processing of streaming data is needed
+- Delivery to multiple destinations is needed
 
 ## IMPORTANT: No Anki cards needed for this section
 

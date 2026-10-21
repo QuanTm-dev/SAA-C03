@@ -1,18 +1,45 @@
-# Simple Notification Service
+# Simple Notification Service (SNS)
 
-- SNS is a pub-sub message service.
-- SNS is a public AWS service.
-- SNS job is coordinating the sending and delivery of messages.
-- Messages are payload with < 256kb in size.
-- SNS topics are the base entity of SNS. This is where permissions and configurations are defined.
-- Publisher is an entity sending messages to topics.
-- Each topics have subcribers which are entities receiving messages.
-- Subcribers can have different forms including: HTTP(S), Lambda functions,...
-- SNS is used across many AWS Services including CloudWatch, CloudFormation,...
-- By default, subcribers receive all messages sent to the topic they subcribe to. Subcribers can use filters to receive only the relevant messages.
-- Fanout pattern can be applied for SNS and SQS: Multiple SQS topics subcribe to the same SNS topic, each SQS topic handle a different workload.
-- SNS provides the message delivery status.
-- SNS also provides message delivery retries.
-- SNS is regional resilient.
-- SNS supports SSE.
-- SNS supports cross-account via Topic policy (AKA resource policy).
+## Overview
+
+- Pub-sub message service
+- Public AWS service
+- Coordinates the sending and delivery of messages
+- Used across many AWS services, including CloudWatch and CloudFormation
+
+## Topics, publishers and subscribers
+
+- Topics are the base entity of SNS
+- Permissions and configurations are defined on the topic
+- A publisher is an entity that sends messages to topics
+- Each topic has subscribers, which are entities that receive messages
+- Subscriber forms include HTTP(S) endpoints, Lambda functions, and others
+
+## Message size
+
+- Default maximum message payload is 256 KB
+- Payload limit can be increased to 1 MB
+
+## Message filtering
+
+- By default, subscribers receive all messages sent to their topic
+- Subscribers can use filters to receive only relevant messages
+
+## Fanout pattern with SQS
+
+- Multiple SQS queues subscribe to the same SNS topic
+- Each SQS queue handles a different workload
+
+## Delivery
+
+- Provides message delivery status
+- Provides message delivery retries
+
+## Resilience
+
+- Regionally resilient
+
+## Security
+
+- Supports SSE
+- Supports cross-account access via topic policy (also known as resource policy)
