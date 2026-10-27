@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[Amazon MQ] What does Amazon MQ let you migrate to AWS?","Existing <b>on-premises</b> message or queueing systems","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] What code change does migrating to Amazon MQ require?","<b>None</b> (no rewrite)","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] What open-source broker is Amazon MQ based on?","<b>Apache ActiveMQ</b>","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Is Amazon MQ a public or private service?","<b>Private</b> service","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] How do its AWS-native integrations compare to SQS, SNS, or EventBridge?","<b>Fewer</b> integrations","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] What is the delivery pattern of its queueing system?","<b>1-to-1</b>","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] What is the delivery pattern of its message system?","<b>1-to-many</b>","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Which architecture are supported?","<b>Single Instance and Active-Standby</b>","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] In Active-Standby, what provides shared storage between instances?","<b>EFS</b>","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Which service(s) suit new applications?","<b>SQS + SNS</b> (Amazon MQ is for migrations)","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Which service(s) suit native AWS service integration?","<b>SQS + SNS</b> (Amazon MQ has fewer native integrations)","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Which service suits migrating an existing system with no code rewrite?","<b>Amazon MQ</b> (contrast SQS + SNS for new applications)","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"
+"[Amazon MQ] Which service fits apps needing JMS, AMQP, MQTT, OpenWire, or STOMP?","<b>Amazon MQ</b> (contrast SQS + SNS)","SAA-C03::15 - Serverless and Application Services::15 - Amazon MQ 101"

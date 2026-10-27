@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"[AWS Glue] What does ETL stand for?","<b>Extract-Transform-Load</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What type of service is Glue?","<b>Serverless</b> ETL service","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What does Glue do with data?","<b>Moves and transforms</b> data from a source to a destination","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What source types are supported?","<b>Stores (e.g. S3) and Stream (e.g. Kinesis Data Strea)</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] Which common destinations are supported","<b> S3, RDS</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] Which service can invoke Glue via events?","<b>EventBridge</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] Besides events, how else can Glue be invoked?","<b>Manually</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What does a crawler crawl?","<b>data and metadata</b> from sources","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What do crawlers generate?","The <b>Glue Data Catalog</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What is the Data Catalog?","<b>Persistent metadata store</b> that indexes and organizes data across sources","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What does the Data Catalog make data?","<b>Searchable and queryable</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] How many Data Catalogs exist per region per account?","<b>One</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] What is a data silo?","Departments or apps storing data <b>separately</b>, without sharing or standardizing","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] Why are data silos a problem?","They make <b>collaboration difficult</b>","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"
+"[AWS Glue] Why does a shared Data Catalog avoid data silos?","<b>Single metadata store</b> shared across teams and applications","SAA-C03::15 - Serverless and Application Services::14 - AWS Glue 101"

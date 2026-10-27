@@ -19,7 +19,7 @@
 ## Shards
 
 - Shards are the unit used to scale the stream
-- A stream starts with one shard
+- A stream starts with one shard by default
 - Add more shards to increase throughput
 - Each shard supports up to 1 MB/sec data input
 - Each shard supports up to 2 MB/sec data output

@@ -1,0 +1,14 @@
+#deck column:3
+#separator:Comma
+"[GWLB] What might inspect and filter traffic before it reaches your app?","<b>Third-party virtual appliance</b> (e.g. firewall)","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What is challenging to build with third-party virtual appliances?","<b>Highly available and scalable solution</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What does a Gateway Load Balancer run and scale?","<b>Third-party virtual appliances</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] Which traffic direction(s) does GWLB work for?","<b>Both inbound and outbound</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What does GWLBE stand for?","<b>Gateway Load Balancer Endpoint</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What is a GWLBE technically?","<b>Elastic network interface (ENI)</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] Where do you create a GWLBE?","<b>In your VPC</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What role does a GWLBE play for VPC traffic?","<b>Entry point</b> for traffic going to or leaving your VPC","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What does the GWLB itself do?","<b>Balances traffic</b> across multiple GWLB backend instances","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] What are the GWLB backend instances?","<b>EC2 instances</b> running virtual appliance software","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] Which protocol encapsulates traffic between GWLB and appliances?","<b>GENEVE</b>","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"
+"[GWLB] Why does GWLB use GENEVE encapsulation?","<b>Preserves original packet</b> without modification","SAA-C03::14 - HA and Scaling::08 - Gateway Load Balancer"

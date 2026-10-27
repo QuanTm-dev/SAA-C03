@@ -1,0 +1,13 @@
+#deck column:3
+#separator:Comma
+"[LC vs LT] What does LC stand for?","<b>Launch Configuration</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] What does LT stand for?","<b>Launch Template</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] What do LC and LT define in advance?","<b>EC2 instance configuration</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Which IAM-related parameter can an LC or LT define?","<b>IAM Role</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Besides networking, which security parameter can an LC or LT define?","<b>Security Groups</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] What is the edit state of an LC or LT once created?","<b>Immutable</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Which of LC and LT supports versioning?","<b>LT</b> (LC has no versioning)","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] What is LC's status?","<b>Deprecated</b> (contrast LT, which supports versioning)","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Where can an LC be used?","<b>Only in an Auto Scaling Group</b>","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Besides an ASG, how else can an LT launch instances?","<b>Directly via console/CLI</b> (LC has no other use case)","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"
+"[LC vs LT] Which of LC and LT has more features?","<b>LT</b> (e.g. T2/T3 Unlimited, placement groups, capacity reservations)","SAA-C03::14 - HA and Scaling::03 - Launch Configuration and Templates"

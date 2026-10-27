@@ -1,0 +1,12 @@
+#deck column:3
+#separator:Comma
+"[ASG Health Checks] How many health check types can an ASG use?","<b>3: EC2 Health Checks, ELB Health Checks<, Custom Health Checks/b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] Which ASG health check type is the default?","<b>EC2 Health Checks</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] How does an EC2 health check treat a Stopping, Stopped, Terminated, Shutting down, or Impaired instance?","Marked <b>unhealthy</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] What instance state does an ELB health check require?","<b>Running</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] Besides running, what must an instance pass to be healthy under ELB health checks?","The <b>ELB health check</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] In Custom health checks, what marks instances healthy or unhealthy?","An <b>external system</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] What is the health check grace period?","Time ASG waits before marking an instance <b>unhealthy</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] What is the default health check grace period?","<b>300 seconds</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] When does the 300-second default grace period apply?","Only when ASG is created via the <b>AWS Console</b>","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"
+"[ASG Health Checks] Why use a health check grace period?","Let launch, bootstrapping and app start finish","SAA-C03::14 - HA and Scaling::06 - ASG Healthcheck Comparison"

@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[Kinesis Video] Who manages the Kinesis Video Streams service?","<b>Fully managed</b> by AWS","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What does it ingest from producers?","<b>Live video streams</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What kind of non-video data can it ingest?","<b>Time-serialized data (e.g Audio)</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] Which access mode processes each frame continuously in real time?","<b>Frame-by-frame access</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] Which access mode retrieves only specific portions of the stream?","<b>On-demand access</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What storage capability does it provide for stream data?","Can <b>persist data</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What is the encryption state of data in transit?","<b>Encrypted</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What is the encryption state of data at rest?","<b>Encrypted</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What is the direct access state of its storage?","<b>Not directly accessible</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What is the only way to access stored data?","<b>Kinesis Video Streams APIs</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] Which service integration provides deep-learning analysis like facial recognition?","<b>Rekognition</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What does the Rekognition integration provide?","<b>Deep-learning analysis</b> (e.g., facial recognition)","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] Which service integration handles voice mail or other audio streaming?","<b>Connect</b>","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"
+"[Kinesis Video] What is the Connect integration used for?","<b>Voice mail</b> or other audio streaming","SAA-C03::15 - Serverless and Application Services::12 - Kinesis Video Streams"

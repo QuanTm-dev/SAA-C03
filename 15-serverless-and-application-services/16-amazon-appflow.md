@@ -31,7 +31,7 @@
 
 ### Connector
 
-- Plug-in that lets AppFlow communicate with other applications
+- Plugin that lets AppFlow communicate with other applications
 
 ### Connection
 
