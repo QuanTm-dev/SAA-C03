@@ -1,23 +1,40 @@
 # Securing CF and S3 using OAI
 
-## Origin Access Identity (OAI)
+## OAI applicability
 
-- This is only applicable to S3 buckets that are only being used as the origin for CloudFront distributions. Meaning, the s3 bucket is not being used for static website hosting. If the S3 bucket is being used for static website hosting, then it is treated as a custom origin.
-- OAI is a type of identity.
-- OAI can be associcated with a CloudFront distribution. CF then "become" the OAI.
-- OAI is then can be used in bucket policies.
-- A common pattern is only allow access to the bucket from CloudFront. This is done by configuring an explicit allow statement in the bucket policy that allows access to the OAI. The result is any other traffics will be deny by implicit deny rule.
-- Best practice: Use 1 OAI for 1 distribution to make it easier to manage permissions in the long term.
+- Origin Access Identity (OAI) only applies to S3 buckets used solely as the origin for CloudFront distributions. Meaning, the S3 bucket must not be used for static website hosting
+- A bucket used for static website hosting is treated as a custom origin
 
-## Securing Custom Origins
+## OAI mechanics
 
-- There are 2 ways to secure a custom origin:
-  - Use custom header and HTTPS: CF sends a custom header to the origin. The origin check if the custom header is present. If not, the origin rejects the request.
-  - Whitelist only the CF IP ranges: The origin check if the request is from the CF using the IP. If not, the origin rejects the request.
+- An OAI is a type of identity
+- An OAI can be associated with a CloudFront distribution. CloudFront then "becomes" the OAI
+- An OAI can be used in bucket policies
 
-## Origin Access Control (OAC)
+## OAI bucket policy pattern
 
-- OAC is the replacement for OAI and is the recommended way to secure S3 origins behind CloudFront.
-- OAC ties to a distribution.
-- CloudFront uses the OAC to sign requests to S3. S3 then can verify if the request comes from CF.
-- The S3 bucket policy is then updated to allow only CloudFront access through the distribution and implicitly deny all other access.
+- Common pattern: allow access to the bucket only from CloudFront
+- How it works:
+  - Configure an explicit allow statement for the OAI in the bucket policy
+  - All other anonymous traffic is denied by the implicit deny rule
+
+## OAI best practice
+
+- Use 1 OAI per distribution
+- This makes permissions easier to manage in the long term
+
+## Securing custom origins
+
+- There are 2 common ways to secure a custom origin
+
+### Custom header and HTTPS
+
+- CloudFront sends a custom header to the origin, used together with HTTPS
+- The origin checks whether the custom header is present
+- The origin rejects the request if the header is missing
+
+### CloudFront IP range allowlist
+
+- The origin allowlists only the CloudFront IP ranges
+- The origin checks the request's source IP
+- The origin rejects the request if it is not from CloudFront

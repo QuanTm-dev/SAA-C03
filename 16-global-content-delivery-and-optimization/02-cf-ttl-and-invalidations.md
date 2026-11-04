@@ -1,28 +1,53 @@
 # CloudFront - TTL and Invalidations
 
-- When an object cached at edge locations expires, and CF makes a request to the origin server, there are two possible outcomes:
-  - The object is still valid at the origin server, the origin server returns a 304 Not Modified response to CF, and CF serves the cached object to the client.
-  - The object is stale at the origin server, the origin server returns a 200 OK response with the updated object to CF, and CF serves the updated object to the client.
-- More frequent cache hits = lower origin load + better performance for users.
+## Cache expiry and revalidation
+
+- When a cached object expires, CF makes a request to the origin, with two possible outcomes:
+  - Object still valid: origin returns 304 Not Modified, and CF serves the cached object to the client
+  - Object stale: origin returns 200 OK with the updated object, and CF serves it to the client
+- More frequent cache hits lower the load on the origin
+- More frequent cache hits improve performance for users
 
 ## TTL
 
-- Default TTL of an object is 24 hours. It can be set on a behavior of a distribution. This means any object using the behavior will have the TTL of 24 hours.
-- You can also set the min TTL and max TTL on a behavior. These values define the range within which an object can override the default TTL. Min TTL will be used if the overwrite TTL is lower than Min TTL. Max TTL will be use if the overwrite TTL is higher than Max TTL.
-- You can overwrite each object TTL using HTTP headers:
-  - Cache-control max-age (use seconds)
-  - Cache-control s-maxage (use seconds)
-  - Expires (use exact Date and time)
-- You can define these headers with S3 via object metadata.
+### Default, min, and max TTL
+
+- Default TTL is set on a behavior of a distribution
+- Any object using the behavior has a default TTL of 24 hours
+- Min TTL and max TTL can also be set on a behavior
+- Min and max TTL define the range within which an object's overriding TTL can fall
+- Min TTL is used if the overriding TTL is lower than min TTL
+- Max TTL is used if the overriding TTL is higher than max TTL
+
+### Per-object TTL override
+
+- Each object's TTL can be overwritten using HTTP headers:
+  - Cache-Control max-age (in seconds)
+  - Cache-Control s-maxage (in seconds)
+  - Expires (exact date and time)
+- With S3 as the origin, these headers are defined via object metadata
 
 ## Invalidations
 
-- Cache invalidation can be performed on a distribution.
-- Apply to all edge locations within the distribution.
-- Cache invalidation charges you the same amount no matter the number of objects.
-- Cache invalidations is not immediate.
-- Cache invalidations mark all affected objects as expired.
-- Cache invalidations match objects by path.
-- Cache invalidations should only be thought of as a way to correct cache errors.
-- If you regularly need or invalidate the files, use **versioned file name**. For example, your HTML file can point to `styles-v2.css` to avoid the outdated `styles-v1.css` being served.
-- You should always prefer **versioned file name** because it works for both CF cache and browser cache. Moreover, it's more cost effective.
+### Behavior
+
+- Performed on a distribution
+- Applies to all edge locations within the distribution
+- Not immediate
+- Marks all affected objects as expired
+- Matches objects by path
+
+### Cost
+
+- Charged per path, regardless of the number of objects matching that path
+
+### Usage guidance
+
+- Should only be thought of as a way to correct cache errors
+
+## Versioned file names
+
+- Use versioned file names if files need to be invalidated regularly
+- Example: an HTML file points to `styles-v2.css` to avoid the outdated `styles-v1.css` being served
+- Always prefer versioned file names, since they work for both CF cache and browser cache
+- More cost effective than invalidations

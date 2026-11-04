@@ -1,24 +1,47 @@
-# Private Distribution & Behaviours
+# CloudFront Private Distribution
 
-## Private Distribution
+## Distribution modes
 
-- Each distribution can serve content in 1 of 2 modes:
-  - Public
-  - Private: requests required signed cookies or urls to access
+- CloudFront serves content in one of two modes: public or private
+- Private mode requires signed cookies or signed URLs to access content
 
-- Signed Cookies and urls can be generated in 2 ways:
-  - Trusted Signer (Old way): Root User creates a CF Key Pair for an AWS Account. The public key is added to a distribution. The account then becomes a **trusted signer** for your distribution. The private key then can generate signed cookies or urls for your distribution.
-  - Trusted Key Group (New way): An user with the right permissions can create a key pair and add the public key to a **key group**. The private keys can generate signed cookies or urls for your distribution.
-- Prefer the new way because:
-  - You don't need account root user to create the key pair.
-  - Give you more flexibility in how to manage and use the keys.
+## Signing methods
 
-## Signed URL vs Signed Cookie
+- Signed cookies and URLs can be generated in two ways: trusted signer (old) or trusted key group (new)
 
-- Signed URL provides access to **1 object**.
-- Signed Cookies provides access to **group of object**.
-- Use URL if your client doesn't support cookie.
-- Use Cookie if you want to maintain application URL: Signed URL provide a custom URL. For example, if your original url is `https://d123.cloudfront.net/video.mp4`, then the signed url could be `https://d123.cloudfront.net/video.mp4?Expires=1728300000&Signature=abc123&Key-Pair-Id=APKAXXXXX`.
+### Trusted signer (old way)
+
+- Root user creates a CloudFront key pair for an AWS account
+- The account is added to a distribution
+- The account then becomes a trusted signer for that distribution
+- The private key generates signed cookies or URLs for the distribution
+
+### Trusted key group (new way)
+
+- A user with the right permissions creates a key pair
+- The public key is added to a key group
+- The key group is added to a distribution
+- The private key generates signed cookies or URLs for the distribution
+
+### Why prefer trusted key groups
+
+- Does not require the account root user to create the key pair
+- Gives more flexibility in managing and using the keys
+
+## Signed URL vs signed cookie
+
+### Signed URL
+
+- Provides access to one object
+- Use when the client doesn't support cookies
+- Provides a custom URL, so the application URL changes
+  - Original: `https://d123.cloudfront.net/video.mp4`
+  - Signed: `https://d123.cloudfront.net/video.mp4?Expires=1728300000&Signature=abc123&Key-Pair-Id=APKAXXXXX`
+
+### Signed cookie
+
+- Provides access to a group of objects
+- Use when you want to keep the application URL unchanged
 
 ## CloudFront + API Gateway + Lambda + Signed Cookies Flow (No Anki Card Needed)
 

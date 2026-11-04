@@ -1,18 +1,26 @@
-# VPC Endpoints (Gateway)
+# VPC Gateway Endpoints
 
-- Gateway Endpoints provides private access to public AWS services without using Internet Gateway or NAT Gateway.
-- Supported services: S3 and DynamoDB.
-- Gateway Endpoint is a regional service.
+## Overview
+
+- allow resources in a VPC to privately access S3 and DynamoDB without requiring an Internet Gateway, NAT Gateway.
+- Is a regional service
 
 ## How it works
 
-- Gateway Endpoints doesn't actually go into VPC subnets.
-- When a Gateway Endpoint is associated with a VPC, it adds a prefix list to the route table of the subnets that point to the endpoint.
-- The destination of the prefix list is not an IP address, but a logical representation of the service (e.g., pl-12345678 for S3).
-- Endpoint policy can be attached to the endpoint to control access to the service. For example, only allow the endpoint to connect to a particular S3 bucket.
-- A Gateway Endpoint can only be accessed from the VPC it's associated with.
+### Routing
 
-## When to use VPC Endpoints
+- Does not actually go into VPC subnets
+- Associating with a VPC adds a prefix list to the route table of the subnets, pointing to the endpoint
+- Prefix list destination is not an IP address
+- Prefix list destination is a logical representation of the service (e.g., pl-12345678 for S3)
 
-- When you want to access particular public AWS Services without allowing other public access.
+### Access control
+
+- An endpoint policy can be attached to control access to the service
+- Example: restrict the endpoint to connect only to a particular S3 bucket
+- Can only be accessed from the VPC it is associated with
+
+## Use cases
+
+- Access S3 and DynamoDB without allowing other public access
 - Prevent Leaky Buckets: Keep a bucket private by updating the bucket policy to only allow access from a particular Gateway Endpoint.

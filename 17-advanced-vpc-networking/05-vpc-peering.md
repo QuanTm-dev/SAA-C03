@@ -1,12 +1,33 @@
 # VPC Peering
 
-- VPC allows you to create a private network link between **two VPCs**. In other words, VPC peering allows 2 private VPCs to communicate with each other as if they are on the same network.
-- VPC connection can be created between VPCs in the same region or cross regions.
-- VPC connection can be created in the same account or across different accounts.
-- When you create a VPC, you can enable a setting that makes an instance’s public DNS hostname resolve to its private IP address instead of its public IP when queried from within the VPC.
-- Security groups of the peered VPCs can reference each other if they're in the same region.
-- VPC Peering is not **transitive**. If VPC A is peered with VPC B, and VPC B is peered with VPC C, VPC A cannot communicate with VPC C through VPC B. You must create a separate peering connection between VPC A and VPC C if you want them to communicate.
-- To enable connection between 2 VPC:
-  - You need to add a route in each VPC’s route table pointing to the other VPC’s CIDR.
-  - Allow the peer VPC’s CIDR in both security group rules and NACLs.
-- Communication is encrypted during transit.
+## Overview
+
+- Creates a private network link between two VPCs
+- Lets two private VPCs communicate as if they are on the same network
+
+## Supported scopes
+
+- Works between VPCs in the same region or across regions
+- Works between VPCs in the same account or across different accounts
+
+## Transitivity
+
+- Not transitive. If VPC A peers with VPC B and VPC B peers with VPC C, VPC A cannot reach VPC C through VPC B. A separate peering connection between VPC A and VPC C is required for them to communicate
+
+## Enabling connectivity
+
+- Add a route in each VPC's route table pointing to the other VPC's CIDR
+- Allow the peer VPC's CIDR in the security group rules of both VPCs
+
+## Security group references
+
+- Security groups of peered VPCs can reference each other only if the VPCs are in the same region
+
+## DNS resolution
+
+- You can enable a setting that makes an instance's public DNS hostname resolve to its private IP when queried from within the peered VPC
+
+## Encryption
+
+- Cross-Region VPC peering traffic is automatically encrypted in transit.
+- Same-Region VPC peering traffic is not automatically encrypted in transit by default. If encryption is required, use application-layer encryption such as TLS.

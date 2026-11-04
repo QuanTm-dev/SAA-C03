@@ -1,44 +1,33 @@
-# Amazon AppFlow
+# VPC Peering
 
 ## Overview
 
-- AWS AppFlow allows you to exchange data between applications.
-- Fully managed integration service
+- Creates a private network link between two VPCs
+- Lets two private VPCs communicate as if they are on the same network
 
-## Use cases
+## Supported scopes
 
-- Sync data across applications
-- Aggregate data from different sources to avoid data silos
+- Works between VPCs in the same region or across regions
+- Works between VPCs in the same account or across different accounts
 
-## Network connectivity
+## Transitivity
 
-- Uses a public endpoint by default
-- Supports PrivateLink
+- Not transitive. If VPC A peers with VPC B and VPC B peers with VPC C, VPC A cannot reach VPC C through VPC B. A separate peering connection between VPC A and VPC C is required for them to communicate
 
-## Connectors
+## Enabling connectivity
 
-- Offers many connectors for popular applications
-- Custom connectors can be built with the SDK
+- Add a route in each VPC's route table pointing to the other VPC's CIDR
+- Allow the peer VPC's CIDR in the security group rules of both VPCs
 
-## Core components
+## Security group references
 
-- Three main components: Flow, Connector, and Connection
+- Security groups of peered VPCs can reference each other only if the VPCs are in the same region
 
-### Flow
+## DNS resolution
 
-- Pipeline that moves data between a source and a destination
-- Can transform data while moving it
+- You can enable a setting that makes an instance's public DNS hostname resolve to its private IP when queried from within the peered VPC
 
-### Connector
+## Encryption
 
-- Plug-in that lets AppFlow communicate with other applications
-
-### Connection
-
-- Resource that stores the credentials and configuration for a connector
-- Can be reused across multiple flows
-
-## Flow configuration
-
-- Source and Field mapping needs to be defined in the flow.
-- Data Transformation, Filtering, and Validation can optionally be applied in the flow.
+- Cross-Region VPC peering traffic is automatically encrypted in transit.
+- Same-Region VPC peering traffic is not automatically encrypted in transit by default. If encryption is required, use application-layer encryption such as TLS.
