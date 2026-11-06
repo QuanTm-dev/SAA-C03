@@ -2,7 +2,7 @@
 
 ## Overview
 
-- allow resources in a VPC to privately access S3 and DynamoDB without requiring an Internet Gateway, NAT Gateway.
+- Allow resources in a VPC to privately access S3 and DynamoDB without requiring an Internet Gateway, NAT Gateway.
 - Is a regional service
 
 ## How it works

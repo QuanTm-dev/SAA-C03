@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[EOIGW] What does EOIGW stand for?","<b>Egress-Only Internet Gateway</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] Why is EOIGW needed for IPv6 outbound traffic?","NAT Gateway does <b>not support IPv6-to-IPv6</b> traffic","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] Which traffic direction does it allow?","<b>Outbound only</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] Which instances can send traffic through it to the internet?","<b>IPv6-enabled</b> instances in a VPC","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] What is an EOIGW attached to?","<b>A VPC</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] What is its resilience scope?","<b>Regionally resilient</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] Which default route needs to be added to the route table?","<b>::/0</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"
+"[EOIGW] What is the route target of the ::/0 route?","<b>The EOIGW</b>","SAA-C03::17 - Advanced VPC Networking::02 - Egress Only Internet Gateway"

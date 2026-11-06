@@ -1,0 +1,16 @@
+#deck column:3
+#separator:Comma
+"[VPC Peering] What does VPC peering create between two VPCs?","<b>Private network link</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] How do peered private VPCs communicate?","<b>As if on the same network</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What region scope can peered VPCs span?","<b>Same region or across regions</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What account scope can peered VPCs span?","<b>Same account or across accounts</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What is VPC peering's transitivity behavior?","<b>Not transitive</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] Where must routes be added to enable peering connectivity?","<b>Route table of each VPC</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What must the added route point to?","<b>The other VPC's CIDR</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What must security group rules of both VPCs allow?","<b>The peer VPC's CIDR</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What region restriction applies to security group references between peered VPCs?","<b>VPCs must be in the same region</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What does the peering DNS resolution setting make an instance's public DNS hostname resolve to?","<b>Its private IP</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] Where must a DNS query originate for the public hostname to resolve to the private IP?","<b>From within the peered VPC</b>","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What is the in-transit encryption state of cross-Region peering traffic?","<b>Automatically encrypted</b> (contrast same-Region, which is not)","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] What is the default in-transit encryption state of same-Region peering traffic?","<b>Not automatically encrypted</b> (contrast cross-Region, which is)","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"
+"[VPC Peering] How can same-Region peering traffic be encrypted when required?","<b>Application-layer encryption</b> (e.g., TLS)","SAA-C03::17 - Advanced VPC Networking::05 - VPC Peering"

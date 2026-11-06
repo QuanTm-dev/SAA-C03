@@ -1,0 +1,11 @@
+#deck column:3
+#separator:Comma
+"[Gateway Endpoints] What services are supported?","<b>S3 and DynamoDB</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] What does a Gateway Endpoint allow VPC resources to do?","<b>Privately access S3 and DynamoDB</b> (without an Internet Gateway or NAT Gateway)","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] What is a Gateway Endpoint's service scope?","<b>Regional</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] What is added to subnet route tables when an endpoint is associated with a VPC?","A <b>prefix list</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] In the route table, what does the prefix list point to?","The <b>endpoint</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] What does a prefix list like pl-12345678 represent?","A <b>logical representation</b> of a service (e.g., S3)","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] What can be attached to control access to the service?","An <b>endpoint policy</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] From where can a Gateway Endpoint be accessed?","Only the <b>VPC it is associated with</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"
+"[Gateway Endpoints] How do you keep a bucket private using a Gateway Endpoint?","Update bucket policy to only allow access from <b>that endpoint</b>","SAA-C03::17 - Advanced VPC Networking::03 - VPC Endpoints Gateway"

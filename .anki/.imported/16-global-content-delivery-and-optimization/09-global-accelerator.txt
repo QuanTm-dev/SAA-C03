@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[Global Accelerator] What does Global Accelerator improve?","<b>Global application performance</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Where does Global Accelerator first direct user traffic?","<b>Nearest edge location</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] After directed to the edge location, how is traffic routed to the origin server?","<b>Over the AWS global network</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Which traffic protocols does Global Accelerator work with?","<b>TCP and UDP</b> (any traffic)","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] What type of IP address does Global Accelerator use?","<b>Anycast IP</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] What does an anycast IP allow?","<b>A single IP address in multiple locations</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] How are users routed when sending traffic to the anycast IP?","<b>Automatically to the nearest edge location</b> (based on geographic location)","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] How many static anycast IPs does creating a Global Accelerator give you?","<b>Two</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Which edge locations can use the anycast IP addresses?","<b>Any edge location</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] What do clients use to communicate with your application?","<b>The anycast IP addresses</b>","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Which service fits non-HTTP(S) traffic?","<b>Global Accelerator</b> (contrast CloudFront for caching content)","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Which service fits improving performance for compute applications?","<b>Global Accelerator</b> (contrast CloudFront for caching content)","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"
+"[Global Accelerator] Which service fits when you need to cache content?","<b>CloudFront</b> (contrast Global Accelerator for non-HTTP(S) traffic)","SAA-C03::16 - Global Content Delivery and Optimization::09 - Global Accelerator"

@@ -1,0 +1,10 @@
+#deck column:3
+#separator:Comma
+"[Securing CF and S3] How many common ways are there to secure a custom origin?","<b>2</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] Custom header method: what does CloudFront send to the origin?","A <b>custom header</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] Custom header method: which protocol is used together with the header?","<b>HTTPS</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] Custom header method: what does the origin check?","Whether the <b>custom header is present</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] Custom header method: what does the origin do if the header is missing?","<b>Rejects</b> the request","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] IP allowlist method: which IP ranges does the origin allowlist?","Only the <b>CloudFront IP ranges</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] IP allowlist method: what does the origin check?","The request's <b>source IP</b>","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"
+"[Securing CF and S3] IP allowlist method: what does the origin do if the source IP is not from CloudFront?","<b>Rejects</b> the request","SAA-C03::16 - Global Content Delivery and Optimization::06 - Securing CF and S3 Using OAI"

@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[VPC Flow Logs] What does VPC Flow Logs monitor?","Traffic to and from <b>ENIs</b> within a VPC","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What traffic data do flow logs capture?","<b>Metadata only</b> (not actual packet data)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What timing limitation do flow logs have?","<b>Not real-time</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the broadest level a flow log can be attached to?","<b>VPC</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the narrowest level a flow log can be attached to?","<b>ENI</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Besides VPC and ENI, what is the third attachment level?","<b>Subnet</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Which traffic filter captures only permitted traffic?","<b>Accepted</b> (vs rejected, all)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Which traffic filter captures only denied traffic?","<b>Rejected</b> (vs accepted, all)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Which traffic filter captures both permitted and denied traffic?","<b>All</b> (vs accepted, rejected)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Which object storage service can receive flow logs?","<b>S3</b> (alternative: CloudWatch Logs)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] Which AWS logging service can receive flow logs?","<b>CloudWatch Logs</b> (alternative: S3)","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the logging status of traffic from and to the AWS metadata service?","<b>Not logged</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the logging status of traffic from and to the Amazon Time Sync Service?","<b>Not logged</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the logging status of traffic to the AWS DNS server?","<b>Not logged</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] What is the logging status of traffic to the AWS Windows license server?","<b>Not logged</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
+"[VPC Flow Logs] How are request and response traffic recorded?","Each gets its <b>own dedicated log record</b>","SAA-C03::17 - Advanced VPC Networking::01 - VPC Flow Logs"
