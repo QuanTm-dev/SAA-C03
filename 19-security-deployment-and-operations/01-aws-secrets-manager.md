@@ -1,8 +1,23 @@
 # AWS Secrets Manager
 
-- AWS Secrets manager is a product which can manage secrets within AWS.
-- There is some overlap between it and the SSM Parameter Store (SecretString) - but Secrets manager is specialised for secrets.
-- Supports the automatic rotation using Lambda. This is the key difference compared to SSM.
-- Can directly integrate with some AWS products. For example, with RDS, you can store credentials inside AWS Secrets Manager, when AWS Secrets Manager rotates the credentials, it also update the credentials saved within the RDS.
-- Use IAM to restrict access to secrets.
-- Secrets are encrypted using KMS.
+## Overview
+
+- Manages secrets within AWS
+- Specialised for storing and managing secrets
+- Overlaps with SSM Parameter Store (SecureString)
+
+## Automatic rotation
+
+- Supports automatic rotation of secrets using Lambda
+- Rotation is the key difference compared to SSM Parameter Store
+
+## Integration with AWS services
+
+- Integrates directly with some AWS products
+- Example: RDS credentials can be stored in Secrets Manager
+- When Secrets Manager rotates RDS credentials, it also updates the credentials saved within RDS
+
+## Security
+
+- Access to secrets is restricted using IAM
+- Secrets are encrypted using KMS

@@ -1,6 +1,8 @@
 # AWS Config
 
 - AWS Config is a service that monitor and evaluate the configurations changes of AWS resources overtime.
+- AWS Config is a regional service.
+- It can support cross-region and cross-account.
 
 ## Core concepts
 
@@ -24,6 +26,4 @@
 
 ### Monitoring and notifications
 
-- AWS Config is a regional service.
-- It can support cross-region and cross-account.
 - Resource changes can trigger SNS notifications or EventBridge events.

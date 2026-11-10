@@ -1,25 +1,48 @@
 # CloudHSM
 
-- With KMS, you share the underlying hardware with other accounts.
-- CloudHSM provides dedicated HSM for your account, which can be used to generate and store cryptographic keys.
-- AWS is responsible for hardware maintenance, but you are responsible for managing the HSM cluster and the keys stored in it.
-- CloudHSM is FIPS 140-3 Level 3 HSM.
-- How to access CloudHSM: Use the industry standard API such as PKCS#11, Java JCE, etc...
-- KMS can use CloudHSM as a custom key store. By using CloudHSM as a custom key store for KMS, you keep full control over dedicated, single‑tenant HSMs while still leveraging all native KMS integrations with AWS services.
+## Overview
+
+- Provides a dedicated HSM for your account
+- Used to generate and store cryptographic keys
+- Is a FIPS 140-3 Level 3 HSM
+
+## CloudHSM vs KMS
+
+- With KMS, you share the underlying hardware with other accounts
+- With CloudHSM, the HSM is dedicated to your account
+
+## Responsibilities
+
+- AWS is responsible for hardware maintenance
+- You are responsible for managing the HSM cluster and the keys stored in it
+
+## Access
+
+- Accessed using industry-standard APIs such as PKCS#11, Java JCE, etc.
+- The CloudHSM client must be installed on the client to interact with CloudHSM
+
+## AWS Integration
+
+- No native AWS integration with AWS products
+- KMS can use CloudHSM as a custom key store. You keeps full control over dedicated, single-tenant HSMs while still leverages all native KMS integrations with AWS services
 
 ## Architecture
 
-- CloudHSM is not highly available and runs within one AZ.
-- To make CloudHSM highly available, you need to create a Cluster and have at least 2 HSM in different AZs.
-- CloudHSM keeps keys and policies in sync between HSM in a Cluster.
-- CloudHSM operates in an **AWS-Managed VPC** and are injected to your VPC via ENI.
-- To achieve high avaibility, use load balancer to load balance between HSM's ENI.
-- CloudHSM client needs be installed on the client to interact with CloudHSM.
-- HSM needs an endpoint in the subnet of the VPC to allow other resources access to the cluster.
+### Networking
 
-## Use cases
+- CloudHSM operates in an **AWS-Managed VPC**
+- HSMs are injected into your VPC via ENI. Each HSM has its own ENI
 
-- No native AWS integration with AWS products.
-- Can be used to offload the SSL/TLS processing for the webservers. CloudHSM is much more efficent to do these encryption processes.
+### High Availability
+
+- CloudHSM is not highly available and runs within one AZ
+- To make it highly available, create a Cluster with at least 2 HSMs in different AZs
+- CloudHSM keeps keys and policies in sync between HSMs in a Cluster
+- The client needs to load balance between the HSMs' ENIs
+
+## Use Cases
+
+- Offload SSL/TLS processing for web servers
+- CloudHSM is much more efficient at these encryption processes
 - Oracle Databases can use CloudHSM to enable transparent data encryption (TDE)
-- This can be used to protect the private keys for an issuing certificate authority.
+- Protect the private keys of an issuing certificate authority

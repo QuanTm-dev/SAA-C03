@@ -1,25 +1,32 @@
 # AWS Site-to-Site VPN
 
-## Core concepts
+## Overview
 
-- Site-to-Site VPN is a logical connection between your on-premises network and your AWS VPC.
-- The VPN connection is encrypted in transit using IPsec.
-- The VPN connection runs over on public internet.
-- Site-to-Site VPN is highly available (If the on-premises network is configured correctly, check `Problem with single on-premises router` section below).
-- Site-to-Site VPN is quick to provision, typically less than an hour.
+- Logical connection between your on-premises network and your AWS VPC
+- Encrypted in transit using IPsec
+- Runs over the public internet
+- Quick to provision, typically less than an hour
+- Highly available if the on-premises network is configured correctly (check `Problem with single on-premises router` section below)
 
 ## Components
 
-- The AWS VPC your on-premise network needs to connect to.
-- Virtual Private Gateway (VGW): The target of one or more route tables. Traffic from the VPC to the on-premises network is routed to the VGW, which then sends it to the on-premises network via the VPN connection.
-- Customer Gateway (CGW): Logical piece of config and the thing that the config represents - your on-premises router.
-- VPN Connection itself.
+- **VPC**: the AWS VPC the on-premises network connects to
+- **Virtual Private Gateway (VGW)**: target of one or more route tables
+  - Traffic from the VPC to on-premises is routed to the VGW
+  - VGW sends it to on-premises via the VPN connection
+- **Customer Gateway (CGW)**: logical piece of config representing your on-premises router
+- **VPN connection**: the connection itself between the VGW and CGW
 
 ## Architecture
 
-- CGW needs to be configured with the on-premises router public IP address.
-- VGW provides 2 physical endpoints for each on-premises router, each router represents 1 VPN connection. Each endpoint is in a different Availability Zone (AZ). Each endpoint has a different public IP address. Each endpoint has a diffrent tunnel to the on-premises router.
-- AWS side needs to know the IP range of the on-premises network, and the on-premises side needs to know the IP range of the AWS VPC.
+- CGW is configured with the on-premises router's public IP address
+- Each on-premises router represents 1 VPN connection
+- VGW provides 2 physical endpoints per on-premises router
+- Each endpoint is in a different Availability Zone (AZ)
+- Each endpoint has a different public IP address
+- Each endpoint has its own tunnel to the on-premises router
+- AWS side must know the IP range of the on-premises network
+- On-premises side must know the IP range of the AWS VPC
 
 ### Problem with single on-premises router
 
@@ -30,23 +37,38 @@
 
 ### Static
 
-- Routes for on-premises side added to route tables as **static route**.
-- Network for on-premises side is statically configured on the VPN connection.
-- No load balancing and multi-connection failover.
+- On-premises routes are added to route tables as **static routes**
+- On-premises network is statically configured on the VPN connection
+- No load balancing
+- No multi-connection failover
 
 ### Dynamic
 
-- Dynamic VPN uses BGP protocol. Make sure your on-premises network support BGP, otherwise, it cannot use dynamic VPN. Networks information between each side are exchanged via BGP.
-- Support multiple VPN connections, provide HA and load balancing.
-- Routes for on-premises side can be added to route tables statically or dynamically via **route propagation**.
-- **Route propagation** automatically adds any routes of any connected networks that the VPN is aware of to route tables.
+- Uses the BGP protocol
+- On-premises network must support BGP, otherwise dynamic VPN cannot be used
+- Network information is exchanged between both sides via BGP
+- Supports multiple VPN connections
+- Provides HA and load balancing
+- On-premises routes can be added to route tables statically or dynamically via **route propagation**
+- **Route propagation** automatically adds routes of any connected networks the VPN is aware of to route tables
 
-## VPN Considerations
+## Throughput
 
-- A VPN connection has maximum throughput at 1.25 Gbps.
-- Virtual Private Gateway has maximum aggregated throughput at 1.25 Gbps for all connected VPN connection.
-- The above limit is from AWS side, you still need to check for the limit from on-premises side.
-- Latency is inconsistent as it is through Public Internet. If need low latency, use Direct Connect.
-- Cost: hourly charged, per GB out.
-- Can be used as backup for Direct Connect.
-- Can be used as initial setup as it's quick to setup, then migrate to Direct Connect later.
+- Maximum throughput of a VPN connection is 1.25 Gbps per tunnel
+- VGW maximum aggregated throughput is 1.25 Gbps across all connected VPN connections
+- These limits are from the AWS side, you still need to check the limit on the on-premises side
+
+## Latency
+
+- Latency is inconsistent because traffic goes over the public internet
+- If you need low latency, use Direct Connect
+
+## Cost
+
+- Charged hourly
+- Charged per GB out
+
+## Use cases
+
+- Backup for Direct Connect
+- Initial setup, since it is quick to provision, then migrate to Direct Connect later

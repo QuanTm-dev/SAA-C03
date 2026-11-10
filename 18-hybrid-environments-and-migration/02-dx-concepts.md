@@ -1,22 +1,44 @@
-# Direct Connect (DX) Concepts
+# Direct Connect (DX)
 
-- DX is a physical connection between your on-premises network and an AWS Region.
-- The connection can be 1 Gbps, 10 Gbps, or 100 Gbps.
-- Connection Flow: On-premises network → DX Location → AWS Region.
-- When you order DX, you're really ordering a Port Allocation at the DX Location.
-- Cost is charged hourly and based on the Outbound data transfer.
-- DX takes time to provision, can take weeks to months.
-- There is no built-in resiliency, so you should consider using multiple DX connections for high availability.
-- DX provides low and concistent latency with high speed.
-- DX cannot access public internet, only AWS services (both public and private).
+## Overview
+
+- Physical connection between your on-premises network and an AWS Region
+- Connection speed can be 1, 10, 100, or 400 Gbps
+- Connection flow: On-premises network → DX Location → AWS Region
+- Ordering DX means ordering a Port Allocation at the DX Location
+
+## Characteristics
+
+- Provides low and consistent latency with high speed
+- Takes weeks to months to provision
+- Has no built-in resiliency. Use multiple DX connections for high availability
+- Cannot access the public internet
+- Can only access AWS services, both public and private
+
+## Cost
+
+- Charged hourly
+- Based on outbound data transfer
 
 ## Architecture
 
-- There are 2 types of cages within a DX location:
-  - AWS cage: contains the AWS infra and routers (AKA DX Endpoints). This is where your Port Allocation is provisioned.
-  - Customer or Partner cage: contains the customer's or partner's infra and routers. Your on-premises network connects to this cage.
+### Cages in a DX Location
+
+- Two cage types exist within a DX Location: AWS cage and Customer/Partner cage
+- AWS cage contains the AWS infrastructure and routers (AKA DX Endpoints)
+- Your Port Allocation is provisioned in the AWS cage
+- Customer/Partner cage contains the customer's or partner's infrastructure and routers
 - You can either pay for a dedicated Customer cage or purchase a port capacity in a shared Partner cage.
-- Your on-premises network connects to the AWS cage via a cross-connect, which is a physical cable that connects AWS cage and the Customer/Partner cage.
-- Your on-premises network communicates with AWS Services via Virtual Interfaces (VIFs) that are created on the DX Endpoints. There are 2 **main** types of VIFs:
+
+### Connectivity
+
+- Your on-premises network connects to the AWS cage via a cross-connect
+- A cross-connect is a physical cable connecting the AWS cage and the Customer/Partner cage
+
+## Virtual Interfaces (VIFs)
+
+- Your on-premises network communicates with AWS services via VIFs
+- VIFs are created on the DX Endpoints
+- There are 2 **main** types of VIFs: Private VIF and Public VIF:
   - Private VIF: connects to a VPC via a VGW (Virtual Gateway).
   - Public VIF: connects to AWS public services via an AWS public endpoint.

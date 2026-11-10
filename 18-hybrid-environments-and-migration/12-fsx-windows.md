@@ -1,14 +1,41 @@
-# FSx for Windows Servers
+# FSx for Windows File Server
 
-- FSx provides a fully managed native windows file server (AKA file share).
-- Designed for integration with window environments.
-- Can integrate with AWS Directory Service or Self-Managed AD (on-premises AD).
-- Can be deployed into single or multi-AZ.
+## Overview
+
+- Fully managed native Windows file server (file share)
+- Designed for integration with Windows environments
+
+## Directory integration
+
+- Can integrate with AWS Managed Microsoft AD of AWS Directory Service
+- Can integrate with self-managed AD (on-premises AD)
+
+## Availability
+
+- Can be deployed as single-AZ or multi-AZ
+
+## Access
+
+- Accessible using VPC
+- Accessed using the SMB protocol
+- Uses the Windows permission model
+
+## Encryption
+
+- Uses KMS for encryption at rest
+- Enforces encryption in transit
+
+## Backup and recovery
+
 - Support on-demand and scheduled backup.
-- Accessible using VPC.
-- Use KMS for at rest encryption.
-- Enforce encryption in transit.
-- Accessed using SMB protocol.
-- Support volume shadow copies (VSS) - User can see multiple file/folder versions, and restore the file/folder to a specific version.
-- Use Window permission model.
-- Support DFS - Distributed File System: Group shared folders across multiple servers into a single logical namespace.
+
+### Volume Shadow Copies (VSS)
+
+- Supports volume shadow copies (VSS)
+- Users can see multiple versions of a file or folder
+- Users can restore a file or folder to a specific version
+
+## Distributed File System (DFS)
+
+- Supports DFS (Distributed File System)
+- Groups shared folders across multiple servers into a single logical namespace

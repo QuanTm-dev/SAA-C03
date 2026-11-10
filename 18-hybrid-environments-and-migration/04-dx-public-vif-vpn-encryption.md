@@ -1,17 +1,39 @@
 # Direct Connect (DX) - Public VIF + VPN (Encryption)
 
-- Note: VPN refers to Site-to-Site VPN, which is a logical connection between your on-premises network and your AWS VPC. The VPN connection is encrypted in transit using IPsec.
-- Neither public or private VIFS offer any form of encryption.
+- Note: VPN in this lesson refers to Site-to-Site VPN
+
+## Site-to-Site VPN basics
+
+- Logical connection between your on-premises network and your AWS VPC
+- Encrypted in transit using IPsec
+- Transit agnostic — can be used over either DX or the public internet
+
+## DX encryption
+
+- Neither public nor private VIFs offer any form of encryption
 - Public VIFs+IPSec VPN is a way to provide access to private VPC resources, using an encrypted IPSEC tunnel for transit.
 
 ## Public VIF + VPN
 
-- Use public VIF and Virtual Private Gateway (VGW) or Transit Gateway (TGW) public endpoint.
-- VPN is transit agnostic, meaning it can be used with either DX or public internet.
-- Using VPN with DX (public VIF) provides encryption for DX traffic while still providing low latency and high throughput.
-- Difference between VPN and MacSec:
-  - VPN is an End-to-End encryption solution. MacSec provides encryption between 2 hops only.
-  - VPN has wider vendor support than MacSec.
-  - VPN has more encryption overhead than MacSec, which can impact throughput and latency.
-- Common pattern: Use VPN as intial setup, then when DX is provisioned, either use VPN as backup or to provide encryption for DX traffic.
-- VPN can be used to allows connections to VPC from other regions.
+- Uses a public VIF with the public endpoint of a Virtual Private Gateway (VGW) or Transit Gateway (TGW)
+- Provides encryption for DX traffic
+- Still provides low latency and high throughput
+- Allows connections to the VPC from other regions
+
+## VPN vs MACsec
+
+### VPN
+
+- End-to-end encryption solution
+- Wider vendor support than MACsec
+- More encryption overhead than MACsec, which can impact throughput and latency
+
+### MACsec
+
+- Provides encryption between 2 hops only
+
+## Common pattern
+
+- Use VPN as the initial setup while DX is being provisioned
+- Once DX is provisioned, use VPN as backup
+- Alternatively, once DX is provisioned, use VPN to provide encryption for DX traffic

@@ -1,33 +1,33 @@
-# VPC Peering
+# AWS GuardDuty
 
 ## Overview
 
-- Creates a private network link between two VPCs
-- Lets two private VPCs communicate as if they are on the same network
+- Continuous security monitoring service
+- Runs all the time once enabled
 
-## Supported scopes
+## How it works
 
-- Works between VPCs in the same region or across regions
-- Works between VPCs in the same account or across different accounts
+- Reviews data from supported services
+- Identifies events outside the "norm" for a given AWS account or accounts
 
-## Transitivity
+## Detection methods
 
-- Not transitive. If VPC A peers with VPC B and VPC B peers with VPC C, VPC A cannot reach VPC C through VPC B. A separate peering connection between VPC A and VPC C is required for them to communicate
+- Uses machine learning and threat intelligence feeds (lists of known threats) to detect suspicious activity
+- Machine learning learns your normal activity patterns
+- Flags anything unusual compared to those patterns
 
-## Enabling connectivity
+## Findings
 
-- Add a route in each VPC's route table pointing to the other VPC's CIDR
-- Allow the peer VPC's CIDR in the security group rules of both VPCs
+- When a finding is generated, an event is sent to EventBridge
+- EventBridge events can drive notification or remediation
 
-## Security group references
+## Multi-account support
 
-- Security groups of peered VPCs can reference each other only if the VPCs are in the same region
+- Supports multiple accounts through an Administrator-Member architecture
+- An administrator account can invite other member accounts
 
-## DNS resolution
+## Supported data sources
 
-- You can enable a setting that makes an instance's public DNS hostname resolve to its private IP when queried from within the peered VPC
-
-## Encryption
-
-- Cross-Region VPC peering traffic is automatically encrypted in transit.
-- Same-Region VPC peering traffic is not automatically encrypted in transit by default. If encryption is required, use application-layer encryption such as TLS.
+- CloudTrail logs
+- DNS logs
+- VPC Flow Logs
