@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[AWS GuardDuty] What type of service is GuardDuty?","<b>Continuous security monitoring</b> service","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] How often does GuardDuty run once enabled?","<b>All the time</b> (continuously)","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What does GuardDuty review?","<b>Data from supported services</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What kind of events does GuardDuty identify?","Events <b>outside the norm</b> for an account or accounts","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What does GuardDuty's machine learning learn?","Your <b>normal activity patterns</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What does GuardDuty flag as suspicious?","Anything <b>unusual</b> compared to normal patterns","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What does GuardDuty use to detect suspicious activity?","<b>Machine learning and Threat intelligence feeds</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What is a threat intelligence feed?","A <b>list of known threats</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] When a finding is generated, where is an event sent?","<b>EventBridge</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What can GuardDuty finding events in EventBridge drive?","<b>Notification</b> or <b>remediation</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What architecture supports multiple accounts?","<b>Administrator-Member</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] What can an administrator account do with other accounts?","<b>Invite</b> them as member accounts","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"
+"[AWS GuardDuty] Which are the supported data sources?","<b>CloudTrail logs, DNS logs, VPC Flow Logs</b>","SAA-C03::19 - Security Deployment and Operations::08 - AWS GuardDuty"

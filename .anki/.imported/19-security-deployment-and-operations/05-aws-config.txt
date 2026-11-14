@@ -1,0 +1,17 @@
+#deck column:3
+#separator:Comma
+"[AWS Config] What is AWS Config's purpose?","Monitor and evaluate AWS resource configuration changes over time","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What is AWS Config's service scope?","<b>Regional</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What does AWS Config support beyond a single region?","<b>Cross-region</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What does AWS Config support beyond a single account?","<b>Cross-account</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What is a Configuration Item (CI)?","<b>Snapshot</b> of a resource's configuration at a point in time","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What is Configuration History?","Collection of all CIs for a resource over time","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What do Config Rules evaluate?","<b>Resource compliance</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What are the AWS-provided Config Rules called?","<b>AWS-managed</b> rules (contrast Custom rules)","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What does a Custom Config Rule use?","<b>Lambda</b> (contrast AWS-managed rules)","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] When does AWS Config create a configuration item?","Every time a supported resource changes","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What does AWS Config keep for each resource over time?","<b>Configuration history</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] Where is AWS Config data stored?","<b>S3 delivery bucket</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] Where can stored AWS Config data be reviewed?","<b>S3 console</b>","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What happens to non-compliant resources?","Flagged for review and remediation","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"
+"[AWS Config] What can AWS Config NOT do about config changes?","<b>Prevent</b> them (it only checks compliance)","SAA-C03::19 - Security Deployment and Operations::05 - AWS Config"

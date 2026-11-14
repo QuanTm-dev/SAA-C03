@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[Storage Gateway Tape] What does it present to on-premises backup applications?","<b>Virtual tape library</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What protocol does it use?","<b>iSCSI</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] Which Storage Gateway type is its storage design similar to?","<b>Volume Cached</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What local storages does it use?","<b>Cache Storage and Upload Buffer</b> (same as Volume Cached)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] Where are tapes stored?","<b>VTL</b> (Virtual Tape Library)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] Where do tapes move when no longer needed for immediate access?","<b>VTS</b> (Virtual Tape Shelf)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] How many main components does it have?","<b>2</b> (VTL and VTS)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What does VTL stand for?","<b>Virtual Tape Library</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What does VTS stand for?","<b>Virtual Tape Shelf</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What backs the VTL?","<b>S3</b> (VTS uses S3 Glacier classes instead)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What backs the VTS?","<b>S3 Glacier Flexible Retrieval</b> or <b>S3 Glacier Deep Archive</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What traditional tape concept does the VTS represent?","<b>Tape shelf</b> (offsite storage)","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What type of tapes does the VTS hold?","Tapes <b>no longer needed for immediate access</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What does it do with on-premises tape backup in a migration use case?","<b>Migrates</b> it to AWS","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What does it do with on-premises tape backup in an extension use case?","<b>Extends</b> it with AWS","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"
+"[Storage Gateway Tape] What can run in parallel with traditional on-premises tape backup?","<b>AWS tape backup solution</b>","SAA-C03::18 - Hybrid Environments and Migration::07 - Storage Gateway Tape VTL"

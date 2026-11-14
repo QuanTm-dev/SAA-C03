@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[AWS Inspector] How often does Inspector scan AWS workloads?","<b>Continuously</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What does Inspector scan workloads for, besides unintended network exposure?","<b>Security vulnerabilities</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What does Inspector scan workloads for, besides security vulnerabilities?","<b>Unintended network exposure</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] Which AWS services can Inspector scan?","<b>EC2 instances, ECR container images, Lambda functions</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What are findings automatically prioritized by?","<b>Severity and Exploitability</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] Which finding type detects known CVEs?","<b>Vulnerability findings</b> (contrast network exposure findings)","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] Which finding type detects unintended network exposure?","<b>Network exposure findings</b> (contrast vulnerability findings)","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What does Inspector check on EC2 for CVEs?","<b>Installed software and Operating system</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What does Inspector check in ECR for CVEs?","<b>Container images</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What does Inspector check in Lambda for CVEs?","<b>Deployment packages and Dependencies</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] What do network exposure findings detect?","<b>unintended network exposure and Reachable services</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] How does Inspector discover resources?","<b>Automatically</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"
+"[AWS Inspector] When does Inspector automatically re-evaluate resources?","When <b>new CVEs are published</b>","SAA-C03::19 - Security Deployment and Operations::07 - AWS Inspector"

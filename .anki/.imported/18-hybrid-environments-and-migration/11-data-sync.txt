@@ -1,0 +1,18 @@
+#deck column:3
+#separator:Comma
+"[DataSync] What does DataSync do?","Moves data <b>from and to AWS</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What scale is DataSync designed to work at?","<b>Huge scale</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What besides file data can DataSync transfer?","<b>Metadata</b> (e.g. permissions, timestamps)","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What DataSync feature checks transferred data?","<b>Built-in validation</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What data-size feature does DataSync support?","<b>Compression</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What data-security feature does DataSync support?","<b>Encryption</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] After the initial transfer, what does an incremental transfer send?","<b>Only changes</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What feature lets transfers run on a timetable?","<b>Scheduled transfers</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What feature avoids saturating the network?","<b>Bandwidth limiters</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] How does DataSync handle transit errors?","<b>Recovers automatically</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What AWS storage services can DataSync integrate with?","<b>S3, EFS, and FSx for Windows servers</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] DataSync talks to on-premises storage via which protocols?","<b>NFS and SMB</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] Where does the DataSync agent run, and in what form?","<b>On-premises as a virtual machine (VM)</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What does the DataSync agent do with on-premises storage?","<b>Reads and writes data</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] How does the DataSync agent communicate with AWS?","Via <b>DataSync endpoint</b>","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"
+"[DataSync] What is a DataSync task?","<b>Configuration unit</b> defining source and destination locations","SAA-C03::18 - Hybrid Environments and Migration::11 - Data Sync"

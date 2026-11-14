@@ -1,0 +1,15 @@
+#deck column:3
+#separator:Comma
+"[DX Public VIF + VPN] What encryption do public and private VIFs offer?","<b>None</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What does Public VIF + IPsec VPN give access to?","<b>Private VPC resources</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What carries the encrypted transit over a public VIF?","<b>IPsec tunnel</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] Which VPN endpoint does the public VIF connect to?","<b>Public endpoint</b> of a VGW or TGW","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What does Public VIF + VPN provide for DX traffic?","<b>Encryption</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What latency does Public VIF + VPN still provide?","<b>Low latency</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What throughput does Public VIF + VPN still provide?","<b>High throughput</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What regional connections does Public VIF + VPN allow to a VPC?","<b>Allows connections to the VPC from other regions</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What encryption scope does VPN provide?","<b>End-to-end</b> (contrast MACsec: 2 hops only)","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] How does VPN vendor support compare to MACsec?","<b>Wider</b> vendor support","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] Why can VPN impact throughput and latency more than MACsec?","<b>More encryption overhead</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] What encryption scope does MACsec provide?","<b>Between 2 hops only</b> (contrast VPN: end-to-end)","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
+"[DX Public VIF + VPN] Once DX is provisioned, what else can VPN provide besides backup?","<b>Encryption for DX traffic</b>","SAA-C03::18 - Hybrid Environments and Migration::04 - DX Public VIF VPN Encryption"
